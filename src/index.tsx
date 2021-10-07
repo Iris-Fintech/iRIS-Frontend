@@ -4,15 +4,17 @@ import ReactDOM from 'react-dom';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
-// const Provider = lazy(() => import('./Provider'));
+const Provider = lazy(() => import('./Provider'));
 const App = lazy(() => import('./App'));
 
 ReactDOM.render(
     <React.StrictMode>
         <Suspense fallback={<div>Loading...</div>}>
-            {/* <Provider> */}
-            <App />
-            {/* </Provider> */}
+            <Provider>
+                <App>
+                    <p>DeFite</p>
+                </App>
+            </Provider>
         </Suspense>
     </React.StrictMode>,
     document.getElementById('root'),
