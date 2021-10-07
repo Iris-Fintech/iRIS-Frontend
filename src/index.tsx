@@ -1,24 +1,29 @@
 // Library Import
-import React, { Suspense, lazy } from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
 const App = lazy(() => import('./App'));
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import AdminLayout from "./layouts/Admin";
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 ReactDOM.render(
-    
     <React.StrictMode>
         <BrowserRouter>
-          <Switch>
-            <Route
-              path="/"
-              render={(props) => <AdminLayout {...props} />}
-            />
-            <Redirect from="/" to="/home" />
-          </Switch>
+            <Suspense fallback={<div>Loading...</div>}>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to="/">App</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <Switch>
+                    <Route path="/">
+                        <App />
+                    </Route>
+                </Switch>
+            </Suspense>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root'),
