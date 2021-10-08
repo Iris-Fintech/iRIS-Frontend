@@ -1,6 +1,7 @@
 // Library Import
 import React, { Suspense, lazy } from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
