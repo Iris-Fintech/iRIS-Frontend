@@ -9,6 +9,7 @@ import { connectorsByName } from '../../utils/connectors';
 import { ConnectorNames } from '../../utils/connectorNames';
 import WalletCard from './WalletCard';
 import metaInfo, { Config, connectorLocalStorageKey } from './metaInfo';
+import { getErrorMessage } from '../../utils/getEthErrorMessage';
 
 const WalletModal = () => {
     const context = useWeb3React<Web3Provider>();
@@ -44,16 +45,28 @@ const WalletModal = () => {
 
     return (
         <>
-            {(active || error) && (
-                <Button variant="primary" onClick={closeConnect}>
-                    Disconnect
-                </Button>
-            )}
-            {!active && (
-                <Button variant="primary" onClick={handleShow}>
-                    Launch demo modal
-                </Button>
-            )}
+            <hr style={{ margin: '2rem' }} />
+            <div
+                style={{
+                    display: 'grid',
+                    gridGap: '1rem',
+                    gridTemplateColumns: 'fit-content',
+                    maxWidth: '20rem',
+                    margin: 'auto',
+                }}
+            >
+                {(active || error) && (
+                    <Button variant="primary" onClick={closeConnect}>
+                        Disconnect
+                    </Button>
+                )}
+                {!active && (
+                    <Button variant="primary" onClick={handleShow}>
+                        Launch demo modal
+                    </Button>
+                )}
+            </div>
+            {!!error && <h4 style={{ marginTop: '1rem', marginBottom: '0' }}>{getErrorMessage(error)}</h4>}
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
