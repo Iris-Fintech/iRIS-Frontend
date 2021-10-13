@@ -7,6 +7,7 @@ import { signMessage } from '../../utils/connectors';
 const Account = () => {
     const context = useWeb3React<Web3Provider>();
     const { library, account } = context;
+
     return (
         <>
             <hr style={{ margin: '2rem' }} />

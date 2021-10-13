@@ -17,6 +17,7 @@ function ChainId() {
 
 function BlockNumber() {
     const { chainId, library } = useWeb3React();
+    console.log(library);
 
     const [blockNumber, setBlockNumber] = React.useState<number>();
     React.useEffect((): any => {

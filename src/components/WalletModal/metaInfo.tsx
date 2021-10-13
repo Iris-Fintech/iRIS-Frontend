@@ -5,8 +5,6 @@ import TrustWallet from './icons/TrustWallet';
 import WalletConnect from './icons/WalletConnect';
 import BinanceChain from './icons/BinanceChain';
 // import SafePalWallet from './icons/SafePalWallet';
-// import WalletLink from './icons/WalletLink';
-import LedgerWallet from './icons/LedgerWallet';
 
 import { ConnectorNames } from '../../utils/connectorNames';
 
@@ -52,17 +50,6 @@ const config: Config[] = [
     //     icon: SafePalWallet(),
     //     connectorId: ConnectorNames.Injected,
     // },
-    // {
-    //     title: 'Wallet Link',
-    //     icon: WalletLink(),
-    //     connectorId: ConnectorNames.WalletLink,
-    // },
-    {
-        title: 'Ledger Wallet',
-        icon: LedgerWallet(),
-        connectorId: ConnectorNames.Ledger,
-    },
 ];
 
 export default config;
-export const connectorLocalStorageKey = 'connectorId';

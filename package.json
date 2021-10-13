@@ -6,6 +6,7 @@
         "@binance-chain/bsc-connector": "^1.0.0",
         "@ethersproject/providers": "^5.1.2",
         "@ethersproject/units": "^5.1.0",
+        "@reduxjs/toolkit": "^1.6.2",
         "@testing-library/jest-dom": "^5.11.4",
         "@testing-library/react": "^11.1.0",
         "@testing-library/user-event": "^12.1.10",
@@ -80,5 +81,5 @@
         "prettier": "^2.4.1",
         "typescript-eslint": "^0.0.1-alpha.0"
     },
-    "description": "My webpack project"
+    "description": "DeFite Frontend"
 }

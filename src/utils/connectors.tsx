@@ -2,8 +2,7 @@
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { BscConnector } from '@binance-chain/bsc-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
-import { WalletLinkConnector } from '@web3-react/walletlink-connector';
-import { LedgerConnector } from '@web3-react/ledger-connector';
+
 import { ethers } from 'ethers';
 
 // Import TSX File
@@ -38,26 +37,11 @@ const walletconnect = new WalletConnectConnector({
     pollingInterval: POLLING_INTERVAL,
 });
 
-const walletlink = new WalletLinkConnector({
-    url: RPC_URL,
-    appName: 'OUR APP NAME',
-    appLogoUrl: '',
-    supportedChainIds: [CHAIN_ID],
-});
-
-const ledger = new LedgerConnector({
-    chainId: CHAIN_ID,
-    url: RPC_URL,
-    pollingInterval: POLLING_INTERVAL,
-});
-
 // Connectors dictionary for fast lookup
 export const connectorsByName: { [connectorName: string]: any } = {
     [ConnectorNames.Injected]: injected,
     [ConnectorNames.WalletConnect]: walletconnect,
     [ConnectorNames.BSC]: bscConnector,
-    [ConnectorNames.WalletLink]: walletlink,
-    [ConnectorNames.Ledger]: ledger,
 };
 
 // getLibrary function for Web3Provider

@@ -5,17 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
-const Provider = lazy(() => import('./Provider'));
+const Web3Provider = lazy(() => import('./Provider'));
 const App = lazy(() => import('./App'));
 
 ReactDOM.render(
     <React.StrictMode>
         <Suspense fallback={<div>Loading...</div>}>
-            <Provider>
+            <Web3Provider>
                 <App>
                     <p>DeFite</p>
                 </App>
-            </Provider>
+            </Web3Provider>
         </Suspense>
     </React.StrictMode>,
     document.getElementById('root'),
