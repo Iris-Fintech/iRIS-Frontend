@@ -1,12 +1,10 @@
 import React from 'react';
 import { useWeb3React } from '@web3-react/core';
-import { Web3Provider } from '@ethersproject/providers';
 
 import { signMessage } from '../../utils/connectors';
 
 const Account = () => {
-    const context = useWeb3React<Web3Provider>();
-    const { library, account } = context;
+    const { library, account } = useWeb3React();
 
     return (
         <>

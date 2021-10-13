@@ -1,5 +1,5 @@
 export enum ConnectorNames {
     Injected = 'Injected',
-    BSC = 'BSC',
+    BSC = 'Binance Chain Wallet',
     WalletConnect = 'WalletConnect',
 }

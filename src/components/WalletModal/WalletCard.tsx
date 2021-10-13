@@ -7,7 +7,7 @@ const WalletCard = ({ walletMetaInfo, activate, disabled }: any) => {
     return (
         <div>
             <Button
-                disabled={!disabled}
+                disabled={disabled}
                 onClick={() => {
                     activate(connectorsByName[connectorId]);
                 }}

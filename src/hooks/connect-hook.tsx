@@ -1,24 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
 
 import { injected } from '../utils/connectors';
 import { ConnectorNames } from '../utils/connectorNames';
 import { connectorsByName } from '../utils/connectors';
+import { useAppSelector, useAppDispatch } from '../redux/hook';
+import { setState } from '../redux/triedEager';
 
-export function useEagerConnect() {
+export const useEagerConnect = () => {
     const { connector, activate, active } = useWeb3React();
 
-    const [tried, setTried] = useState(false);
+    const triedEager = useAppSelector((state) => state.triedEager.tried);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         if (connector == connectorsByName[ConnectorNames.Injected]) {
             injected.isAuthorized().then((isAuthorized: boolean) => {
                 if (isAuthorized) {
                     activate(injected, undefined, true).catch(() => {
-                        setTried(true);
+                        dispatch(setState(true));
                     });
                 } else {
-                    setTried(true);
+                    dispatch(setState(false));
                 }
             });
         }
@@ -26,15 +29,15 @@ export function useEagerConnect() {
 
     // if the connection worked, wait until we get confirmation of that to flip the flag
     useEffect(() => {
-        if (!tried && active) {
-            setTried(true);
+        if (!triedEager && active) {
+            dispatch(setState(true));
+        } else {
+            dispatch(setState(false));
         }
-    }, [tried, active]);
+    }, [active]);
+};
 
-    return tried;
-}
-
-export function useInactiveListener(suppress: boolean = false) {
+export const useInactiveListener = (suppress: boolean = false) => {
     const { active, error, activate } = useWeb3React();
 
     useEffect((): any => {
@@ -74,4 +77,4 @@ export function useInactiveListener(suppress: boolean = false) {
             };
         }
     }, [active, error, suppress, activate]);
-}
+};

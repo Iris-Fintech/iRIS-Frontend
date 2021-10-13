@@ -26,9 +26,12 @@ const WalletModal = () => {
 
                 <Modal.Body>
                     {metaInfo.map((entry: Config) => {
-                        const currentConnector = connectorsByName[entry.title];
+                        const currentConnector = connectorsByName[entry.connectorId];
                         const connected = currentConnector === connector;
-                        const disabled = !triedEager || connected || !!error;
+
+                        const disabled = triedEager || connected || error;
+
+                        console.log(triedEager, connected, error);
 
                         return (
                             <div key={entry.title} onClick={() => dispatch(changeState())}>
