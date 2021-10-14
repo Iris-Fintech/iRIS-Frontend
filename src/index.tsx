@@ -1,9 +1,12 @@
 // Library Import
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
+
+const Web3Provider = lazy(() => import('./Provider'));
 const App = lazy(() => import('./App'));
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
@@ -20,7 +23,11 @@ ReactDOM.render(
                 </nav>
                 <Switch>
                     <Route path="/">
-                        <App />
+                        <Web3Provider>
+                            <App>
+                                <p>DeFite</p>
+                            </App>
+                        </Web3Provider>
                     </Route>
                 </Switch>
             </Suspense>

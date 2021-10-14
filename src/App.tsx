@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { ReactNode, lazy } from 'react';
 
-import logo from './logo.svg';
-// import './css/App.css';
+const WalletModal = lazy(() => import('./components/WalletModal'));
+const WalletInfo = lazy(() => import('./components/Wallet'));
+const Account = lazy(() => import('./components/Account'));
+const ConnectButton = lazy(() => import('./components/ConnectButton'));
 
-const App = () => {
+import injectedConnector from './utils/injectConnection';
+
+const App = ({ children }: { children: ReactNode | undefined }) => {
+    injectedConnector();
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <img src={logo} className="App-logo" alt="logo" />
-                <p>
-                    Edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
+        <div>
+            {children}
+            <ConnectButton />
+            <WalletInfo />
+            <WalletModal />
+            <Account />
         </div>
     );
 };
