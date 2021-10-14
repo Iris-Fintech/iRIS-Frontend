@@ -3,18 +3,22 @@ import { connectorsByName } from '../../utils/connectors';
 import Button from 'react-bootstrap/Button';
 
 const WalletCard = ({ walletMetaInfo, activate, disabled }: any) => {
-    const { title, icon, connectorId } = walletMetaInfo;
+    const { title, connectorId } = walletMetaInfo;
     return (
-        <div>
-            <Button
-                disabled={disabled}
-                onClick={() => {
-                    activate(connectorsByName[connectorId]);
-                }}
-            >
-                {icon}
-                <span>{title}</span>
-            </Button>
+        <div className="row mt-2">
+            <div className="d-grid gap-2">
+                <Button
+                    disabled={disabled}
+                    onClick={() => {
+                        activate(connectorsByName[connectorId]);
+                    }}
+                    size="lg"
+                    variant="outline-primary"
+                >
+                    {' '}
+                    {title}
+                </Button>
+            </div>
         </div>
     );
 };
