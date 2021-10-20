@@ -2,6 +2,7 @@ import React from 'react';
 import { useWeb3React } from '@web3-react/core';
 
 import { signMessage } from '../../utils/connectors';
+// import { result } from 'lodash';
 
 const Account = () => {
     const { library, account } = useWeb3React();
