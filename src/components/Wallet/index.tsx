@@ -1,23 +1,10 @@
 import React from 'react';
 import { useWeb3React } from '@web3-react/core';
+import WalletAddress from './address';
+import ConnectChainId from './chainId';
 
-function ChainId() {
-    const { chainId } = useWeb3React();
-
-    return (
-        <>
-            <span>Chain Id</span>
-            <span role="img" aria-label="chain">
-                ⛓
-            </span>
-            <span>{chainId ?? ''}</span>
-        </>
-    );
-}
-
-function BlockNumber() {
+const BlockNumber = () => {
     const { chainId, library } = useWeb3React();
-    console.log(library);
 
     const [blockNumber, setBlockNumber] = React.useState<number>();
     React.useEffect((): any => {
@@ -59,27 +46,7 @@ function BlockNumber() {
             <span>{blockNumber === null ? 'Error' : blockNumber ?? ''}</span>
         </>
     );
-}
-
-function Account() {
-    const { account } = useWeb3React();
-
-    return (
-        <>
-            <span>Account</span>
-            <span role="img" aria-label="robot">
-                🤖
-            </span>
-            <span>
-                {account === null
-                    ? '-'
-                    : account
-                    ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}`
-                    : ''}
-            </span>
-        </>
-    );
-}
+};
 
 function Balance() {
     const { account, library, chainId } = useWeb3React();
@@ -136,9 +103,24 @@ const WalletInfo = () => {
                     margin: 'auto',
                 }}
             >
-                <ChainId />
+                <>
+                    <span>Chain Id</span>
+                    <span role="img" aria-label="chain">
+                        ⛓
+                    </span>
+                    <span>{ConnectChainId() ?? ''}</span>
+                </>
+
                 <BlockNumber />
-                <Account />
+
+                <>
+                    <span>Account</span>
+                    <span role="img" aria-label="robot">
+                        🤖
+                    </span>
+                    <span>{WalletAddress()}</span>
+                </>
+
                 <Balance />
             </h3>
         </>

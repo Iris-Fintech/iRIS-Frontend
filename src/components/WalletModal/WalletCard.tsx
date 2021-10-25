@@ -13,6 +13,7 @@ const WalletCard = ({ walletMetaInfo, activate, disabled }: any) => {
                     disabled={disabled}
                     onClick={() => {
                         activate(connectorsByName[connectorId]);
+                        localStorage.setItem('Wallet', connectorId);
                     }}
                     size="lg"
                     variant="outline-light"

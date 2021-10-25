@@ -1,4 +1,5 @@
-import { useEagerConnect, useInactiveListener } from '../hooks/connect-hook';
+import useEagerConnect from '../hooks/useEagerConnect';
+import useInactiveListener from '../hooks/useInactiveListener';
 import { useAppSelector } from '../redux/hook';
 
 const injectedConnector = () => {

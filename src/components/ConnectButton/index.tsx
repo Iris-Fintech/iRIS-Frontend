@@ -9,6 +9,8 @@ import { connectorsByName } from '../../utils/connectors';
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import { useAppDispatch } from '../../redux/hook';
 
+import WalletAddress from '../Wallet/address';
+
 const ConnectButton = () => {
     const { connector, deactivate, active, error } = useWeb3React();
 
@@ -18,6 +20,8 @@ const ConnectButton = () => {
         if (connector === connectorsByName[ConnectorNames.WalletConnect]) (connector as any).close();
 
         deactivate();
+
+        localStorage.removeItem('Wallet');
     };
 
     return (
@@ -35,7 +39,7 @@ const ConnectButton = () => {
                 {(active || error) && (
                     <Dropdown>
                         <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                            Dropdown Button
+                            {WalletAddress()}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
@@ -48,7 +52,7 @@ const ConnectButton = () => {
                 )}
                 {!active && !error && (
                     <Button variant="primary" onClick={() => dispatch(changeState())}>
-                        Launch demo modal
+                        Connect Wallet
                     </Button>
                 )}
             </div>

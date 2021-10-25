@@ -29,9 +29,9 @@ export const injected = new InjectedConnector({
     supportedChainIds: [CHAIN_ID],
 });
 
-const bscConnector = new BscConnector({ supportedChainIds: [CHAIN_ID] });
+export const bscConnector = new BscConnector({ supportedChainIds: [CHAIN_ID] });
 
-const walletconnect = new WalletConnectConnector({
+export const walletconnect = new WalletConnectConnector({
     rpc: { [CHAIN_ID]: RPC_URL },
     qrcode: true,
     pollingInterval: POLLING_INTERVAL,
@@ -52,14 +52,16 @@ export const getLibrary = (provider: any): ethers.providers.Web3Provider => {
 };
 
 export const signMessage = async (provider: any, account: string, message: string): Promise<string> => {
+    const connecetedWallet = localStorage.getItem('Wallet');
+
     // https://docs.binance.org/smart-chain/wallet/wallet_api.html#binancechainbnbsignaddress-string-message-string-promisepublickey-string-signature-string
-    if (window.BinanceChain) {
+    if (connecetedWallet == ConnectorNames.BSC && window.BinanceChain) {
         const { signature } = await window.BinanceChain.bnbSign(account, message);
         return signature;
     }
 
     // https://github.com/WalletConnect/walletconnect-monorepo/issues/462
-    if (provider.provider?.wc) {
+    if (connecetedWallet == ConnectorNames.WalletConnect && provider.provider?.wc) {
         const wcMessage = ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message));
         const signature = await provider.provider?.wc.signPersonalMessage([wcMessage, account]);
         return signature;
