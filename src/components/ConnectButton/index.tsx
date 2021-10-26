@@ -3,26 +3,21 @@ import { useWeb3React } from '@web3-react/core';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
-import { ConnectorNames } from '../../utils/connectorNames';
 import { changeState } from '../../redux/modalShowSlice';
-import { connectorsByName } from '../../utils/connectors';
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import { useAppDispatch } from '../../redux/hook';
+import useAuth from '../../hooks/useAuth';
 
 import WalletAddress from '../Wallet/address';
 
 const ConnectButton = () => {
-    const { connector, deactivate, active, error } = useWeb3React();
+    const { active, error } = useWeb3React();
 
     const dispatch = useAppDispatch();
 
-    const closeConnect = () => {
-        if (connector === connectorsByName[ConnectorNames.WalletConnect]) (connector as any).close();
+    const { logout } = useAuth();
 
-        deactivate();
-
-        localStorage.removeItem('Wallet');
-    };
+    const address = WalletAddress();
 
     return (
         <>
@@ -39,14 +34,14 @@ const ConnectButton = () => {
                 {(active || error) && (
                     <Dropdown>
                         <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                            {WalletAddress()}
+                            {address}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
                             <Dropdown.Item>Wallet</Dropdown.Item>
                             <Dropdown.Item>Transactions</Dropdown.Item>
                             <Dropdown.Divider />
-                            <Dropdown.Item onClick={closeConnect}>Disconnect</Dropdown.Item>
+                            <Dropdown.Item onClick={logout}>Disconnect</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 )}

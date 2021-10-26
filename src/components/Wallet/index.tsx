@@ -13,7 +13,7 @@ const BlockNumber = () => {
 
             library
                 .getBlockNumber()
-                .then((blockNumber: number) => {
+                .then(() => {
                     if (!stale) {
                         setBlockNumber(blockNumber);
                     }
@@ -24,7 +24,7 @@ const BlockNumber = () => {
                     }
                 });
 
-            const updateBlockNumber = (blockNumber: number) => {
+            const updateBlockNumber = () => {
                 setBlockNumber(blockNumber);
             };
             library.on('block', updateBlockNumber);
@@ -35,7 +35,7 @@ const BlockNumber = () => {
                 setBlockNumber(undefined);
             };
         }
-    }, [library, chainId]); // ensures refresh if referential identity of library doesn"t change across chainIds
+    }, [library, chainId, blockNumber]); // ensures refresh if referential identity of library doesn"t change across chainIds
 
     return (
         <>
@@ -58,7 +58,7 @@ function Balance() {
 
             library
                 .getBalance(account)
-                .then((balance: any) => {
+                .then(() => {
                     if (!stale) {
                         setBalance(balance);
                     }
@@ -74,7 +74,7 @@ function Balance() {
                 setBalance(undefined);
             };
         }
-    }, [account, library, chainId]); // ensures refresh if referential identity of library doesn"t change across chainIds
+    }, [account, library, chainId, balance]); // ensures refresh if referential identity of library doesn"t change across chainIds
 
     return (
         <>

@@ -37,7 +37,7 @@ const useEagerConnect = () => {
         } else {
             localStorage.removeItem('Wallet');
         }
-    }, []); // intentionally only running on mount (make sure it's only mounted once :))
+    }, [activate, dispatch, login]); // intentionally only running on mount (make sure it's only mounted once :))
 };
 
 export default useEagerConnect;

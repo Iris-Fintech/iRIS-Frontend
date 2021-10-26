@@ -18,43 +18,47 @@ const useAuth = () => {
     const dispatch = useAppDispatch();
     const { activate, deactivate } = useWeb3React();
 
-    const login = useCallback((connectorID: string) => {
-        const connector = connectorsByName[connectorID];
-        if (connector) {
-            activate(connector, async (error: Error) => {
-                if (error instanceof UnsupportedChainIdError) {
-                    const hasSetup = await setupNetwork();
-                    if (hasSetup) {
-                        activate(connector, undefined, true).catch(() => {
-                            dispatch(setState(true));
-                        });
-                    }
-                } else {
-                    window.localStorage.removeItem('Wallet');
-                    if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
-                        console.log('Provider Error', 'No provider was found');
-                    } else if (
-                        error instanceof UserRejectedRequestErrorInjected ||
-                        error instanceof UserRejectedRequestErrorWalletConnect
-                    ) {
-                        if (connector instanceof WalletConnectConnector) {
-                            const walletConnector = connector as WalletConnectConnector;
-                            walletConnector.walletConnectProvider = null;
+    const login = useCallback(
+        (connectorID: string) => {
+            const connector = connectorsByName[connectorID];
+            if (connector) {
+                activate(connector, async (error: Error) => {
+                    if (error instanceof UnsupportedChainIdError) {
+                        const hasSetup = await setupNetwork();
+                        if (hasSetup) {
+                            activate(connector, undefined, true).catch(() => {
+                                dispatch(setState(true));
+                            });
                         }
-                        console.log('Authorization Error', 'Please authorize to access your account');
                     } else {
-                        console.log(error.name, error.message);
+                        window.localStorage.removeItem('Wallet');
+                        if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+                            console.log('Provider Error', 'No provider was found');
+                        } else if (
+                            error instanceof UserRejectedRequestErrorInjected ||
+                            error instanceof UserRejectedRequestErrorWalletConnect
+                        ) {
+                            if (connector instanceof WalletConnectConnector) {
+                                const walletConnector = connector as WalletConnectConnector;
+                                walletConnector.walletConnectProvider = null;
+                            }
+                            console.log('Authorization Error', 'Please authorize to access your account');
+                        } else {
+                            console.log(error.name, error.message);
+                        }
                     }
-                }
-            }).catch(() => {
-                dispatch(setState(true));
-            });
-        } else {
-            console.log("Can't find connector", 'The connector config is wrong');
-        }
-    }, []);
+                }).catch(() => {
+                    dispatch(setState(true));
+                });
+            } else {
+                console.log("Can't find connector", 'The connector config is wrong');
+            }
+        },
+        [activate, dispatch],
+    );
 
     const logout = useCallback(() => {
+        localStorage.removeItem('Wallet');
         dispatch(setState(false));
         deactivate();
     }, [deactivate, dispatch]);
