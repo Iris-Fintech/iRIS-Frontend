@@ -2,42 +2,8 @@ import { useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
 
 import { injected } from '../utils/connectors';
-import { ConnectorNames } from '../utils/connectorNames';
-import { connectorsByName } from '../utils/connectors';
-import { useAppSelector, useAppDispatch } from '../redux/hook';
-import { setState } from '../redux/triedEager';
 
-export const useEagerConnect = () => {
-    const { connector, activate, active } = useWeb3React();
-
-    const triedEager = useAppSelector((state) => state.triedEager.tried);
-    const dispatch = useAppDispatch();
-
-    useEffect(() => {
-        if (connector == connectorsByName[ConnectorNames.Injected]) {
-            injected.isAuthorized().then((isAuthorized: boolean) => {
-                if (isAuthorized) {
-                    activate(injected, undefined, true).catch(() => {
-                        dispatch(setState(true));
-                    });
-                } else {
-                    dispatch(setState(false));
-                }
-            });
-        }
-    }, []); // intentionally only running on mount (make sure it's only mounted once :))
-
-    // if the connection worked, wait until we get confirmation of that to flip the flag
-    useEffect(() => {
-        if (!triedEager && active) {
-            dispatch(setState(true));
-        } else {
-            dispatch(setState(false));
-        }
-    }, [active]);
-};
-
-export const useInactiveListener = (suppress: boolean = false) => {
+const useInactiveListener = (suppress: boolean = false) => {
     const { active, error, activate } = useWeb3React();
 
     useEffect((): any => {
@@ -78,3 +44,5 @@ export const useInactiveListener = (suppress: boolean = false) => {
         }
     }, [active, error, suppress, activate]);
 };
+
+export default useInactiveListener;
