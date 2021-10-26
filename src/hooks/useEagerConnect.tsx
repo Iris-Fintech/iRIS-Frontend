@@ -32,10 +32,8 @@ const useEagerConnect = () => {
                     dispatch(setState(false));
                 }
             });
-        } else if (connecetedWallet == ConnectorNames.Injected) {
+        } else if (connecetedWallet == ConnectorNames.Injected || connecetedWallet == ConnectorNames.WalletConnect) {
             login(connecetedWallet);
-        } else {
-            localStorage.removeItem('Wallet');
         }
     }, [activate, dispatch, login]); // intentionally only running on mount (make sure it's only mounted once :))
 };

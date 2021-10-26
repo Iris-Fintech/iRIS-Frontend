@@ -10,6 +10,7 @@ import {
     WalletConnectConnector,
 } from '@web3-react/walletconnect-connector';
 import { connectorsByName } from '../utils/connectors';
+import { ConnectorNames } from '../utils/connectorNames';
 import { useAppDispatch } from '../redux/hook';
 import { setState } from '../redux/triedEager';
 import { setupNetwork } from './walletTokenNetwork';
@@ -58,7 +59,14 @@ const useAuth = () => {
     );
 
     const logout = useCallback(() => {
+        const connecetedWallet = localStorage.getItem('Wallet');
+        if (connecetedWallet == ConnectorNames.WalletConnect) {
+            connectorsByName[connecetedWallet].close();
+            // resetWalletConnector(connectorsByName[connecetedWallet]);
+        }
+
         localStorage.removeItem('Wallet');
+
         dispatch(setState(false));
         deactivate();
     }, [deactivate, dispatch]);
