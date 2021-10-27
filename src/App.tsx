@@ -16,8 +16,6 @@ const App = ({ children }: { children: ReactNode | undefined }) => {
             {children}
             <ConnectButton />
             <WalletInfo />
-            <WalletInfo />
-            <WalletInfo />
             <WalletModal />
             <Account />
             <Footer />
