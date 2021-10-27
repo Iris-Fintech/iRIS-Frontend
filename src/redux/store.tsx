@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import modalShowReducer from './modalShowSlice';
 import triedEagerReducer from './triedEager';
+import modalExpandReducer from './modalExpand';
 
 const store = configureStore({
     reducer: {
         modalShow: modalShowReducer,
         triedEager: triedEagerReducer,
+        modalExpand: modalExpandReducer,
     },
 });
 

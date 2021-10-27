@@ -1,10 +1,11 @@
-import Metamask from './icons/Metamask';
-import MathWallet from './icons/MathWallet';
-import TokenPocket from './icons/TokenPocket';
-import TrustWallet from './icons/TrustWallet';
-import WalletConnect from './icons/WalletConnect';
-import BinanceChain from './icons/BinanceChain';
-// import SafePalWallet from './icons/SafePalWallet';
+import Icon from './icon';
+import Metamask from '../../assets/connectors/metamask-icon.svg';
+import TrustWallet from '../../assets/connectors/trustwallet-icon.svg';
+import MathWallet from '../../assets/connectors/mathwallet-icon.svg';
+import TokenPocket from '../../assets/connectors/tokenpocket-icon.svg';
+import WalletConnect from '../../assets/connectors/walletconnect-icon.svg';
+import BinanceWallet from '../../assets/connectors/binancewallet-icon.svg';
+import MoreIcon from '../../assets/utils/more-icon.svg';
 
 import { ConnectorNames } from '../../utils/connectorNames';
 
@@ -17,39 +18,39 @@ export interface Config {
 const config: Config[] = [
     {
         title: 'Metamask',
-        icon: Metamask(),
+        icon: Icon(Metamask),
         connectorId: ConnectorNames.Injected,
     },
     {
         title: 'TrustWallet',
-        icon: TrustWallet(),
+        icon: Icon(TrustWallet),
         connectorId: ConnectorNames.Injected,
     },
     {
         title: 'MathWallet',
-        icon: MathWallet(),
+        icon: Icon(MathWallet),
         connectorId: ConnectorNames.Injected,
     },
     {
         title: 'TokenPocket',
-        icon: TokenPocket(),
+        icon: Icon(TokenPocket),
         connectorId: ConnectorNames.Injected,
     },
     {
         title: 'WalletConnect',
-        icon: WalletConnect(),
+        icon: Icon(WalletConnect),
         connectorId: ConnectorNames.WalletConnect,
     },
     {
-        title: 'Binance Chain Wallet',
-        icon: BinanceChain(),
+        title: 'Binance-Chain',
+        icon: Icon(BinanceWallet),
         connectorId: ConnectorNames.BSC,
     },
-    // {
-    //     title: 'SafePal Wallet',
-    //     icon: SafePalWallet(),
-    //     connectorId: ConnectorNames.Injected,
-    // },
 ];
+
+export const moreIcon = {
+    title: 'More Icon',
+    icon: Icon(MoreIcon),
+};
 
 export default config;
