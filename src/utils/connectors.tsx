@@ -70,6 +70,7 @@ bscConnector.handleChainChanged = (newChainID: string | number) => {
 
 export const walletconnect = new WalletConnectConnector({
     rpc: { [CHAIN_ID]: RPC_URL },
+    chainId: CHAIN_ID,
     qrcode: true,
     pollingInterval: POLLING_INTERVAL,
 });

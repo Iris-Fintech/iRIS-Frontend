@@ -14,6 +14,9 @@ import { useAppDispatch } from '../redux/hook';
 import { setState } from '../redux/triedEager';
 import { setupNetwork } from './walletTokenNetwork';
 import { ConnectorNames } from '../utils/connectorNames';
+// import { getChainID } from '../utils/getRPC';
+
+// const CHAIN_ID = getChainID();
 
 const useAuth = () => {
     const dispatch = useAppDispatch();
@@ -34,6 +37,15 @@ const useAuth = () => {
     const login = useCallback(
         (connectorID: string) => {
             const connector = connectorsByName[connectorID];
+
+            // if (connector instanceof WalletConnectConnector && connector.walletConnectProvider.chainId != CHAIN_ID) {
+            //     console.log('wrong rpc');
+            //     const walletConnector = connector as WalletConnectConnector;
+            //     walletConnector.walletConnectProvider = null;
+            //     walletConnector.close();
+            // }
+
+            console.log(connector);
             if (connector) {
                 activate(connector, async (error: Error) => {
                     if (error instanceof UnsupportedChainIdError) {
@@ -57,6 +69,11 @@ const useAuth = () => {
                             }
                             console.log('Authorization Error', 'Please authorize to access your account');
                         } else {
+                            console.log(connector);
+                            if (connector instanceof WalletConnectConnector) {
+                                const walletConnector = connector as WalletConnectConnector;
+                                walletConnector.walletConnectProvider = null;
+                            }
                             console.log(error.name, error.message);
                         }
                     }
