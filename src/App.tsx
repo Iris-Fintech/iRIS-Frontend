@@ -6,6 +6,7 @@ const Account = lazy(() => import('./components/Account'));
 const Routes = lazy(() => import('./route'));
 import Header from './components/Header';
 import injectedConnector from './utils/injectConnection';
+import { Footer } from './components/Footer/Footer';
 
 const App = () => {
     injectedConnector();
@@ -17,6 +18,7 @@ const App = () => {
             <WalletInfo />
             <WalletModal />
             <Account />
+            <Footer />
         </div>
     );
 };
