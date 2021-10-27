@@ -1,20 +1,20 @@
-import React, { ReactNode, lazy } from 'react';
+import React, { lazy } from 'react';
 
 const WalletModal = lazy(() => import('./components/WalletModal'));
 const WalletInfo = lazy(() => import('./components/Wallet'));
 const Account = lazy(() => import('./components/Account'));
-const ConnectButton = lazy(() => import('./components/ConnectButton'));
-
+const Routes = lazy(() => import('./route'));
+import Header from './components/Header';
 import injectedConnector from './utils/injectConnection';
 import { Footer } from './components/Footer/Footer';
 
-const App = ({ children }: { children: ReactNode | undefined }) => {
+const App = () => {
     injectedConnector();
 
     return (
         <div>
-            {children}
-            <ConnectButton />
+            <Header />
+            <Routes />
             <WalletInfo />
             <WalletInfo />
             <WalletInfo />
