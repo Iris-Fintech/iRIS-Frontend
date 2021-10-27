@@ -9,7 +9,6 @@ import { changeState } from '../../redux/modalShowSlice';
 import { connectorsByName } from '../../utils/connectors';
 import WalletCard from './WalletCard';
 import metaInfo, { Config } from './metaInfo';
-
 const WalletModal = () => {
     const { connector, activate, error } = useWeb3React();
 
@@ -19,7 +18,7 @@ const WalletModal = () => {
 
     return (
         <>
-            <Modal show={show} onHide={() => dispatch(changeState())}>
+            <Modal show={show} onHide={() => dispatch(changeState())} size="lg">
                 <Modal.Header closeButton>
                     <Modal.Title>Wallet Connection</Modal.Title>
                 </Modal.Header>

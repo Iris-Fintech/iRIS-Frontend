@@ -6,6 +6,7 @@ const Account = lazy(() => import('./components/Account'));
 const ConnectButton = lazy(() => import('./components/ConnectButton'));
 
 import injectedConnector from './utils/injectConnection';
+import { Footer } from './components/Footer/Footer';
 
 const App = ({ children }: { children: ReactNode | undefined }) => {
     injectedConnector();
@@ -15,8 +16,11 @@ const App = ({ children }: { children: ReactNode | undefined }) => {
             {children}
             <ConnectButton />
             <WalletInfo />
+            <WalletInfo />
+            <WalletInfo />
             <WalletModal />
             <Account />
+            <Footer />
         </div>
     );
 };
