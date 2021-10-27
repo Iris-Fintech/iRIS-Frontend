@@ -15,12 +15,12 @@ const RPC_URL: string | undefined = getRPCNodeUrl();
 const CHAIN_ID: number = getChainID();
 
 // Type Check: RPC_URL should be valid string
-if (RPC_URL == undefined) {
+if (RPC_URL === undefined) {
     throw new Error('URL Type Error: should be string');
 }
 
 // Type Check: CHAIN_ID should be valid Number
-if (CHAIN_ID == NaN) {
+if (CHAIN_ID === NaN) {
     throw new Error('Invalid Numneric Error: should be a valid number');
 }
 
@@ -29,13 +29,68 @@ export const injected = new InjectedConnector({
     supportedChainIds: [CHAIN_ID],
 });
 
+//@ts-ignore
+injected.handleChainChanged = (newChainID: string | number) => {
+    if (newChainID != CHAIN_ID) {
+        console.log('error');
+
+        localStorage.removeItem('Wallet');
+
+        //@ts-ignore
+        injected.emitDeactivate();
+
+        return;
+    }
+
+    //@ts-ignore
+    injected.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
+
+    window.location.reload();
+};
+
 export const bscConnector = new BscConnector({ supportedChainIds: [CHAIN_ID] });
+
+//@ts-ignore
+bscConnector.handleChainChanged = (newChainID: string | number) => {
+    if (newChainID != CHAIN_ID) {
+        console.log('error');
+
+        localStorage.removeItem('Wallet');
+
+        //@ts-ignore
+        bscConnector.emitDeactivate();
+        return;
+    }
+
+    //@ts-ignore
+    bscConnector.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
+
+    window.location.reload();
+};
 
 export const walletconnect = new WalletConnectConnector({
     rpc: { [CHAIN_ID]: RPC_URL },
     qrcode: true,
     pollingInterval: POLLING_INTERVAL,
 });
+
+//@ts-ignore
+walletconnect.handleChainChanged = (newChainID: string | number) => {
+    if (newChainID != CHAIN_ID) {
+        console.log('error');
+
+        localStorage.removeItem('Wallet');
+
+        //@ts-ignore
+        walletconnect.emitDeactivate();
+        return;
+    }
+
+    //@ts-ignore
+    walletconnect.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
+
+    window.location.reload();
+};
 
 // Connectors dictionary for fast lookup
 export const connectorsByName: { [connectorName: string]: any } = {

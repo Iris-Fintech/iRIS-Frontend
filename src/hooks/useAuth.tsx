@@ -10,14 +10,26 @@ import {
     WalletConnectConnector,
 } from '@web3-react/walletconnect-connector';
 import { connectorsByName } from '../utils/connectors';
-import { ConnectorNames } from '../utils/connectorNames';
 import { useAppDispatch } from '../redux/hook';
 import { setState } from '../redux/triedEager';
 import { setupNetwork } from './walletTokenNetwork';
+import { ConnectorNames } from '../utils/connectorNames';
 
 const useAuth = () => {
     const dispatch = useAppDispatch();
     const { activate, deactivate } = useWeb3React();
+
+    const logout = useCallback(() => {
+        const connecetedWallet = localStorage.getItem('Wallet');
+        if (connecetedWallet == ConnectorNames.WalletConnect) {
+            connectorsByName[connecetedWallet].close();
+        }
+
+        localStorage.removeItem('Wallet');
+
+        dispatch(setState(false));
+        deactivate();
+    }, [deactivate, dispatch]);
 
     const login = useCallback(
         (connectorID: string) => {
@@ -57,19 +69,6 @@ const useAuth = () => {
         },
         [activate, dispatch],
     );
-
-    const logout = useCallback(() => {
-        const connecetedWallet = localStorage.getItem('Wallet');
-        if (connecetedWallet == ConnectorNames.WalletConnect) {
-            connectorsByName[connecetedWallet].close();
-            // resetWalletConnector(connectorsByName[connecetedWallet]);
-        }
-
-        localStorage.removeItem('Wallet');
-
-        dispatch(setState(false));
-        deactivate();
-    }, [deactivate, dispatch]);
 
     return { login, logout };
 };

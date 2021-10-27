@@ -2,7 +2,7 @@ import useEagerConnect from '../hooks/useEagerConnect';
 import useInactiveListener from '../hooks/useInactiveListener';
 import { useAppSelector } from '../redux/hook';
 
-const InjectedConnector = () => {
+const BaseConnector = () => {
     const triedEager = useAppSelector((state) => state.triedEager.tried);
 
     // handle logic to eagerly connect to the injected ethereum provider, if it exists and has granted access already
@@ -12,4 +12,4 @@ const InjectedConnector = () => {
     useInactiveListener(!triedEager);
 };
 
-export default InjectedConnector;
+export default BaseConnector;

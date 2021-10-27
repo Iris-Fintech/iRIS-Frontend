@@ -1,7 +1,10 @@
 import { getChainID, getRPCNodeUrl } from '../utils/getRPC';
+import { ConnectorNames } from '../utils/connectorNames';
 
 export const setupNetwork = async () => {
-    const provider = window.ethereum;
+    const connecetedWallet = localStorage.getItem('Wallet');
+
+    const provider = connecetedWallet == ConnectorNames.BSC ? window.BinanceChain : window.ethereum;
 
     if (provider) {
         const chainId = getChainID();

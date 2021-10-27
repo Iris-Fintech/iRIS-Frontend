@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
 import { useWeb3React } from '@web3-react/core';
 import { useAppDispatch } from '../redux/hook';
-import { bscConnector } from '../utils/connectors';
 import { ConnectorNames } from '../utils/connectorNames';
-import { setState } from '../redux/triedEager';
 import useAuth from './useAuth';
 
 const useEagerConnect = () => {
@@ -14,25 +12,11 @@ const useEagerConnect = () => {
 
     useEffect(() => {
         const connecetedWallet = localStorage.getItem('Wallet');
-
-        if (connecetedWallet == ConnectorNames.BSC) {
-            bscConnector.isAuthorized().then((isAuthorized: boolean) => {
-                if (isAuthorized) {
-                    activate(bscConnector, undefined, true).catch(() => {
-                        dispatch(setState(true));
-                    });
-                } else {
-                    if (window.ethereum) {
-                        activate(bscConnector, undefined, true).catch(() => {
-                            dispatch(setState(true));
-                        });
-                    } else {
-                        dispatch(setState(false));
-                    }
-                    dispatch(setState(false));
-                }
-            });
-        } else if (connecetedWallet == ConnectorNames.Injected || connecetedWallet == ConnectorNames.WalletConnect) {
+        if (
+            connecetedWallet == ConnectorNames.BSC ||
+            connecetedWallet == ConnectorNames.Injected ||
+            connecetedWallet == ConnectorNames.WalletConnect
+        ) {
             login(connecetedWallet);
         }
     }, [activate, dispatch, login]); // intentionally only running on mount (make sure it's only mounted once :))
