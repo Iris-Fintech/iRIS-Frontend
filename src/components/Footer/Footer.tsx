@@ -34,7 +34,7 @@ const ETHBalance = () => {
                 setEthbalance(undefined);
             };
         }
-    }, [account, library, chainId]);
+    }, [account, library, chainId, ETHcontract.methods]);
     // console.log(ethbalance);
     return (
         <>
@@ -73,7 +73,7 @@ const BTCBalance = () => {
                 setBtcbalance(undefined);
             };
         }
-    }, [account, library, chainId]);
+    }, [account, library, chainId, BTCcontract.methods]);
     // console.log(btcbalance);
     return (
         <>
