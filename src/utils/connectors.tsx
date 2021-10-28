@@ -10,7 +10,7 @@ import { getRPCNodeUrl, getChainID } from './getRPC';
 import { ConnectorNames } from './connectorNames';
 
 // Define Constants
-const POLLING_INTERVAL: number = 12000;
+// const POLLING_INTERVAL: number = 12000;
 const RPC_URL: string | undefined = getRPCNodeUrl();
 const CHAIN_ID: number = getChainID();
 
@@ -72,26 +72,8 @@ export const walletconnect = new WalletConnectConnector({
     rpc: { [CHAIN_ID]: RPC_URL },
     chainId: CHAIN_ID,
     qrcode: true,
-    pollingInterval: POLLING_INTERVAL,
+    // pollingInterval: POLLING_INTERVAL,
 });
-
-//@ts-ignore
-walletconnect.handleChainChanged = (newChainID: string | number) => {
-    if (newChainID != CHAIN_ID) {
-        console.log('error');
-
-        localStorage.removeItem('Wallet');
-
-        //@ts-ignore
-        walletconnect.emitDeactivate();
-        return;
-    }
-
-    //@ts-ignore
-    walletconnect.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
-
-    window.location.reload();
-};
 
 // Connectors dictionary for fast lookup
 export const connectorsByName: { [connectorName: string]: any } = {

@@ -12,9 +12,10 @@ const useEagerConnect = () => {
 
     useEffect(() => {
         const connecetedWallet = localStorage.getItem('Wallet');
+
         if (
-            connecetedWallet == ConnectorNames.BSC ||
             connecetedWallet == ConnectorNames.Injected ||
+            connecetedWallet == ConnectorNames.BSC ||
             connecetedWallet == ConnectorNames.WalletConnect
         ) {
             login(connecetedWallet);

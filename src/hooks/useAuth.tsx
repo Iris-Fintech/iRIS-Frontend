@@ -13,50 +13,43 @@ import { connectorsByName } from '../utils/connectors';
 import { useAppDispatch } from '../redux/hook';
 import { setState } from '../redux/triedEager';
 import { setupNetwork } from './walletTokenNetwork';
-import { ConnectorNames } from '../utils/connectorNames';
-// import { getChainID } from '../utils/getRPC';
-
-// const CHAIN_ID = getChainID();
 
 const useAuth = () => {
     const dispatch = useAppDispatch();
     const { activate, deactivate } = useWeb3React();
 
     const logout = useCallback(() => {
-        const connecetedWallet = localStorage.getItem('Wallet');
-        if (connecetedWallet == ConnectorNames.WalletConnect) {
+        dispatch(setState(false));
+        deactivate();
+
+        const connecetedWallet = localStorage.getItem('Wallet') ?? 'WalletConnect';
+
+        if (window.localStorage.getItem('walletconnect')) {
+            connectorsByName[connecetedWallet].walletConnectProvider = undefined;
             connectorsByName[connecetedWallet].close();
+            localStorage.removeItem('walletconnect');
         }
 
         localStorage.removeItem('Wallet');
-
-        dispatch(setState(false));
-        deactivate();
     }, [deactivate, dispatch]);
 
     const login = useCallback(
         (connectorID: string) => {
             const connector = connectorsByName[connectorID];
-
-            // if (connector instanceof WalletConnectConnector && connector.walletConnectProvider.chainId != CHAIN_ID) {
-            //     console.log('wrong rpc');
-            //     const walletConnector = connector as WalletConnectConnector;
-            //     walletConnector.walletConnectProvider = null;
-            //     walletConnector.close();
-            // }
-
-            console.log(connector);
             if (connector) {
                 activate(connector, async (error: Error) => {
                     if (error instanceof UnsupportedChainIdError) {
                         const hasSetup = await setupNetwork();
+
                         if (hasSetup) {
                             activate(connector, undefined, true).catch(() => {
                                 dispatch(setState(true));
                             });
+                        } else {
+                            logout();
                         }
                     } else {
-                        window.localStorage.removeItem('Wallet');
+                        // window.localStorage.removeItem('Wallet');
                         if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
                             console.log('Provider Error', 'No provider was found');
                         } else if (
@@ -65,17 +58,14 @@ const useAuth = () => {
                         ) {
                             if (connector instanceof WalletConnectConnector) {
                                 const walletConnector = connector as WalletConnectConnector;
-                                walletConnector.walletConnectProvider = null;
+                                walletConnector.walletConnectProvider = undefined;
                             }
+
                             console.log('Authorization Error', 'Please authorize to access your account');
                         } else {
-                            console.log(connector);
-                            if (connector instanceof WalletConnectConnector) {
-                                const walletConnector = connector as WalletConnectConnector;
-                                walletConnector.walletConnectProvider = null;
-                            }
                             console.log(error.name, error.message);
                         }
+                        logout();
                     }
                 }).catch(() => {
                     dispatch(setState(true));
@@ -84,7 +74,7 @@ const useAuth = () => {
                 console.log("Can't find connector", 'The connector config is wrong');
             }
         },
-        [activate, dispatch],
+        [activate, dispatch, logout],
     );
 
     return { login, logout };
