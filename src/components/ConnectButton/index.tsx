@@ -21,7 +21,6 @@ const ConnectButton = () => {
 
     return (
         <>
-            {/* <hr style={{ margin: '2rem' }} /> */}
             <div
                 style={{
                     display: 'grid',

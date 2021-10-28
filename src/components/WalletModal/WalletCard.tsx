@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connectorsByName } from '../../utils/connectors';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 

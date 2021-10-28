@@ -12,11 +12,7 @@ const getErrorMessage = (error: Error) => {
     if (error instanceof UnsupportedChainIdError) {
         return 'You are connected to an unsupported network.';
     }
-    if (
-        error instanceof UserRejectedRequestErrorInjected ||
-        error instanceof UserRejectedRequestErrorWalletConnect
-        // error instanceof UserRejectedRequestErrorFrame
-    ) {
+    if (error instanceof UserRejectedRequestErrorInjected || error instanceof UserRejectedRequestErrorWalletConnect) {
         return 'Please authorize this website to access your Ethereum account.';
     }
 

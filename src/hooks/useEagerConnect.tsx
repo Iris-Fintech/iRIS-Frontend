@@ -5,7 +5,6 @@ import { ConnectorNames } from '../utils/connectorNames';
 import useAuth from './useAuth';
 
 const useEagerConnect = () => {
-    // const triedEager = useAppSelector((state) => state.triedEager.tried);
     const { activate } = useWeb3React();
     const dispatch = useAppDispatch();
     const { login } = useAuth();
