@@ -1,0 +1,30 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Frontend CI
+
+on:
+  pull_request:
+    branches: [ master ]
+env:
+  NODE_ENV: test
+  CI: true
+  BUILD_PATH: "./build"
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+        # https://zenn.dev/shimat/articles/d9ed0345c9866e
+        # https://blog.siwa32.com/npm_install_error_on_windows/
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: build frontend
+        run: yarn install && yarn build
+        working-directory: . 
