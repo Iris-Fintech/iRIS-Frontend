@@ -7,6 +7,7 @@ interface Window {
     };
     BinanceChain?: {
         bnbSign: (address: string, message: string) => Promise<{ publicKey: string; signature: string }>;
+        request: (...args: any[]) => Promise<void>;
     };
 }
 

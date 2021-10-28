@@ -10,17 +10,17 @@ import { getRPCNodeUrl, getChainID } from './getRPC';
 import { ConnectorNames } from './connectorNames';
 
 // Define Constants
-const POLLING_INTERVAL: number = 12000;
+// const POLLING_INTERVAL: number = 12000;
 const RPC_URL: string | undefined = getRPCNodeUrl();
 const CHAIN_ID: number = getChainID();
 
 // Type Check: RPC_URL should be valid string
-if (RPC_URL == undefined) {
+if (RPC_URL === undefined) {
     throw new Error('URL Type Error: should be string');
 }
 
 // Type Check: CHAIN_ID should be valid Number
-if (CHAIN_ID == NaN) {
+if (CHAIN_ID === NaN) {
     throw new Error('Invalid Numneric Error: should be a valid number');
 }
 
@@ -29,12 +29,50 @@ export const injected = new InjectedConnector({
     supportedChainIds: [CHAIN_ID],
 });
 
+//@ts-ignore
+injected.handleChainChanged = (newChainID: string | number) => {
+    if (newChainID != CHAIN_ID) {
+        console.log('error');
+
+        localStorage.removeItem('Wallet');
+
+        //@ts-ignore
+        injected.emitDeactivate();
+
+        return;
+    }
+
+    //@ts-ignore
+    injected.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
+
+    window.location.reload();
+};
+
 export const bscConnector = new BscConnector({ supportedChainIds: [CHAIN_ID] });
+
+//@ts-ignore
+bscConnector.handleChainChanged = (newChainID: string | number) => {
+    if (newChainID != CHAIN_ID) {
+        console.log('error');
+
+        localStorage.removeItem('Wallet');
+
+        //@ts-ignore
+        bscConnector.emitDeactivate();
+        return;
+    }
+
+    //@ts-ignore
+    bscConnector.emitUpdate({ chainId: newChainID, provider: window.BinanceChain });
+
+    window.location.reload();
+};
 
 export const walletconnect = new WalletConnectConnector({
     rpc: { [CHAIN_ID]: RPC_URL },
+    chainId: CHAIN_ID,
     qrcode: true,
-    pollingInterval: POLLING_INTERVAL,
+    // pollingInterval: POLLING_INTERVAL,
 });
 
 // Connectors dictionary for fast lookup
@@ -55,13 +93,13 @@ export const signMessage = async (provider: any, account: string, message: strin
     const connecetedWallet = localStorage.getItem('Wallet');
 
     // https://docs.binance.org/smart-chain/wallet/wallet_api.html#binancechainbnbsignaddress-string-message-string-promisepublickey-string-signature-string
-    if (connecetedWallet == ConnectorNames.BSC && window.BinanceChain) {
+    if (connecetedWallet === ConnectorNames.BSC && window.BinanceChain) {
         const { signature } = await window.BinanceChain.bnbSign(account, message);
         return signature;
     }
 
     // https://github.com/WalletConnect/walletconnect-monorepo/issues/462
-    if (connecetedWallet == ConnectorNames.WalletConnect && provider.provider?.wc) {
+    if (connecetedWallet === ConnectorNames.WalletConnect && provider.provider?.wc) {
         const wcMessage = ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message));
         const signature = await provider.provider?.wc.signPersonalMessage([wcMessage, account]);
         return signature;

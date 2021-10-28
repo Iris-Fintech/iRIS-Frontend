@@ -4,12 +4,13 @@ const WalletModal = lazy(() => import('./components/WalletModal'));
 const WalletInfo = lazy(() => import('./components/Wallet'));
 const Account = lazy(() => import('./components/Account'));
 const Routes = lazy(() => import('./route'));
-import Header from './components/Header';
-import injectedConnector from './utils/injectConnection';
-import { Footer } from './components/Footer/Footer';
+const Header = lazy(() => import('./components/Header'));
+const Footer = lazy(() => import('./components/Footer/Footer'));
+
+import BaseConnector from './utils/baseConnection';
 
 const App = () => {
-    injectedConnector();
+    BaseConnector();
 
     return (
         <div>

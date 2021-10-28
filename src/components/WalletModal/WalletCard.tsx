@@ -1,18 +1,19 @@
 import React from 'react';
-import { connectorsByName } from '../../utils/connectors';
 import Button from 'react-bootstrap/Button';
-
 import Row from 'react-bootstrap/Row';
 
-const WalletCard = ({ walletMetaInfo, activate, disabled }: any) => {
+import useAuth from '../../hooks/useAuth';
+
+const WalletCard = ({ walletMetaInfo, disabled }: any) => {
     const { title, icon, connectorId } = walletMetaInfo;
+    const { login } = useAuth();
     return (
         <div className="row mt-2">
             <div className="d-grid gap-2">
                 <Button
                     disabled={disabled}
                     onClick={() => {
-                        activate(connectorsByName[connectorId]);
+                        login(connectorId);
                         localStorage.setItem('Wallet', connectorId);
                     }}
                     size="lg"

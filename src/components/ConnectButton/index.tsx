@@ -21,7 +21,6 @@ const ConnectButton = () => {
 
     return (
         <>
-            {/* <hr style={{ margin: '2rem' }} /> */}
             <div
                 style={{
                     display: 'grid',
@@ -31,7 +30,7 @@ const ConnectButton = () => {
                     margin: 'auto',
                 }}
             >
-                {(active || error) && (
+                {active && (
                     <Dropdown>
                         <Dropdown.Toggle variant="primary" id="dropdown-basic">
                             {address}

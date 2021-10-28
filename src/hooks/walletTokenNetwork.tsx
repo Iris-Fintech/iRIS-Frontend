@@ -1,9 +1,11 @@
 import { getChainID, getRPCNodeUrl } from '../utils/getRPC';
+import { ConnectorNames } from '../utils/connectorNames';
 
 export const setupNetwork = async () => {
     const provider = window.ethereum;
+    const connectedWallet = localStorage.getItem('Wallet');
 
-    if (provider) {
+    if (provider && connectedWallet === ConnectorNames.Injected) {
         const chainId = getChainID();
         try {
             await provider.request({

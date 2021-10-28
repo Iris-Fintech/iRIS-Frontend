@@ -82,7 +82,7 @@ const BTCBalance = () => {
     );
 };
 
-export const Footer = () => {
+const Footer = () => {
     const { account, library } = useWeb3React();
     if (!account || !library) {
         return (
@@ -116,3 +116,5 @@ export const Footer = () => {
         );
     }
 };
+
+export default Footer;
