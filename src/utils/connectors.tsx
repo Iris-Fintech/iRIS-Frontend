@@ -93,13 +93,13 @@ export const signMessage = async (provider: any, account: string, message: strin
     const connecetedWallet = localStorage.getItem('Wallet');
 
     // https://docs.binance.org/smart-chain/wallet/wallet_api.html#binancechainbnbsignaddress-string-message-string-promisepublickey-string-signature-string
-    if (connecetedWallet == ConnectorNames.BSC && window.BinanceChain) {
+    if (connecetedWallet === ConnectorNames.BSC && window.BinanceChain) {
         const { signature } = await window.BinanceChain.bnbSign(account, message);
         return signature;
     }
 
     // https://github.com/WalletConnect/walletconnect-monorepo/issues/462
-    if (connecetedWallet == ConnectorNames.WalletConnect && provider.provider?.wc) {
+    if (connecetedWallet === ConnectorNames.WalletConnect && provider.provider?.wc) {
         const wcMessage = ethers.utils.hexlify(ethers.utils.toUtf8Bytes(message));
         const signature = await provider.provider?.wc.signPersonalMessage([wcMessage, account]);
         return signature;

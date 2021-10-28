@@ -21,7 +21,7 @@ const getRPCNodeUrl = (): string | undefined => {
     const url = sample(RPC_NODES);
 
     // return undefined if failed to extract valid URL
-    if (url == undefined) {
+    if (url === undefined) {
         return undefined;
     }
 
@@ -30,7 +30,7 @@ const getRPCNodeUrl = (): string | undefined => {
 };
 
 // Error check ".env" file for BSC_CHAIN_ID
-if (process.env.REACT_APP_BSC_CHAIN_ID == undefined) {
+if (process.env.REACT_APP_BSC_CHAIN_ID === undefined) {
     throw new Error('BSC_CHAIN_ID is undefined');
 }
 

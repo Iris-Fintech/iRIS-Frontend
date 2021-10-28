@@ -13,9 +13,9 @@ const useEagerConnect = () => {
         const connecetedWallet = localStorage.getItem('Wallet');
 
         if (
-            connecetedWallet == ConnectorNames.Injected ||
-            connecetedWallet == ConnectorNames.BSC ||
-            connecetedWallet == ConnectorNames.WalletConnect
+            connecetedWallet === ConnectorNames.Injected ||
+            connecetedWallet === ConnectorNames.BSC ||
+            connecetedWallet === ConnectorNames.WalletConnect
         ) {
             login(connecetedWallet);
         }

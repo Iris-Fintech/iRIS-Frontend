@@ -5,7 +5,7 @@ export const setupNetwork = async () => {
     const provider = window.ethereum;
     const connectedWallet = localStorage.getItem('Wallet');
 
-    if (provider && connectedWallet == ConnectorNames.Injected) {
+    if (provider && connectedWallet === ConnectorNames.Injected) {
         const chainId = getChainID();
         try {
             await provider.request({
