@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 
 const WalletModal = lazy(() => import('./components/WalletModal'));
-const WalletInfo = lazy(() => import('./components/Wallet'));
+// const WalletInfo = lazy(() => import('./components/Wallet'));
 const Account = lazy(() => import('./components/Account'));
 const Routes = lazy(() => import('./route'));
 import Header from './components/Header';
@@ -15,7 +15,6 @@ const App = () => {
         <div>
             <Header />
             <Routes />
-            <WalletInfo />
             <WalletModal />
             <Account />
             <Footer />

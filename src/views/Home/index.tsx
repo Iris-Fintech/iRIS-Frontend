@@ -1,6 +1,7 @@
 import React from 'react';
+import WalletInfo from '../../components/Wallet';
 
 const Home = () => {
-    return <div>Home</div>;
+    return <WalletInfo />;
 };
 export default Home;

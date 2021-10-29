@@ -1,0 +1,28 @@
+#footer {
+    position: fixed;
+    padding: 2px 20px 0px 20px;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: black;
+}
+
+#title {
+    color: white;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#CardTitle {
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 24px;
+    /* display: inline-block; */
+    vertical-align: top;
+}
+#CardStyle {
+    padding: 2px 20px 0px 20px;
+}
