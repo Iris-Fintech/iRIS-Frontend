@@ -1,0 +1,2 @@
+(this["webpackJsonpdefite-frontend"]=this["webpackJsonpdefite-frontend"]||[]).push([[14],{1024:function(e,t,n){"use strict";n.r(t);n(0);var c=n(1),i=n(6),r=function(){return Object(i.jsx)("div",{children:"Home"})};t.default=function(){return Object(i.jsx)(c.c,{children:Object(i.jsx)(c.a,{exact:!0,path:"/home",children:Object(i.jsx)(r,{})})})}}}]);
+//# sourceMappingURL=14.b49efa47.chunk.js.map

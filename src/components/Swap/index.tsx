@@ -1,8 +1,10 @@
 import React from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
+import { Card, Form, Button, Image, Modal } from 'react-bootstrap';
 // import { useWeb3React } from '@web3-react/core';
 // import Web3 from 'web3';
 import './index.css';
+import GIS from './GIS.jpg';
+import GIS_banner from './GIS_banner.jpg';
 
 const SwapForm = () => {
     const [swapvalue, setSwapvalue] = React.useState<number>();
@@ -67,6 +69,17 @@ export default function Swap(): any {
                     </Card>
                 </div>
             </div>
+            {/* <div className="row">
+                <div className="col-12">
+                    <Card className="mx-3 my-2 px-1 py-1">
+                        <Image src={GIS_banner} rounded />
+                    </Card>
+                </div>
+            </div>
+            <Modal show={true}>
+                <h2 id="Test">Sponsorship</h2>
+                <Image id="IMAGE" src={GIS} fluid />
+            </Modal> */}
         </>
     );
 }
