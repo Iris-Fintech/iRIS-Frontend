@@ -1,20 +1,12 @@
 import sample from 'lodash/sample';
 
 // Error check ".env" file for BSC_RPC_URL
-if (
-    !process.env.REACT_APP_BSC_RPC_URL_1 ||
-    !process.env.REACT_APP_BSC_RPC_URL_2 ||
-    !process.env.REACT_APP_BSC_RPC_URL_3
-) {
-    throw Error('BSC_RPC_URLs is undefined');
+if (!process.env.REACT_APP_ETH_MAINNET_RPC_URL_1 || !process.env.REACT_APP_ETH_MAINNET_RPC_URL_2) {
+    throw Error('ETH_RPC_URLs is undefined');
 }
 
 // Array of available nodes to connect to Binance Smart Chain
-export const RPC_NODES = [
-    process.env.REACT_APP_BSC_RPC_URL_1,
-    process.env.REACT_APP_BSC_RPC_URL_2,
-    process.env.REACT_APP_BSC_RPC_URL_3,
-];
+export const RPC_NODES = [process.env.REACT_APP_ETH_MAINNET_RPC_URL_1, process.env.REACT_APP_ETH_MAINNET_RPC_URL_2];
 
 const getRPCNodeUrl = (): string | undefined => {
     // get URL
@@ -30,11 +22,11 @@ const getRPCNodeUrl = (): string | undefined => {
 };
 
 // Error check ".env" file for BSC_CHAIN_ID
-if (process.env.REACT_APP_BSC_CHAIN_ID === undefined) {
+if (process.env.REACT_APP_ETH_MAINNET_CHAIN_ID === undefined) {
     throw new Error('BSC_CHAIN_ID is undefined');
 }
 
-const chainID = process.env.REACT_APP_BSC_CHAIN_ID;
+const chainID = process.env.REACT_APP_ETH_MAINNET_CHAIN_ID;
 
 const getChainID = () => {
     return parseInt(chainID, 10);
