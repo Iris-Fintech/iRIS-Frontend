@@ -31,18 +31,11 @@ const ETHBalance = () => {
                 setEthbalance(undefined);
             };
         }
-    }, [account, library, chainId]);
-    // console.log(ethbalance);
+    }, [account, library]);
+    console.log(ethbalance);
     return (
         <>
-            <p id="title">
-                Your ETH balance:{' '}
-                {ethbalance === null
-                    ? 'Error'
-                    : ethbalance
-                    ? `${(ethbalance / 10000000000000000000).toPrecision(6)}`
-                    : ''}
-            </p>
+            <p id="title">ETH: {ethbalance === null ? 'Error' : ethbalance ? `${ethbalance}` : ''}</p>
         </>
     );
 };
@@ -73,25 +66,18 @@ const ETHBalance = () => {
 //                     }
 //                 });
 
-            return () => {
-                setBtcbalance(undefined);
-            };
-        }
-    }, [account, library, chainId]);
-    // console.log(btcbalance);
-    return (
-        <>
-            <p id="title">
-                Your BTC Balance:{' '}
-                {btcbalance === null
-                    ? 'Error'
-                    : btcbalance
-                    ? `${(btcbalance / 10000000000000000000).toPrecision(6)}`
-                    : ''}
-            </p>
-        </>
-    );
-};
+//             return () => {
+//                 setBtcbalance(undefined);
+//             };
+//         }
+//     }, [account, library, chainId, BTCcontract.methods]);
+//     // console.log(btcbalance);
+//     return (
+//         <>
+//             <p id="title">BTC: {btcbalance === null ? 'Error' : btcbalance ? `${btcbalance}` : ''}</p>
+//         </>
+//     );
+// };
 
 const Footer = () => {
     const { account, library } = useWeb3React();
@@ -99,7 +85,7 @@ const Footer = () => {
         return (
             <>
                 <div id="footer">
-                    <div className="row px-3">
+                    <div className="row">
                         <div className="col-3">
                             <p id="title">Welcome to Iris Fintech</p>
                         </div>
@@ -111,8 +97,8 @@ const Footer = () => {
         return (
             <>
                 <div id="footer">
-                    <div className="row px-3">
-                        <div className="col-2">
+                    <div className="row">
+                        <div className="col-3">
                             <p id="title">Wallet Connected</p>
                         </div>
                         {/* <div className="col-3">
