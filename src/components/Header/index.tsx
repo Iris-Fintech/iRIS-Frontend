@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <>
             <Navbar id="Nav">
-                <Container fluid>
+                <Container className="mx-3 mb-1" fluid>
                     <Navbar.Brand href="/" style={{ marginLeft: '1%' }}>
                         <img src={logo1} width="90" height="36" alt="iRIS Fintech" />
                     </Navbar.Brand>

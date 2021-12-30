@@ -102,7 +102,7 @@ const Footer = () => {
         return (
             <>
                 <div id="footer">
-                    <div className="row">
+                    <div className="row px-3">
                         <div className="col-3">
                             <p id="title">Welcome to Iris Fintech</p>
                         </div>
@@ -114,7 +114,7 @@ const Footer = () => {
         return (
             <>
                 <div id="footer">
-                    <div className="row">
+                    <div className="row px-3">
                         <div className="col-2">
                             <p id="title">Wallet Connected</p>
                         </div>

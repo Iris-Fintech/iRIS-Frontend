@@ -1,5 +1,6 @@
 #Nav {
-    background: 	rgb(81, 65, 79);
+    background-color: rgb(0, 0, 0);
+    /* background-color: black; */
     color: rgb(230, 230, 250);
     font-family: monospace;
     font-weight: bold;

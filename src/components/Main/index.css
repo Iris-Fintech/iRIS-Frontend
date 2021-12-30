@@ -1,3 +1,9 @@
-#story {
-    background-color: black;
+.main {
+    /* background-color: black; */
+    background-color: rgb(10, 10, 30);
 }
+
+/* #story, #home, #roadmap, #contact, #team {
+    color: white;
+} */
+

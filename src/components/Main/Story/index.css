@@ -1,0 +1,12 @@
+.story-title {
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.top-hr {
+    color: white;
+    border: 1px;
+    padding: 1px;
+    margin: 0px;    
+}
