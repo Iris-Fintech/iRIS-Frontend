@@ -31,7 +31,7 @@ const ETHBalance = () => {
                 setEthbalance(undefined);
             };
         }
-    }, [account, library]);
+    }, [account, library, web3.eth, web3.utils]);
     console.log(ethbalance);
     return (
         <>
