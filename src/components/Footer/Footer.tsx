@@ -5,28 +5,25 @@ import Web3 from 'web3';
 import './index.css';
 
 const ETHBalance = () => {
-    const { account, library, chainId } = useWeb3React();
-    const [ethbalance, setEthbalance] = React.useState<number>();
-    const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+    const { account, library } = useWeb3React();
+    const [ethbalance, setEthbalance] = React.useState<string>();
+    const web3 = new Web3(Web3.givenProvider);
 
-    const Address = '0x2170Ed0880ac9A755fd29B2688956BD959F933F8';
-    const ETHcoinABI = JSON.parse(JSON.stringify(require('./EthcoinABI.json')));
-    const ETHcontract = new web3.eth.Contract(ETHcoinABI, Address);
     React.useEffect((): any => {
         if (!!account && !!library) {
             let stale = false;
 
-            ETHcontract.methods
-                .balanceOf(account)
-                .call()
-                .then((balance: any) => {
+            web3.eth
+                .getBalance(account)
+                .then((wei: any) => {
+                    var balance = web3.utils.fromWei(wei, 'ether');
                     if (!stale) {
                         setEthbalance(balance);
                     }
                 })
                 .catch(() => {
                     if (!stale) {
-                        setEthbalance(NaN);
+                        setEthbalance('NaN');
                     }
                 });
 
@@ -50,31 +47,31 @@ const ETHBalance = () => {
     );
 };
 
-const BTCBalance = () => {
-    const { account, library, chainId } = useWeb3React();
-    const [btcbalance, setBtcbalance] = React.useState<number>();
-    const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+// const BTCBalance = () => {
+//     const { account, library, chainId } = useWeb3React();
+//     const [btcbalance, setBtcbalance] = React.useState<number>();
+//     const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
 
-    const Address = '0x5aF03DbdD8273A81B9e713AF821D25e819d31894';
-    const BitcoinABI = JSON.parse(JSON.stringify(require('./BitcoinABI.json')));
-    const BTCcontract = new web3.eth.Contract(BitcoinABI, Address);
-    React.useEffect((): any => {
-        if (!!account && !!library) {
-            let stale = false;
+//     const Address = '0x5aF03DbdD8273A81B9e713AF821D25e819d31894';
+//     const BitcoinABI = JSON.parse(JSON.stringify(require('./BitcoinABI.json')));
+//     const BTCcontract = new web3.eth.Contract(BitcoinABI, Address);
+//     React.useEffect((): any => {
+//         if (!!account && !!library) {
+//             let stale = false;
 
-            BTCcontract.methods
-                .balanceOf(account)
-                .call()
-                .then((balance: any) => {
-                    if (!stale) {
-                        setBtcbalance(balance);
-                    }
-                })
-                .catch(() => {
-                    if (!stale) {
-                        setBtcbalance(NaN);
-                    }
-                });
+//             BTCcontract.methods
+//                 .balanceOf(account)
+//                 .call()
+//                 .then((balance: any) => {
+//                     if (!stale) {
+//                         setBtcbalance(balance);
+//                     }
+//                 })
+//                 .catch(() => {
+//                     if (!stale) {
+//                         setBtcbalance(NaN);
+//                     }
+//                 });
 
             return () => {
                 setBtcbalance(undefined);
@@ -118,9 +115,9 @@ const Footer = () => {
                         <div className="col-2">
                             <p id="title">Wallet Connected</p>
                         </div>
-                        <div className="col-3">
+                        {/* <div className="col-3">
                             <BTCBalance />
-                        </div>
+                        </div> */}
                         <div className="col-3">
                             <ETHBalance />
                         </div>

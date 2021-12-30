@@ -1,12 +1,11 @@
 import React from 'react';
 import { useWeb3React } from '@web3-react/core';
+
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import useAuth from '../../hooks/useAuth';
-
-import { ConnectorNames } from '../../utils/connectorNames';
 import WalletAddress from '../Wallet/address';
 import './index.css';
 
@@ -47,8 +46,8 @@ const ConnectButton = () => {
                         // id="connect-button"
                         variant="flat"
                         onClick={() => {
-                            login(ConnectorNames.Injected);
-                            localStorage.setItem('Wallet', ConnectorNames.Injected);
+                            login();
+                            localStorage.setItem('Wallet', 'Injected');
                         }}
                     >
                         Connect Wallet
