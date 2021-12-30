@@ -11,22 +11,22 @@ const useInactiveListener = (suppress: boolean = false) => {
         if (connector && connector.on && !active && !error && !suppress) {
             const handleConnect = () => {
                 console.log("Handling 'connect' event");
-                login(connectedWallet);
+                login();
             };
             const handleChainChanged = (chainId: string | number) => {
                 console.log("Handling 'chainChanged' event with payload", chainId);
                 window.location.reload();
-                login(connectedWallet);
+                login();
             };
             const handleAccountsChanged = (accounts: string[]) => {
                 console.log("Handling 'accountsChanged' event with payload", accounts);
                 if (accounts.length > 0) {
-                    login(connectedWallet);
+                    login();
                 }
             };
             const handleNetworkChanged = (networkId: string | number) => {
                 console.log("Handling 'networkChanged' event with payload", networkId);
-                login(connectedWallet);
+                login();
             };
 
             connector.on('connect', handleConnect);

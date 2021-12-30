@@ -5,10 +5,6 @@ interface Window {
         isMetaMask?: true;
         request: (...args: any[]) => Promise<void>;
     };
-    BinanceChain?: {
-        bnbSign: (address: string, message: string) => Promise<{ publicKey: string; signature: string }>;
-        request: (...args: any[]) => Promise<void>;
-    };
 }
 
 type SerializedBigNumber = string;
