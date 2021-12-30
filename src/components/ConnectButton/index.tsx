@@ -8,6 +8,7 @@ import useAuth from '../../hooks/useAuth';
 
 import { ConnectorNames } from '../../utils/connectorNames';
 import WalletAddress from '../Wallet/address';
+import './index.css';
 
 const ConnectButton = () => {
     const { active, error } = useWeb3React();
@@ -43,13 +44,14 @@ const ConnectButton = () => {
                 )}
                 {!active && !error && (
                     <Button
-                        variant="primary"
+                        // id="connect-button"
+                        variant="flat"
                         onClick={() => {
                             login(ConnectorNames.Injected);
                             localStorage.setItem('Wallet', ConnectorNames.Injected);
                         }}
                     >
-                        Connect·Wallet
+                        Connect Wallet
                     </Button>
                 )}
             </div>

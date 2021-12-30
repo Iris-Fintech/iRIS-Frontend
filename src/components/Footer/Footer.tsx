@@ -34,11 +34,18 @@ const ETHBalance = () => {
                 setEthbalance(undefined);
             };
         }
-    }, [account, library, chainId, ETHcontract.methods]);
+    }, [account, library, chainId]);
     // console.log(ethbalance);
     return (
         <>
-            <p id="title">ETH: {ethbalance === null ? 'Error' : ethbalance ? `${ethbalance}` : ''}</p>
+            <p id="title">
+                Your ETH balance:{' '}
+                {ethbalance === null
+                    ? 'Error'
+                    : ethbalance
+                    ? `${(ethbalance / 10000000000000000000).toPrecision(6)}`
+                    : ''}
+            </p>
         </>
     );
 };
@@ -73,11 +80,18 @@ const BTCBalance = () => {
                 setBtcbalance(undefined);
             };
         }
-    }, [account, library, chainId, BTCcontract.methods]);
+    }, [account, library, chainId]);
     // console.log(btcbalance);
     return (
         <>
-            <p id="title">BTC: {btcbalance === null ? 'Error' : btcbalance ? `${btcbalance}` : ''}</p>
+            <p id="title">
+                Your BTC Balance:{' '}
+                {btcbalance === null
+                    ? 'Error'
+                    : btcbalance
+                    ? `${(btcbalance / 10000000000000000000).toPrecision(6)}`
+                    : ''}
+            </p>
         </>
     );
 };
@@ -101,7 +115,7 @@ const Footer = () => {
             <>
                 <div id="footer">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="col-2">
                             <p id="title">Wallet Connected</p>
                         </div>
                         <div className="col-3">
