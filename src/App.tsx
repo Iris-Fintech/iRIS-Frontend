@@ -1,7 +1,7 @@
 import React, { lazy } from 'react';
 
-const WalletInfo = lazy(() => import('./components/Wallet'));
-const Account = lazy(() => import('./components/Account'));
+const Main = lazy(() => import('./components/Main'));
+// const Account = lazy(() => import('./components/Account'));
 const Routes = lazy(() => import('./route'));
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
@@ -15,8 +15,8 @@ const App = () => {
         <div>
             <Header />
             <Routes />
-            <WalletInfo />
-            <Account />
+            <Main />
+            {/* <Account /> */}
             <Footer />
         </div>
     );

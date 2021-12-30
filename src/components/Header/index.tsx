@@ -21,10 +21,10 @@ const Header = () => {
                                 <Nav.Link href="#home">HOME</Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#swap">STORY</Nav.Link>
+                                <Nav.Link href="#story">STORY</Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#lending">ROADMAP</Nav.Link>
+                                <Nav.Link href="#roadmap">ROADMAP</Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
                                 <Nav.Link href="#team">TEAM</Nav.Link>
