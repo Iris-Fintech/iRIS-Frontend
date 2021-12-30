@@ -1,9 +1,16 @@
 .main {
-    /* background-color: black; */
-    background-color: rgb(10, 10, 30);
+    width: 100vw;
 }
 
-/* #story, #home, #roadmap, #contact, #team {
-    color: white;
-} */
+#story, #team {
+    background-color: rgb(10, 10, 30);
+    /* position: absolute; */
+    width: 100vw;
+    /* padding: 0%; */
+}
+
+#home, #roadmap, #contact {
+    background-color: rgb(0, 0, 0);
+    width: 100vw;
+}
 
