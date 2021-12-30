@@ -1,14 +1,9 @@
 import { useCallback } from 'react';
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core';
-import { NoBscProviderError } from '@binance-chain/bsc-connector';
 import {
     NoEthereumProviderError,
     UserRejectedRequestError as UserRejectedRequestErrorInjected,
 } from '@web3-react/injected-connector';
-import {
-    UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-    WalletConnectConnector,
-} from '@web3-react/walletconnect-connector';
 import { connectorsByName } from '../utils/connectors';
 import { useAppDispatch } from '../redux/hook';
 import { setState } from '../redux/triedEager';
@@ -46,21 +41,14 @@ const useAuth = () => {
                                 dispatch(setState(true));
                             });
                         } else {
+                            console.log('logout');
                             logout();
                         }
                     } else {
                         // window.localStorage.removeItem('Wallet');
-                        if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+                        if (error instanceof NoEthereumProviderError) {
                             console.log('Provider Error', 'No provider was found');
-                        } else if (
-                            error instanceof UserRejectedRequestErrorInjected ||
-                            error instanceof UserRejectedRequestErrorWalletConnect
-                        ) {
-                            if (connector instanceof WalletConnectConnector) {
-                                const walletConnector = connector as WalletConnectConnector;
-                                walletConnector.walletConnectProvider = undefined;
-                            }
-
+                        } else if (error instanceof UserRejectedRequestErrorInjected) {
                             console.log('Authorization Error', 'Please authorize to access your account');
                         } else {
                             console.log(error.name, error.message);

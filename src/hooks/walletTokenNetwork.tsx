@@ -26,7 +26,7 @@ export const setupNetwork = async () => {
             });
             return true;
         } catch (error) {
-            console.error(error);
+            console.error('setup', error);
             return false;
         }
     } else {

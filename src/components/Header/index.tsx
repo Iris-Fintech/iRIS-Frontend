@@ -10,7 +10,7 @@ const Header = () => {
             <Navbar bg="black" expand="lg" variant="dark" sticky="top">
                 <Container fluid>
                     <Navbar.Brand href="/" style={{ marginLeft: '1%' }}>
-                        DeFite Button
+                        Iris Fintech
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
