@@ -7,6 +7,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import useAuth from '../../hooks/useAuth';
 import WalletAddress from '../Wallet/address';
+import './index.css';
 
 const ConnectButton = () => {
     const { active, error } = useWeb3React();
@@ -28,7 +29,7 @@ const ConnectButton = () => {
             >
                 {active && (
                     <Dropdown>
-                        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                        <Dropdown.Toggle variant="flat" id="dropdown-basic">
                             {address}
                         </Dropdown.Toggle>
 
@@ -42,13 +43,14 @@ const ConnectButton = () => {
                 )}
                 {!active && !error && (
                     <Button
-                        variant="primary"
+                        // id="connect-button"
+                        variant="flat"
                         onClick={() => {
                             login();
                             localStorage.setItem('Wallet', 'Injected');
                         }}
                     >
-                        Connect·Wallet
+                        Connect Wallet
                     </Button>
                 )}
             </div>

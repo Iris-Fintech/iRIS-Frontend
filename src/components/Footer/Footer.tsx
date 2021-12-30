@@ -31,7 +31,7 @@ const ETHBalance = () => {
                 setEthbalance(undefined);
             };
         }
-    }, [account, library, web3.eth, web3.utils]);
+    }, [account, library]); // eslint-disable-line react-hooks/exhaustive-deps
     console.log(ethbalance);
     return (
         <>
