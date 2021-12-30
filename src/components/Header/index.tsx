@@ -9,7 +9,7 @@ import logo1 from './logo1.png';
 const Header = () => {
     return (
         <>
-            <Navbar id="Nav">
+            <Navbar id="Nav" sticky="top">
                 <Container className="mx-3 my-1" fluid>
                     <Navbar.Brand href="/" style={{ marginLeft: '1%' }}>
                         <img src={logo1} width="90" height="36" alt="iRIS Fintech" />

@@ -1,16 +1,19 @@
 .main {
-    width: 100vw;
+    /* width: 100vw; */
+    margin: 0%;
+    padding: 0;
+
 }
 
 #story, #team {
     background-color: rgb(10, 10, 30);
     /* position: absolute; */
-    width: 100vw;
+    /* width: 100vw; */
     /* padding: 0%; */
 }
 
 #home, #roadmap, #contact {
     background-color: rgb(0, 0, 0);
-    width: 100vw;
+    /* width: 100vw; */
 }
 
