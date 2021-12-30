@@ -18,19 +18,29 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#home">HOME</Nav.Link>
+                                <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#home">
+                                    HOME
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#story">STORY</Nav.Link>
+                                <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#story">
+                                    STORY
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#roadmap">ROADMAP</Nav.Link>
+                                <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#roadmap">
+                                    ROADMAP
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#team">TEAM</Nav.Link>
+                                <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#team">
+                                    TEAM
+                                </Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>
-                                <Nav.Link href="#contact">CONTACT</Nav.Link>
+                                <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#contact">
+                                    CONTACT
+                                </Nav.Link>
                             </Nav.Item>
                         </Nav>
                         <Nav>

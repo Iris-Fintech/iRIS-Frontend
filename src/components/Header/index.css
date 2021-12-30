@@ -1,6 +1,13 @@
 #Nav {
-    background: 	rgb(230, 230, 250);
-    font-family: monospace;;
+    background: 	rgb(81, 65, 79);
+    color: rgb(230, 230, 250);
+    font-family: monospace;
     font-weight: bold;
-    font-size: 1.3vw;
+    font-size: 1.4vw;
+    
 }
+/* 
+.navbar-font {
+    color: rgb(230, 230, 250);
+    font-size: 1.3vw;
+} */

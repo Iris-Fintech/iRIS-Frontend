@@ -30,7 +30,7 @@ const ConnectButton = () => {
             >
                 {active && (
                     <Dropdown>
-                        <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                        <Dropdown.Toggle variant="flat" id="dropdown-basic">
                             {address}
                         </Dropdown.Toggle>
 
