@@ -86,7 +86,7 @@ const Footer = () => {
             <>
                 <div id="footer">
                     <div className="row">
-                        <div className="col-3">
+                        <div className="ml-5 col-3">
                             <p id="title">Welcome to Iris Fintech</p>
                         </div>
                     </div>
