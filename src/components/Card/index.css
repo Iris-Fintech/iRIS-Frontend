@@ -167,6 +167,7 @@
 
 .fadeOut{
     opacity:0;
+    z-index: -200;
     -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     -o-transition: opacity 0.2s;
@@ -175,6 +176,7 @@
 }
 .fadeIn{
     opacity:0.75;
+    z-index: 0;
     -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     -o-transition: opacity 0.2s;

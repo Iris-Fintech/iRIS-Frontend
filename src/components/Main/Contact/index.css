@@ -1,0 +1,44 @@
+.name {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.3 vw;
+}
+
+.pos {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.3 vw;
+}
+
+.label {
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    font-size: 0.3 vw;
+    /* height: 3vw; */
+}
+
+.story-content {
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+}
+
+.large {
+    height: 10 vw;
+}
+/* 
+.alerts {
+    font-family: monospace;
+    line-height: 0.5vw;
+} */
+
+.modal {
+    line-height: 0.5vw;
+}
+
+.modaltext {
+    background-color: rgb(230, 230, 250);
+    font-family: monospace;
+}
