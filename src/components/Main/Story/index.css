@@ -3,3 +3,27 @@
     font-family: monospace;
     font-weight: bold;
 }
+
+#story-text {
+    font-size: vw;
+    padding: 0vw 1vw 1vw 1vw;
+    line-height: 125%;
+    letter-spacing: 0.06vw;
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+}
+
+#story-paragraph-1 {
+    margin-top: 7vh;
+    height: 36vh;
+}
+
+#story-paragraph-2 {
+    margin-top: 7vh;
+    height: 33vh;
+}
+
+#story-paragraph-3 {
+    margin-top: 7vh;
+    height: 18vh;
+}
