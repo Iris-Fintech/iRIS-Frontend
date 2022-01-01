@@ -1,0 +1,100 @@
+a:link {
+    text-decoration: none;
+}
+
+.profile {
+    will-change: auto opacity;
+    width: 20vw;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.7;
+    transition: all 1s ease-in-out;
+}
+
+.profile:hover {
+    filter: brightness(110%);
+    opacity: 1;
+}
+
+.fire {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #ff0000 0%, #ff004f 25%, #ff355e 50%, #dc143c 75%, #ff004f 100%);
+    border-image-slice: 1;
+}
+
+.fire:hover {
+    background: red; 
+    box-shadow: 0 0 3vw red; 
+}
+
+.gold {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #ffd700 0%, #e5b73b 25%, #fdff00 50%, #fefe33 75%, #ffff00 100%);
+    border-image-slice: 1;
+}
+
+.gold:hover {
+    background: gold; 
+    box-shadow: 0 0 3vw gold; 
+}
+
+.grass {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #00ff00 0%, #ccff00 25%, #8bbe1b 50%, #a7fc00 75%, #32cd32 100%);
+    border-image-slice: 1;
+}
+
+.grass:hover {
+    background: #adff2f; 
+    box-shadow: 0 0 3vw greenyellow; 
+}
+
+.water {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #00ffef 0%, #00ffff 25%, #9bddff 50%, #00ffff 75%, #00ced1 100%);
+    border-image-slice: 1;
+}
+
+.water:hover {
+    background: cyan; 
+    box-shadow: 0 0 3vw cyan; 
+}
+
+.soil {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #ffa500 0%, #ffb347 25%, #ed872d 50%, #ffa812 75%, #ff4500 100%);
+    border-image-slice: 1;
+}
+
+.soil:hover {
+    background: #ffa500; 
+    box-shadow: 0 0 3vw #ffa500; 
+}
+
+.name {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.3 vw;
+}
+
+.pos {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+    font-size: 0.3 vw;
+}
+
+.twit {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
