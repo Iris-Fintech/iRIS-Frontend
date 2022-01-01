@@ -1,0 +1,156 @@
+#iRIS-bg{
+    color: rgb(230, 230, 250);;
+    position: fixed;
+    width: 100%;
+    height: 10vh;
+    margin-top: 10vh;
+
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0vw 0vw 0.1vw #dddddd;
+    letter-spacing: 0.1rem;
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.cardWrapper {
+    display: flex;                  /* establish flex container */
+    flex-direction: row;            /* default value; can be omitted */
+    flex-wrap: nowrap;              /* default value; can be omitted */
+    justify-content: space-between; /* switched from default (flex-start, see below) */
+   
+    width: 80vw;
+    height: 38vw;
+    perspective: 60vw;
+    margin: 0 auto;
+}
+
+.cardContainer {
+  width: 22vw;
+  height: 30vw;
+  transition: .8s all ease;
+  transform: rotateX(60deg) scale(0.7);
+  perspective: 60vw;
+
+  animation: entry 2s linear 1;
+  display: inline-block;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+}
+
+#c0 {
+  box-shadow: -1vw -1vw 3vw #bbbbbb;
+}
+
+#c1 {
+  box-shadow: 0.2vw -1vw 3vw #bbbbbb, -0.2vw -1vw 3vw #bbbbbb;
+}
+
+#c2 {
+  box-shadow: 1vw -1vw 3vw #bbbbbb;
+}
+
+.cardContainer:hover {
+  cursor: pointer;
+  transform: rotate(0deg) scale(1) translateY(1vw);
+  transition: .5s all ease;
+}
+
+#c0:hover {
+    transform: rotate(0deg) scale(1) translateY(1vw);
+    transition: .5s all ease;
+    box-shadow: 0.2vw 0.2vw 1vw #dddddd, -0.2vw -0.2vw 1vw #dddddd;
+}
+  
+#c1:hover {
+    transform: rotate(0deg) scale(1) translateY(1vw);
+    transition: .5s all ease;
+    box-shadow: 0.2vw 0.2vw 1vw #dddddd, -0.2vw -0.2vw 1vw #dddddd;
+}
+
+#c2:hover {
+    transform: rotate(0deg) scale(1) translateY(1vw);
+    transition: .5s all ease;
+    box-shadow: 0.2vw 0.2vw 1vw #dddddd, -0.2vw -0.2vw 1vw #dddddd;
+}
+
+.cardImage {
+  /* position: absolute; */
+  width: 100%;
+  height: 45%;
+}
+
+.cardCityImage {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1vw;
+    display: block;
+    
+    width: auto;
+    height: 13vw;
+}
+
+#i0 {
+    background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+}
+
+#i1{
+    background: linear-gradient(to top, #eba65b 30%, #d99267 100%);
+}
+
+#i2 {
+    background: linear-gradient(to bottom, #59476f 30%, #7b88d1 100%);
+}
+
+#s0 {
+    background: linear-gradient(to top, #5b62a2 0%, #7b88d1 100%);
+}
+
+#s1{
+    background: linear-gradient(to bottom, #eba65b 0%, #d99267 40%);
+}
+  
+#s2 {
+    background: linear-gradient(to top, #5b62a2 0%, #7b88d1 100%);
+}
+
+.story {
+    position: absolute;
+    top: 45%;
+    left: 0%;
+    height: 55%;
+    width: 100%;
+}
+
+.card-title {
+    padding: 0.5rem 0rem 0rem 0rem;
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0vw 0vw 0.1vw #dddddd;
+    letter-spacing: 0.1rem;
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 0.8rem;
+    padding: 0rem 1rem 1rem 1rem;
+    line-height: 125%;
+    text-align: center;
+    letter-spacing: 0.06rem;
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.fadeOut{
+    opacity:0;
+    transition: opacity 0.2s;
+
+}
+.fadeIn{
+    opacity:0.75;
+    transition: opacity 0.2s;
+}
