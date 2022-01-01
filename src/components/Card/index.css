@@ -145,7 +145,7 @@
 
 .card-title {
     padding: 0.5rem 0rem 0rem 0rem;
-    font-size: 1.6rem;
+    font-size: 2vw;
     text-align: center;
     text-shadow: 0vw 0vw 0.08vw #dddddd;
     letter-spacing: 0.1rem;
@@ -155,7 +155,7 @@
 }
 
 .card-text {
-    font-size: 1rem;
+    font-size: 1.3vw;
     padding: 0rem 1rem 1rem 1rem;
     line-height: 125%;
     text-align: center;
