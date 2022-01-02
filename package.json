@@ -1,10 +1,9 @@
 {
-    "name": "defite-frontend",
+    "name": "iris-fintech-landing-page",
     "version": "0.1.0",
     "private": true,
     "homepage": ".",
     "dependencies": {
-        "@binance-chain/bsc-connector": "^1.0.0",
         "@ethersproject/providers": "^5.1.2",
         "@ethersproject/units": "^5.1.0",
         "@reduxjs/toolkit": "^1.6.2",
@@ -18,7 +17,6 @@
         "@types/react-router-dom": "^5.3.1",
         "@web3-react/core": "^6.1.9",
         "@web3-react/injected-connector": "latest",
-        "@web3-react/walletconnect-connector": "^6.2.7",
         "bootstrap": "5.1.1",
         "eslint-plugin-react-hooks": "^4.2.0",
         "ethers": "^5.4.7",
@@ -41,8 +39,7 @@
         "typescript": "^4.4.3",
         "typewriter-effect": "^2.18.2",
         "web-vitals": "^1.0.1",
-        "web3": "^1.6.1",
-        "yarn": "^1.22.17"
+        "web3": "^1.6.1"
     },
     "scripts": {
         "analyze": "source-map-explorer build/static/js/*.js",
@@ -90,5 +87,5 @@
         "prettier": "^2.4.1",
         "typescript-eslint": "^0.0.1-alpha.0"
     },
-    "description": "DeFite Frontend"
+    "description": "iRIS Fintech -- The NFTs in reality are coming!"
 }
