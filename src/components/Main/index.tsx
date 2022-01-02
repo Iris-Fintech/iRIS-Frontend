@@ -5,6 +5,7 @@ import Story from './Story';
 import Roadmap from './Roadmap';
 import Team from './Team';
 import Contact from './Contact';
+import Ending from './Ending';
 import './index.css';
 
 const Main = () => {
@@ -25,6 +26,9 @@ const Main = () => {
                 </div>
                 <div id="contact">
                     <Contact />
+                </div>
+                <div id="ending">
+                    <Ending />
                 </div>
             </Container>
         </>

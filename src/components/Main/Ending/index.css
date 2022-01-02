@@ -1,0 +1,15 @@
+.ending-title {
+    color: rgb(230, 230, 250);
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.ending-content {
+    color: rgb(230, 230, 250);
+    font-family: monospace;
+    text-align: center;
+    font-size: 0.2vw;
+}
+
