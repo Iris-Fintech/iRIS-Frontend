@@ -68,7 +68,7 @@ class Contact extends Component<{}, ContactInfo> {
         const { Firstname, Lastname, Email, Message, Alertshow } = this.state;
         return (
             <>
-                <div className="py-3">
+                <div className="pt-3">
                     <h3 className="px-5 story-title"> Contact Us </h3>
                     {/* <h5 className="pt-5 px-5 pb-2 story-content"> Please feel free to ask us anything! </h5> */}
                     <Container fluid>

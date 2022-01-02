@@ -25,7 +25,7 @@ const Roadmap = () => {
                                 <p className="description">
                                     Construct landing page website
                                     <br />
-                                    Construct landing page website
+                                    Build testing solar mine
                                     <br />
                                     Develop core contract
                                     <br />
