@@ -1,6 +1,6 @@
 #footer {
     position: fixed;
-    padding: 2px 20px 0px 20px;
+    padding: 0.1vw 2vw 0vw 2vw;
     bottom: 0;
     width: 100%;
     height: 1.5vw;
@@ -11,7 +11,7 @@
     color: rgb(230, 230, 250);
     font-weight: bold;
     font-family: monospace;
-    font-size: 12px;
+    font-size: 0.9vw;
     display: inline-block;
     vertical-align: top;
 }

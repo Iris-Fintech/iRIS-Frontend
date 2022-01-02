@@ -5,7 +5,9 @@
 }
 
 #story-text {
-    font-size: vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    font-size: 1.2vw;
     padding: 0vw 1vw 1vw 1vw;
     line-height: 125%;
     letter-spacing: 0.06vw;
@@ -14,16 +16,16 @@
 }
 
 #story-paragraph-1 {
-    margin-top: 7vh;
-    height: 36vh;
+    margin-top: 3vw;
+    height: 18vw;
 }
 
 #story-paragraph-2 {
-    margin-top: 7vh;
-    height: 33vh;
+    margin-top: 3vw;
+    height: 16vw;
 }
 
 #story-paragraph-3 {
-    margin-top: 7vh;
-    height: 18vh;
+    margin-top: 3vw;
+    height: 8vw;
 }

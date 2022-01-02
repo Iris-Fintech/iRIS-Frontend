@@ -7,7 +7,7 @@ const Roadmap = () => {
             <div className="py-3">
                 <h3 className="px-5 story-title"> Roadmap - Step to our future! </h3>
             </div>
-            <div className="py-1">
+            <div className="py-5">
                 <div className="container">
                     <div className="main-timeline">
                         <div className="timeline">
@@ -21,11 +21,11 @@ const Roadmap = () => {
                                 </div>
                             </div>
                             <div className="timeline-content">
-                                <h5 className="title">First Step</h5>
+                                <h5 className="title">Preliminary Stage</h5>
                                 <p className="description">
-                                    Approach artists and partner stores
+                                    Construct landing page website
                                     <br />
-                                    Develop one page website
+                                    Construct landing page website
                                     <br />
                                     Develop core contract
                                     <br />
