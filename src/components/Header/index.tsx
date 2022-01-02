@@ -4,15 +4,16 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import ConnectButton from '../ConnectButton';
 import './index.css';
-import logo1 from './logo1.png';
+import iris_banner from '../../assets/iris_banner_light.png';
+
 // expand="lg" variant="dark" sticky="top"
 const Header = () => {
     return (
         <>
-            <Navbar id="Nav" sticky="top" expand="lg">
+            <Navbar id="Nav" sticky="top" expand="lg" variant="dark">
                 <Container className="mx-3 my-1" fluid>
                     <Navbar.Brand href="/" style={{ marginLeft: '1%' }}>
-                        <img src={logo1} width="90" height="36" alt="iRIS Fintech" />
+                        <img src={iris_banner} width="90" height="36" alt="iRIS Fintech" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

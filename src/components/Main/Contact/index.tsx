@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
 import './index.css';
 
+enum State {
+    NONE,
+    SUCCESS,
+    ERROR,
+}
+
 interface ContactInfo {
     Firstname: string | undefined;
     Lastname: string | undefined;
     Email: string | undefined;
     Message: string | undefined;
-    Alertshow: boolean;
+    Alertshow: State;
 }
 
 class Contact extends Component<{}, ContactInfo> {
@@ -18,7 +24,7 @@ class Contact extends Component<{}, ContactInfo> {
             Lastname: '',
             Email: '',
             Message: '',
-            Alertshow: false,
+            Alertshow: State.NONE,
         };
         this.onHandleSubmit = this.onHandleSubmit.bind(this);
     }
@@ -27,17 +33,29 @@ class Contact extends Component<{}, ContactInfo> {
         event.preventDefault();
         const Info: ContactInfo = this.state;
         console.log(Info);
-        this.setState({
-            Firstname: '',
-            Lastname: '',
-            Email: '',
-            Message: '',
-            Alertshow: true,
-        });
+
+        if (
+            this.state.Firstname == '' ||
+            this.state.Lastname == '' ||
+            this.state.Email == '' ||
+            this.state.Message == ''
+        ) {
+            this.setState({
+                Alertshow: State.ERROR,
+            });
+        } else {
+            this.setState({
+                Firstname: '',
+                Lastname: '',
+                Email: '',
+                Message: '',
+                Alertshow: State.SUCCESS,
+            });
+        }
     }
 
     onHandleClose() {
-        this.setState({ Alertshow: false });
+        this.setState({ Alertshow: State.NONE });
     }
 
     // let Info: ContactInfo = {
@@ -136,11 +154,19 @@ class Contact extends Component<{}, ContactInfo> {
                             </div>
                         </Form>
                     </Container>
-                    <Modal className="modal" show={Alertshow} onHide={() => this.onHandleClose()}>
-                        <Modal.Body className="modaltext">
-                            Message sent successfully, we will contact you ASAP!
-                        </Modal.Body>
-                    </Modal>
+                    {Alertshow == State.SUCCESS && (
+                        <Modal className="modal" show="true" onHide={() => this.onHandleClose()}>
+                            <Modal.Body className="modaltext">
+                                {"Message sent successfully, we'll contact you ASAP!"}
+                            </Modal.Body>
+                        </Modal>
+                    )}
+
+                    {Alertshow == State.ERROR && (
+                        <Modal className="modal" show="true" onHide={() => this.onHandleClose()}>
+                            <Modal.Body className="modaltext">{'ERROR! Please fill in all required fields'}</Modal.Body>
+                        </Modal>
+                    )}
                 </div>
             </>
         );

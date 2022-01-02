@@ -21,9 +21,9 @@ const ConnectButton = () => {
             <div
                 style={{
                     display: 'grid',
-                    gridGap: '1rem',
+                    gridGap: '2vw',
                     gridTemplateColumns: 'fit-content',
-                    maxWidth: '20rem',
+                    maxWidth: '20vw',
                     margin: 'auto',
                 }}
             >

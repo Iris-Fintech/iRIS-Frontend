@@ -1,33 +1,36 @@
-.name {
+/* .name {
     color: rgb(230, 230, 250);
     text-align: center;
     font-family: monospace;
     font-weight: bold;
-    font-size: 0.3 vw;
-}
+    font-size: 2vw;
+} */
 
-.pos {
+/* .pos {
     color: rgb(230, 230, 250);
     text-align: center;
     font-family: monospace;
     font-size: 0.3 vw;
-}
+} */
 
 .label {
     color: rgb(230, 230, 250);
     font-family: monospace;
-    font-size: 0.3 vw;
+    font-size: 1.5vw;
     /* height: 3vw; */
 }
 
 .story-content {
     color: rgb(230, 230, 250);
     font-family: monospace;
+    font-size: 2vw;
+    font-weight: bold;
 }
 
 .large {
-    height: 10 vw;
+    height: 10vw;
 }
+
 /* 
 .alerts {
     font-family: monospace;
@@ -36,6 +39,8 @@
 
 .modal {
     line-height: 0.5vw;
+    font-size: 1vw;
+    margin: 0 auto;
 }
 
 .modaltext {

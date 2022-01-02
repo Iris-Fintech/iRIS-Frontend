@@ -140,7 +140,7 @@
 }
 
 .main-timeline .month {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 700
 }
 
@@ -159,7 +159,7 @@
 }
 
 .main-timeline .title {
-    font-size: 19px;
+    font-size: 25px;
     font-weight: 700;
     line-height: 24px;
     margin: 0 0 15px 0;
@@ -168,6 +168,7 @@
 
 .main-timeline .description {
     margin-bottom: 0;
+    font-size: 16px;
     color: rgb(230, 230, 250, 0.8);
 }
 
@@ -195,7 +196,10 @@
         padding: 10px 0 10px 30px
     }
     .main-timeline .title {
-        font-size: 17px
+        font-size: 16px
+    }
+    .main-timeline .description {
+        font-size: 12px;
     }
     .main-timeline .timeline:nth-child(2n) .timeline-content {
         padding: 10px 30px 10px 0
@@ -237,7 +241,10 @@
         top: 30%
     }
     .main-timeline .year {
-        font-size: 24px
+        font-size: 14px
+    }
+    .main-timeline .description {
+        font-size: 11px;
     }
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content {

@@ -10,7 +10,7 @@ const Story = () => {
             <div className="py-3">
                 <h3 className="px-5 story-title"> The Story </h3>
 
-                <div id="story-text" className="px-5">
+                <div id="story-text">
                     <div id="story-paragraph-1" className="px-5">
                         <Typewriter
                             onInit={(typewriter) => {
@@ -18,7 +18,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.3vw;">March 31, 2022...<span><br /><br />',
+                                        '<span style="font-weight: bold; font-size: 1.8vw;">March 31, 2022...<span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)
@@ -50,7 +50,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.3vw;">January 19, 2038...</span><br /><br />',
+                                        '<span style="font-weight: bold; font-size: 1.8vw;">January 19, 2038...</span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)
@@ -82,7 +82,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.3vw;">February 07, 2106:</span><br /><br />',
+                                        '<span style="font-weight: bold; font-size: 1.8vw;">February 07, 2106:</span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)
