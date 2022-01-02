@@ -155,7 +155,7 @@ class Contact extends Component<{}, ContactInfo> {
                         </Form>
                     </Container>
                     {Alertshow == State.SUCCESS && (
-                        <Modal className="modal" show="true" onHide={() => this.onHandleClose()}>
+                        <Modal className="modal" show={true} onHide={() => this.onHandleClose()}>
                             <Modal.Body className="modaltext">
                                 {"Message sent successfully, we'll contact you ASAP!"}
                             </Modal.Body>
@@ -163,7 +163,7 @@ class Contact extends Component<{}, ContactInfo> {
                     )}
 
                     {Alertshow == State.ERROR && (
-                        <Modal className="modal" show="true" onHide={() => this.onHandleClose()}>
+                        <Modal className="modal" show={true} onHide={() => this.onHandleClose()}>
                             <Modal.Body className="modaltext">{'ERROR! Please fill in all required fields'}</Modal.Body>
                         </Modal>
                     )}

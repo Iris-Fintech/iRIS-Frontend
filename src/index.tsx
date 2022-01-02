@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import TSX File
 import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 const Web3Provider = lazy(() => import('./Provider'));
 const App = lazy(() => import('./App'));
@@ -14,7 +15,13 @@ import { BrowserRouter } from 'react-router-dom';
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+                fallback={
+                    <div id="loading">
+                        <span id="loading-text">Flying to iRIS ...</span>
+                    </div>
+                }
+            >
                 <Web3Provider>
                     <App />
                 </Web3Provider>
