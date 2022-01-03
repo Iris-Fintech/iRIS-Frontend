@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import ConnectButton from '../ConnectButton';
 import './index.css';
-import iris_banner from '../../assets/iris_banner_light.png';
+import iris_banner from '../../assets/iris_banner_light.svg';
 
 // expand="lg" variant="dark" sticky="top"
 const Header = () => {

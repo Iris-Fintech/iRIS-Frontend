@@ -3,8 +3,8 @@
     "name": "iRIS Fintech NFT Landing Page",
     "icons": [
         {
-            "src": "logo10.png",
-            "type": "image/png",
+            "src": "logo_no_bg.svg",
+            "type": "image/svg",
             "sizes": "192x192"
         }
     ],
