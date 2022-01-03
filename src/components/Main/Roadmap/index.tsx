@@ -23,11 +23,11 @@ const Roadmap = () => {
                             <div className="timeline-content">
                                 <h5 className="title">Preliminary Stage</h5>
                                 <p className="description">
-                                    Construct landing page website
+                                    Reveal our NFT landing page
                                     <br />
-                                    Build testing solar mine
+                                    Reveal the story behind iRIS Hogs
                                     <br />
-                                    Develop core contract
+                                    Build solar energy mining prototype
                                     <br />
                                     Survive NTU CEP final pitch
                                 </p>
@@ -44,15 +44,15 @@ const Roadmap = () => {
                                 </div>
                             </div>
                             <div className="timeline-content">
-                                <h5 className="title">First Mint</h5>
+                                <h5 className="title">NFT Public Mint</h5>
                                 <p className="description">
-                                    Build community
+                                    Establish iRIS community
                                     <br />
-                                    Online AMA party
+                                    iRIS first Online AMA
                                     <br />
-                                    Announce profit sharing percantage
+                                    Reveal interest DAO mechanism
                                     <br />
-                                    IDO first mint character profile picture
+                                    Public mint of iRIS Hogs NFT
                                 </p>
                             </div>
                         </div>
@@ -69,13 +69,13 @@ const Roadmap = () => {
                             <div className="timeline-content">
                                 <h5 className="title">Solar Panel Time</h5>
                                 <p className="description">
-                                    Build solar mine
+                                    Construct solar energy mining
                                     <br />
-                                    Onsite Easter party
+                                    Real world Easter party
                                     <br />
-                                    Time to time airdrops
+                                    Party to Earn! Collect mysterious equipments
                                     <br />
-                                    Preparing Second Round IDO
+                                    Sneak peak at our new plan
                                 </p>
                             </div>
                         </div>
@@ -90,15 +90,15 @@ const Roadmap = () => {
                                 </div>
                             </div>
                             <div className="timeline-content">
-                                <h5 className="title">Second Mint</h5>
+                                <h5 className="title">Reveal new plan</h5>
                                 <p className="description">
-                                    Running solar mine
+                                    Announe New Year plan
                                     <br />
-                                    Announe new year plan
+                                    Online and Real world Summer Party
                                     <br />
-                                    Both Online and Onsite Summer Party
+                                    iRIS Web3.0 symposium
                                     <br />
-                                    IDO second mint character profile picture
+                                    Member exclusive merchandise
                                 </p>
                             </div>
                         </div>

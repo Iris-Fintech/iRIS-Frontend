@@ -23,7 +23,7 @@ const Story = () => {
                                     .pauseFor(200)
                                     .changeDelay(1)
                                     .typeString(
-                                        '<span>&ensp;&ensp;&ensp;&ensp;</span>A piercing ringtone from NASA Johnson Space Center broke the supposed tranquility. They discovered a Polonium asteroid is flying toward the Earth and is expected to hit the ground in 2 months. So the scientists decided to send 1,000 per species to the new Earth – Kepler-352b. The spacecraft carried the hope of the Earth and started the journal to Kepler-352b.<br /><br />',
+                                        '<span>&ensp;&ensp;&ensp;&ensp;</span>A piercing ringtone from NASA Johnson Space Center broke the supposed tranquility. NASA discovered a Polonium asteroid flying toward the Earth and was expected to hit the ground in 2 months. So, the scientists decided to send 1,000 per species to the new Earth – Kepler-352b. The spacecraft carried the hope of the Earth and started the journal to Kepler-352b.<br /><br />',
                                     )
                                     .pauseFor(200)
                                     .pasteString(
@@ -55,7 +55,7 @@ const Story = () => {
                                     .pauseFor(200)
                                     .changeDelay(1)
                                     .typeString(
-                                        '<span>&ensp;&ensp;&ensp;&ensp;</span>Not long after the radiation asteroid, the spacecraft encountered a second crisis. The solar storm from Proxima Centauri, the closest Sun to Solar System, was flooding toward the spacecraft. The interaction between solar storm substance and Polonium gave birth to a totally new element – Irisodium. The Irisodium drastically affected the hedgehogs’ DNA and they evolved into a new species – iRIS Hogs. There are 5 types of iRIS Hogs, which are Metal, Wood, Water, Fire, and Soil.<br /><br />',
+                                        '<span>&ensp;&ensp;&ensp;&ensp;</span>Not long after the radiation asteroid crisis, the spacecraft encountered a second crisis. The solar storm from Proxima Centauri, the closest Sun to Solar System, was flooding toward the spacecraft. The interaction between solar storm substance and Polonium gave birth to a totally new element – Irisodium. The Irisodium drastically affected the hedgehogs’ DNA and they evolved into a new species – iRIS Hogs. There are 5 types of iRIS Hogs, which is Metal, Wood, Water, Fire, and Soil.<br /><br />',
                                     )
                                     .pauseFor(200)
                                     .pasteString(
