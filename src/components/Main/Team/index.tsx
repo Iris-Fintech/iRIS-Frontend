@@ -1,10 +1,10 @@
 import React from 'react';
-import fire from './profile/fire.png';
-import gold from './profile/gold.png';
-import grass from './profile/grass.png';
-import soil from './profile/soil.png';
-import water from './profile/water.png';
-import twitter from './twitter.svg';
+import fire from '../../../assets/profile/CEP_fire.svg';
+import gold from '../../../assets/profile/CEP_gold.svg';
+import grass from '../../../assets/profile/CEP_grass.svg';
+import soil from '../../../assets/profile/CEP_soil.svg';
+import water from '../../../assets/profile/CEP_water.svg';
+import twitter from '../../../assets/twitter.svg';
 
 import './index.css';
 
