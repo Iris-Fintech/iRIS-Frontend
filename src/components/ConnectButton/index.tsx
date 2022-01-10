@@ -16,6 +16,8 @@ const ConnectButton = () => {
 
     const address = WalletAddress();
 
+    const shortenAddress = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+
     return (
         <>
             <div
@@ -30,12 +32,16 @@ const ConnectButton = () => {
                 {active && (
                     <Dropdown>
                         <Dropdown.Toggle variant="flat" id="dropdown-basic">
-                            {address}
+                            {shortenAddress}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item>Wallet</Dropdown.Item>
-                            <Dropdown.Item>Transactions</Dropdown.Item>
+                            <Dropdown.Item href="https://opensea.io/account" target="_blank">
+                                Opensea
+                            </Dropdown.Item>
+                            <Dropdown.Item href={'https://etherscan.io/address/' + address} target="_blank">
+                                Transactions
+                            </Dropdown.Item>
                             <Dropdown.Divider />
                             <Dropdown.Item onClick={logout}>Disconnect</Dropdown.Item>
                         </Dropdown.Menu>
