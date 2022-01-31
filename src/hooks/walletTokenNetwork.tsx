@@ -7,23 +7,43 @@ export const setupNetwork = async () => {
     if (provider && connectedWallet === 'Injected') {
         const chainId = getChainID();
         try {
-            await provider.request({
-                method: 'wallet_addEthereumChain',
-                params: [
-                    {
-                        chainId: `0x${chainId.toString(16)}`,
-                        chainName: 'Binance Smart Chain Mainnet',
-                        nativeCurrency: {
-                            name: 'BNB',
-                            symbol: 'bnb',
-                            decimals: 18,
-                        },
-                        rpcUrls: [getRPCNodeUrl()],
-                        blockExplorerUrls: ['https://bscscan.com/'],
-                    },
-                ],
-            });
-            return true;
+            try {
+                console.log(`0x${chainId.toString(16)}`);
+                await provider.request({
+                    method: 'wallet_switchEthereumChain',
+                    params: [{ chainId: `0x${chainId.toString(16)}` }],
+                });
+                return true;
+            } catch (switchError) {
+                // This error code indicates that the chain has not been added to MetaMask.
+                if ((switchError as any).code === 4902) {
+                    try {
+                        await provider.request({
+                            method: 'wallet_addEthereumChain',
+                            params: [
+                                {
+                                    chainId: `0x${chainId.toString(16)}`,
+                                    chainName: 'Ethereum Mainnet',
+                                    nativeCurrency: {
+                                        name: 'ETH',
+                                        symbol: 'eth',
+                                        decimals: 18,
+                                    },
+                                    rpcUrls: [getRPCNodeUrl()],
+                                    blockExplorerUrls: ['https://etherscan.io'],
+                                },
+                            ],
+                        });
+                        return true;
+                    } catch (addError) {
+                        // handle "add" error
+                        console.error('add', addError);
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
         } catch (error) {
             console.error('setup', error);
             return false;
