@@ -2,9 +2,8 @@ import { getChainID, getRPCNodeUrl } from '../utils/getRPC';
 
 export const setupNetwork = async () => {
     const provider = window.ethereum;
-    const connectedWallet = localStorage.getItem('_iris_fintech_');
 
-    if (provider && connectedWallet === 'Injected') {
+    if (provider) {
         const chainId = getChainID();
         try {
             try {
