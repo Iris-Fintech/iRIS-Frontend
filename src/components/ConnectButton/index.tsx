@@ -7,12 +7,15 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import useAuth from '../../hooks/useAuth';
 import WalletAddress from '../Wallet/address';
+import { changeState } from '../../redux/modalShowSlice';
+import { useAppDispatch } from '../../redux/hook';
 import './index.css';
 
 const ConnectButton = () => {
     const { active, error } = useWeb3React();
 
-    const { login, logout } = useAuth();
+    const { logout } = useAuth();
+    const dispatch = useAppDispatch();
 
     const address = WalletAddress();
 
@@ -43,11 +46,9 @@ const ConnectButton = () => {
                 )}
                 {!active && !error && (
                     <Button
-                        // id="connect-button"
                         variant="flat"
                         onClick={() => {
-                            login();
-                            localStorage.setItem('Wallet', 'Injected');
+                            dispatch(changeState());
                         }}
                     >
                         Connect Wallet

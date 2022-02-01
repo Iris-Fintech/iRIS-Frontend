@@ -1,5 +1,6 @@
 // Library Import
 import { InjectedConnector } from '@web3-react/injected-connector';
+import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import { ethers } from 'ethers';
 
 // Import TSX File
@@ -30,7 +31,7 @@ injected.handleChainChanged = (newChainID: string | number) => {
     if (newChainID != CHAIN_ID) {
         console.log('error');
 
-        localStorage.removeItem('Wallet');
+        localStorage.removeItem('_iris_fintech_');
 
         //@ts-ignore
         injected.emitDeactivate();
@@ -43,6 +44,16 @@ injected.handleChainChanged = (newChainID: string | number) => {
 
     window.location.reload();
 };
+
+// Connect to Walletconnect Connector
+const POLLING_INTERVAL = 12000;
+
+export const walletconnect = new WalletConnectConnector({
+    rpc: { 1: RPC_URL },
+    bridge: 'https://bridge.walletconnect.org',
+    qrcode: true,
+    pollingInterval: POLLING_INTERVAL,
+});
 
 // getLibrary function for Web3Provider
 export const getLibrary = (provider: any): ethers.providers.Web3Provider => {

@@ -9,10 +9,10 @@ const useEagerConnect = () => {
     const { login } = useAuth();
 
     useEffect(() => {
-        const connecetedWallet = localStorage.getItem('Wallet');
+        const connecetedWallet = localStorage.getItem('_iris_fintech_');
 
-        if (connecetedWallet === 'Injected') {
-            login();
+        if (connecetedWallet) {
+            login('useEagerConnect');
         }
     }, [activate, dispatch, login]); // intentionally only running on mount (make sure it's only mounted once :))
 };
