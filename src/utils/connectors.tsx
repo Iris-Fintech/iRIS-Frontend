@@ -1,7 +1,7 @@
 // Library Import
 import { InjectedConnector } from '@web3-react/injected-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
-import { ethers } from 'ethers';
+import Web3 from 'web3';
 
 // Import TSX File
 import { getRPCNodeUrl, getChainID } from './getRPC';
@@ -56,9 +56,8 @@ export const walletconnect = new WalletConnectConnector({
 });
 
 // getLibrary function for Web3Provider
-export const getLibrary = (provider: any): ethers.providers.Web3Provider => {
-    const library = new ethers.providers.Web3Provider(provider);
-    library.pollingInterval = 12000;
+export const getLibrary = (provider: any): Web3 => {
+    const library = new Web3(provider);
     return library;
 };
 
