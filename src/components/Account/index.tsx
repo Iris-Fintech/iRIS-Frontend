@@ -4,9 +4,9 @@ import { useWeb3React } from '@web3-react/core';
 import { signMessage } from '../../utils/connectors';
 
 const Account = () => {
-    const { connector, library, account } = useWeb3React();
+    const { library, account } = useWeb3React();
 
-    console.log('connector', connector, 'library', library, 'account', account);
+//     console.log('connector', connector, 'library', library, 'account', account);
 
     return (
         <>
