@@ -7,7 +7,6 @@ export const setupNetwork = async () => {
         const chainId = getChainID();
         try {
             try {
-                console.log(`0x${chainId.toString(16)}`);
                 await provider.request({
                     method: 'wallet_switchEthereumChain',
                     params: [{ chainId: `0x${chainId.toString(16)}` }],

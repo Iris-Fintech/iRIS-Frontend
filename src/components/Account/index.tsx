@@ -4,7 +4,9 @@ import { useWeb3React } from '@web3-react/core';
 import { signMessage } from '../../utils/connectors';
 
 const Account = () => {
-    const { library, account } = useWeb3React();
+    const { connector, library, account } = useWeb3React();
+
+    console.log('connector', connector, 'library', library, 'account', account);
 
     return (
         <>
@@ -27,7 +29,7 @@ const Account = () => {
                             cursor: 'pointer',
                         }}
                         onClick={() => {
-                            signMessage(library, account, 'Test');
+                            signMessage(library.currentProvider, account, 'Test');
                         }}
                     >
                         Sign Message

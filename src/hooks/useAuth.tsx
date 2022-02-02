@@ -65,16 +65,14 @@ const useAuth = () => {
                                     dispatch(setState(true));
                                 });
                             } else {
-                                console.log('logout');
                                 logout();
                             }
                         } else if (currentConnector == walletconnect) {
                             currentConnector.handleDisconnect();
-                            console.log('logout');
+
                             logout();
                         }
                     } else {
-                        // window.localStorage.removeItem('Wallet');
                         if (error instanceof NoEthereumProviderError) {
                             console.log('Provider Error', 'No provider was found');
                         } else if (error instanceof UserRejectedRequestErrorInjected) {

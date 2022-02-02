@@ -31,8 +31,8 @@ class Contact extends Component<{}, ContactInfo> {
 
     onHandleSubmit(event: any) {
         event.preventDefault();
-        const Info: ContactInfo = this.state;
-        console.log(Info);
+        // const Info: ContactInfo = this.state;
+        // console.log(Info);
 
         if (
             this.state.Firstname == '' ||
