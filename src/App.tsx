@@ -6,8 +6,6 @@ const Routes = lazy(() => import('./route'));
 const Header = lazy(() => import('./components/Header'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
 
-// const Account = lazy(() => import('./components/Account'));
-
 import BaseConnector from './utils/baseConnection';
 
 const App = () => {
@@ -18,7 +16,6 @@ const App = () => {
             <Header />
             <Routes />
             <Main />
-            {/* <Account /> */}
             <WalletModal />
             <Footer />
         </div>
