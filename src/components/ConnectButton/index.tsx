@@ -6,15 +6,22 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 import { getErrorMessage } from '../../utils/getEthErrorMessage';
 import useAuth from '../../hooks/useAuth';
-import WalletAddress from '../Wallet/address';
+import { WalletAddress, WalletAddressAbbrev } from '../Wallet/address';
+import { changeState } from '../../redux/modalShowSlice';
+import { useAppDispatch } from '../../redux/hook';
 import './index.css';
 
 const ConnectButton = () => {
     const { active, error } = useWeb3React();
 
-    const { login, logout } = useAuth();
+    const { logout } = useAuth();
+    const dispatch = useAppDispatch();
+
+    const addressAbbrev = WalletAddressAbbrev();
 
     const address = WalletAddress();
+    const etherscanURL = 'https://etherscan.io/address/' + address;
+    const openseaURL = 'https://opensea.io/' + address;
 
     return (
         <>
@@ -28,14 +35,18 @@ const ConnectButton = () => {
                 }}
             >
                 {active && (
-                    <Dropdown>
+                    <Dropdown align="end">
                         <Dropdown.Toggle variant="flat" id="dropdown-basic">
-                            {address}
+                            {addressAbbrev}
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Wallet</Dropdown.Item>
-                            <Dropdown.Item>Transactions</Dropdown.Item>
+                        <Dropdown.Menu variant="dark">
+                            <Dropdown.Item href={etherscanURL} target="_blank">
+                                Wallet
+                            </Dropdown.Item>
+                            <Dropdown.Item href={openseaURL} target="_blank">
+                                Transactions
+                            </Dropdown.Item>
                             <Dropdown.Divider />
                             <Dropdown.Item onClick={logout}>Disconnect</Dropdown.Item>
                         </Dropdown.Menu>
@@ -43,11 +54,9 @@ const ConnectButton = () => {
                 )}
                 {!active && !error && (
                     <Button
-                        // id="connect-button"
                         variant="flat"
                         onClick={() => {
-                            login();
-                            localStorage.setItem('Wallet', 'Injected');
+                            dispatch(changeState());
                         }}
                     >
                         Connect Wallet

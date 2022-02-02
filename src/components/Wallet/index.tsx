@@ -1,6 +1,6 @@
 import React from 'react';
 import { useWeb3React } from '@web3-react/core';
-import WalletAddress from './address';
+import { WalletAddressAbbrev } from './address';
 import ConnectChainId from './chainId';
 
 const BlockNumber = () => {
@@ -118,7 +118,7 @@ const WalletInfo = () => {
                     <span role="img" aria-label="robot">
                         🤖
                     </span>
-                    <span>{WalletAddress()}</span>
+                    <span>{WalletAddressAbbrev()}</span>
                 </>
 
                 <Balance />

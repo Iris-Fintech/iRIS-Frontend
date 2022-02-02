@@ -4,29 +4,29 @@ import useAuth from './useAuth';
 
 const useInactiveListener = (suppress: boolean = false) => {
     const { connector, active, error } = useWeb3React();
-    const connectedWallet = localStorage.getItem('Wallet') ?? '';
+    const connectedWallet = localStorage.getItem('_iris_fintech_') ?? '';
     const { login } = useAuth();
 
     useEffect((): any => {
         if (connector && connector.on && !active && !error && !suppress) {
             const handleConnect = () => {
                 console.log("Handling 'connect' event");
-                login();
+                login('useInactiveListener');
             };
             const handleChainChanged = (chainId: string | number) => {
                 console.log("Handling 'chainChanged' event with payload", chainId);
                 window.location.reload();
-                login();
+                login('useInactiveListener');
             };
             const handleAccountsChanged = (accounts: string[]) => {
                 console.log("Handling 'accountsChanged' event with payload", accounts);
                 if (accounts.length > 0) {
-                    login();
+                    login('useInactiveListener');
                 }
             };
             const handleNetworkChanged = (networkId: string | number) => {
                 console.log("Handling 'networkChanged' event with payload", networkId);
-                login();
+                login('useInactiveListener');
             };
 
             connector.on('connect', handleConnect);
