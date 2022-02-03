@@ -6,6 +6,8 @@ import { signMessage } from '../../utils/connectors';
 const Account = () => {
     const { library, account } = useWeb3React();
 
+//     console.log('connector', connector, 'library', library, 'account', account);
+
     return (
         <>
             <hr style={{ margin: '2rem' }} />
@@ -27,7 +29,7 @@ const Account = () => {
                             cursor: 'pointer',
                         }}
                         onClick={() => {
-                            signMessage(library, account, 'Test');
+                            signMessage(library.currentProvider, account, 'Test');
                         }}
                     >
                         Sign Message

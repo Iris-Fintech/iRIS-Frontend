@@ -32,7 +32,7 @@ const ETHBalance = () => {
             };
         }
     }, [account, library]); // eslint-disable-line react-hooks/exhaustive-deps
-    console.log(ethbalance);
+
     return (
         <>
             <p id="title">ETH: {ethbalance === null ? 'Error' : ethbalance ? `${ethbalance}` : ''}</p>
