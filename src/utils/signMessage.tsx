@@ -5,7 +5,7 @@ const web3 = new Web3(Web3.givenProvider);
 export const signMessage = async (
     library: any,
     recipient: string,
-    amount: number,
+    amount: number[],
     nonce: string,
     contractAddress: string,
 ) => {
@@ -18,7 +18,7 @@ export const signMessage = async (
             { t: 'address', v: contractAddress },
         ) || '';
 
-    // console.log(msgHash, recipient, amount, contractAddress, nonce);
+    console.log(msgHash, recipient, amount, contractAddress, nonce);
 
     library.eth.personal
         .sign(msgHash, recipient)

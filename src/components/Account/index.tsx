@@ -30,7 +30,13 @@ const Account = () => {
                             cursor: 'pointer',
                         }}
                         onClick={() => {
-                            signMessage(library, account, 1, nonce(), '0x0000000000000000000000000000000000000000');
+                            signMessage(
+                                library,
+                                account,
+                                [1, 2, 3],
+                                nonce(),
+                                '0x0000000000000000000000000000000000000000',
+                            );
                         }}
                     >
                         Sign Message
