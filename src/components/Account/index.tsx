@@ -1,12 +1,13 @@
 import React from 'react';
 import { useWeb3React } from '@web3-react/core';
 
-import { signMessage } from '../../utils/connectors';
+import { nonce } from '../../utils/generateNonce';
+import { signMessage } from '../../utils/signMessage';
 
 const Account = () => {
     const { library, account } = useWeb3React();
 
-//     console.log('connector', connector, 'library', library, 'account', account);
+    // console.log('connector', connector, 'library', library, 'account', account);
 
     return (
         <>
@@ -29,7 +30,7 @@ const Account = () => {
                             cursor: 'pointer',
                         }}
                         onClick={() => {
-                            signMessage(library.currentProvider, account, 'Test');
+                            signMessage(library, account, 1, nonce(), '0x0000000000000000000000000000000000000000');
                         }}
                     >
                         Sign Message
