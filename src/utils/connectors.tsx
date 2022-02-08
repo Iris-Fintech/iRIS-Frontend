@@ -3,8 +3,6 @@ import { InjectedConnector } from '@web3-react/injected-connector';
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector';
 import Web3 from 'web3';
 
-const web3 = new Web3(Web3.givenProvider);
-
 // Import TSX File
 import { getRPCNodeUrl, getChainID } from './getRPC';
 
@@ -59,31 +57,4 @@ export const walletconnect = new WalletConnectConnector({
 export const getLibrary = (provider: any): Web3 => {
     const library = new Web3(provider);
     return library;
-};
-
-export const signMessage = async (provider: any, account: string, msg: string) => {
-    // return provider.eth.sign(provider.utils.utf8ToHex(message), account);
-    const prefix = '\x19Ethereum Signed Message:\n' + msg.length;
-    const msgHash = Web3.utils.keccak256(prefix + msg);
-
-    await provider
-        .request({
-            method: 'personal_sign',
-            params: [account, msgHash],
-        })
-        .then((response: any) => {
-            console.log(response);
-
-            web3.eth.personal
-                .ecRecover(msgHash, response)
-                .then((res: any) => {
-                    console.log(res);
-                })
-                .catch((err: any) => {
-                    console.log(err);
-                });
-        })
-        .catch((error: any) => {
-            console.log(error);
-        });
 };
