@@ -74,15 +74,15 @@ class Contact extends Component<{}, ContactInfo> {
                     <Container fluid>
                         <div className="row px-5 pt-2">
                             <div className="col-1"></div>
-                            <div className="col-10">
+                            <div className="col-sm-10">
                                 <h5 className="pt-5 pb-2 story-content"> Please feel free to reach out to us!</h5>
                             </div>
                             <div className="col-1"></div>
                         </div>
                         <Form>
                             <div className="row px-5 pt-2">
-                                <div className="col-1"></div>
-                                <div className="col-5">
+                                <div className="col-sm-1"></div>
+                                <div className="col-sm-5">
                                     <Form.Group className="mb-3" controlId="FirstName">
                                         <Form.Label className="label">First Name</Form.Label>
                                         <Form.Control
@@ -92,7 +92,7 @@ class Contact extends Component<{}, ContactInfo> {
                                         />
                                     </Form.Group>
                                 </div>
-                                <div className="col-5">
+                                <div className="col-sm-5">
                                     <Form.Group className="mb-3" controlId="LastName">
                                         <Form.Label className="label">Last Name</Form.Label>
                                         <Form.Control
@@ -102,11 +102,11 @@ class Contact extends Component<{}, ContactInfo> {
                                         />
                                     </Form.Group>
                                 </div>
-                                <div className="col-1"></div>
+                                <div className="col-sm-1"></div>
                             </div>
                             <div className="row px-5 pt-2">
-                                <div className="col-1"></div>
-                                <div className="col-10">
+                                <div className="col-sm-1"></div>
+                                <div className="col-sm-10">
                                     <Form.Group className="mb-3" controlId="Email">
                                         <Form.Label className="label">Email address</Form.Label>
                                         <Form.Control
@@ -116,11 +116,11 @@ class Contact extends Component<{}, ContactInfo> {
                                         />
                                     </Form.Group>
                                 </div>
-                                <div className="col-1"></div>
+                                <div className="col-sm-1"></div>
                             </div>
                             <div className="row px-5 pt-2">
-                                <div className="col-1"></div>
-                                <div className="col-10">
+                                <div className="col-sm-1"></div>
+                                <div className="col-sm-10">
                                     <Form.Group className="mb-3" controlId="Message">
                                         <Form.Label className="label">Message</Form.Label>
                                         <Form.Control
@@ -131,16 +131,16 @@ class Contact extends Component<{}, ContactInfo> {
                                         />
                                     </Form.Group>
                                 </div>
-                                <div className="col-1"></div>
+                                <div className="col-sm-1"></div>
                             </div>
                             <div className="row px-5 pt-2 pb-5">
-                                <div className="col-10"></div>
+                                <div className="col-sm-10"></div>
                                 {/* <div className="col-9">
                                     <Alert className="alerts" variant="dark" show={Alertshow}>
                                         Message sent successfully, we will contact you as soon as possible!
                                     </Alert>
                                 </div> */}
-                                <div className="col-1 px-1">
+                                <div className="col-sm-1 px-1">
                                     <Button
                                         className="label"
                                         variant="outline-light"
