@@ -16,14 +16,14 @@
 .label {
     color: rgb(230, 230, 250);
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: (8pt + 1.5vw);
     /* height: 3vw; */
 }
 
 .story-content {
     color: rgb(230, 230, 250);
     font-family: monospace;
-    font-size: 2vw;
+    font-size: (8pt + 1.5vw);
     font-weight: bold;
 }
 
