@@ -27,8 +27,8 @@ a:link {
 }
 
 .fire:hover {
-    background: red; 
-    box-shadow: 0 0 3vw red; 
+    background: red;
+    box-shadow: 0 0 3vw red;
 }
 
 .gold {
@@ -39,8 +39,8 @@ a:link {
 }
 
 .gold:hover {
-    background: gold; 
-    box-shadow: 0 0 3vw gold; 
+    background: gold;
+    box-shadow: 0 0 3vw gold;
 }
 
 .grass {
@@ -51,8 +51,8 @@ a:link {
 }
 
 .grass:hover {
-    background: #adff2f; 
-    box-shadow: 0 0 3vw greenyellow; 
+    background: #adff2f;
+    box-shadow: 0 0 3vw greenyellow;
 }
 
 .water {
@@ -63,8 +63,8 @@ a:link {
 }
 
 .water:hover {
-    background: cyan; 
-    box-shadow: 0 0 3vw cyan; 
+    background: cyan;
+    box-shadow: 0 0 3vw cyan;
 }
 
 .soil {
@@ -75,8 +75,8 @@ a:link {
 }
 
 .soil:hover {
-    background: #ffa500; 
-    box-shadow: 0 0 3vw #ffa500; 
+    background: #ffa500;
+    box-shadow: 0 0 3vw #ffa500;
 }
 
 .name {
