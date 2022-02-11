@@ -18,7 +18,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.8vw;">March 31, 2022...<span><br /><br />',
+                                        '<span class="story-paragraph-time">March 31, 2022...<span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)
@@ -50,7 +50,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.8vw;">January 19, 2038...</span><br /><br />',
+                                        '<span class="story-paragraph-time">January 19, 2038...</span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)
@@ -82,7 +82,7 @@ const Story = () => {
                                     .pauseFor(2000)
                                     .changeDelay(10)
                                     .typeString(
-                                        '<span style="font-weight: bold; font-size: 1.8vw;">February 07, 2106...</span><br /><br />',
+                                        '<span class="story-paragraph-time">February 07, 2106...</span><br /><br />',
                                     )
                                     .pauseFor(200)
                                     .changeDelay(1)

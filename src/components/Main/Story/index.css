@@ -4,6 +4,11 @@
     font-weight: bold;
 }
 
+.story-paragraph-time {
+    font-weight: bold;
+    font-size: 1.8vw;
+}
+
 #story-text {
     margin-left: 2vw;
     margin-right: 2vw;
@@ -28,4 +33,28 @@
 #story-paragraph-3 {
     margin-top: 3vw;
     height: 8vw;
+}
+
+@media (max-width: 768px) {
+    .story-paragraph-time {
+        font-size: 4vw;
+    }
+    #story-text {
+        font-size: 2.8vw;
+    }
+
+    #story-paragraph-1 {
+        margin-top: 3vw;
+        height: 95vw;
+    }
+
+    #story-paragraph-2 {
+        margin-top: 3vw;
+        height: 90vw;
+    }
+
+    #story-paragraph-3 {
+        margin-top: 3vw;
+        height: 30vw;
+    }
 }
