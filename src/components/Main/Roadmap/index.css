@@ -196,10 +196,10 @@
         padding: 10px 0 10px 30px;
     }
     .main-timeline .title {
-        font-size: 16px;
+        font-size: calc(8pt + 1.5vw);
     }
     .main-timeline .description {
-        font-size: 12px;
+        font-size: calc(4pt + 1.5vw);
     }
     .main-timeline .timeline:nth-child(2n) .timeline-content {
         padding: 10px 30px 10px 0;
@@ -241,10 +241,10 @@
         top: 30%;
     }
     .main-timeline .year {
-        font-size: 14px;
+        font-size: calc(8pt + 1.5vw);
     }
     .main-timeline .description {
-        font-size: 11px;
+        font-size: calc(4pt + 1.5vw);
     }
     .main-timeline .timeline-content,
     .main-timeline .timeline:nth-child(2n) .timeline-content {
