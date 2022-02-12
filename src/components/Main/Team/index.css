@@ -83,18 +83,19 @@ a:link {
     text-align: center;
     font-family: monospace;
     font-weight: bold;
-    font-size: 1.5vw;
+    font-size: (8pt + 1.5vw);
 }
 
 .pos {
     color: rgb(230, 230, 250);
     text-align: center;
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: (8pt + 1.5vw);
 }
 
 .twit {
     width: 4vw;
+    min-width: 20px;
     height: auto;
     display: block;
     margin-left: auto;
