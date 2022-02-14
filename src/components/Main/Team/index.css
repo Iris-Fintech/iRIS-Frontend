@@ -4,6 +4,7 @@ a:link {
 
 .profile {
     will-change: auto opacity;
+    min-width: 250px;
     width: 20vw;
     height: auto;
     display: block;
