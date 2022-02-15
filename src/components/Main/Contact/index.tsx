@@ -32,8 +32,6 @@ class Contact extends Component<{}, ContactInfo> {
 
     async onHandleSubmit(event: any) {
         event.preventDefault();
-        // const Info: ContactInfo = this.state;
-        // console.log(Info);
 
         if (
             this.state.Firstname == '' ||
@@ -54,7 +52,6 @@ class Contact extends Component<{}, ContactInfo> {
                 Content: this.state.Message,
             };
             const response = await axios.post(endpoint, data);
-            console.log(response);
 
             this.setState({
                 Firstname: '',
@@ -69,13 +66,7 @@ class Contact extends Component<{}, ContactInfo> {
     onHandleClose() {
         this.setState({ Alertshow: State.NONE });
     }
-
-    // let Info: ContactInfo = {
-    //     Firstname: undefined,
-    //     Lastname: undefined,
-    //     Email: undefined,
-    //     Message: undefined,
-    // };
+    
     render() {
         const { Firstname, Lastname, Email, Message, Alertshow } = this.state;
         return (
