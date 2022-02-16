@@ -44,7 +44,7 @@ class Contact extends Component<{}, ContactInfo> {
             });
         } else {
             const hostname = process.env.REACT_APP_BACKEND_URL;
-            const endpoint = new URL(`/new`, hostname).href;
+            const endpoint = new URL(`/api/add-response`, hostname).href;
             const data = {
                 Lastname: this.state.Lastname,
                 Firstname: this.state.Firstname,
@@ -52,21 +52,30 @@ class Contact extends Component<{}, ContactInfo> {
                 Content: this.state.Message,
             };
             const response = await axios.post(endpoint, data);
-
-            this.setState({
-                Firstname: '',
-                Lastname: '',
-                Email: '',
-                Message: '',
-                Alertshow: State.SUCCESS,
-            });
+            if (response.status === 200) {
+                this.setState({
+                    Firstname: '',
+                    Lastname: '',
+                    Email: '',
+                    Message: '',
+                    Alertshow: State.SUCCESS,
+                });
+            } else {
+                this.setState({
+                    Firstname: '',
+                    Lastname: '',
+                    Email: '',
+                    Message: '',
+                    Alertshow: State.ERROR,
+                });
+            }
         }
     }
 
     onHandleClose() {
         this.setState({ Alertshow: State.NONE });
     }
-    
+
     render() {
         const { Firstname, Lastname, Email, Message, Alertshow } = this.state;
         return (
