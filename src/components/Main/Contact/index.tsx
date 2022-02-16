@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
 import './index.css';
+import axios from 'axios';
 
 enum State {
     NONE,
@@ -9,10 +10,10 @@ enum State {
 }
 
 interface ContactInfo {
-    Firstname: string | undefined;
-    Lastname: string | undefined;
-    Email: string | undefined;
-    Message: string | undefined;
+    Firstname: string;
+    Lastname: string;
+    Email: string;
+    Message: string;
     Alertshow: State;
 }
 
@@ -29,7 +30,7 @@ class Contact extends Component<{}, ContactInfo> {
         this.onHandleSubmit = this.onHandleSubmit.bind(this);
     }
 
-    onHandleSubmit(event: any) {
+    async onHandleSubmit(event: any) {
         event.preventDefault();
 
         if (
@@ -42,13 +43,32 @@ class Contact extends Component<{}, ContactInfo> {
                 Alertshow: State.ERROR,
             });
         } else {
-            this.setState({
-                Firstname: '',
-                Lastname: '',
-                Email: '',
-                Message: '',
-                Alertshow: State.SUCCESS,
-            });
+            const hostname = process.env.REACT_APP_BACKEND_URL;
+            const endpoint = new URL(`/api/add-response`, hostname).href;
+            const data = {
+                Lastname: this.state.Lastname,
+                Firstname: this.state.Firstname,
+                Email: this.state.Email,
+                Content: this.state.Message,
+            };
+            const response = await axios.post(endpoint, data);
+            if (response.status === 200) {
+                this.setState({
+                    Firstname: '',
+                    Lastname: '',
+                    Email: '',
+                    Message: '',
+                    Alertshow: State.SUCCESS,
+                });
+            } else {
+                this.setState({
+                    Firstname: '',
+                    Lastname: '',
+                    Email: '',
+                    Message: '',
+                    Alertshow: State.ERROR,
+                });
+            }
         }
     }
 
