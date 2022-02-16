@@ -31,8 +31,6 @@ class Contact extends Component<{}, ContactInfo> {
 
     onHandleSubmit(event: any) {
         event.preventDefault();
-        // const Info: ContactInfo = this.state;
-        // console.log(Info);
 
         if (
             this.state.Firstname == '' ||
@@ -58,19 +56,12 @@ class Contact extends Component<{}, ContactInfo> {
         this.setState({ Alertshow: State.NONE });
     }
 
-    // let Info: ContactInfo = {
-    //     Firstname: undefined,
-    //     Lastname: undefined,
-    //     Email: undefined,
-    //     Message: undefined,
-    // };
     render() {
         const { Firstname, Lastname, Email, Message, Alertshow } = this.state;
         return (
             <>
                 <div className="pt-3">
                     <h3 className="px-5 story-title"> Contact Us </h3>
-                    {/* <h5 className="pt-5 px-5 pb-2 story-content"> Please feel free to ask us anything! </h5> */}
                     <Container fluid>
                         <div className="row px-5 pt-2">
                             <div className="col-1"></div>
@@ -135,11 +126,6 @@ class Contact extends Component<{}, ContactInfo> {
                             </div>
                             <div className="row px-5 pt-2 pb-5">
                                 <div className="col-sm-10"></div>
-                                {/* <div className="col-9">
-                                    <Alert className="alerts" variant="dark" show={Alertshow}>
-                                        Message sent successfully, we will contact you as soon as possible!
-                                    </Alert>
-                                </div> */}
                                 <div className="col-sm-1 px-1">
                                     <Button
                                         className="label"

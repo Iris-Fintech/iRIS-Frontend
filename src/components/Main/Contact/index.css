@@ -1,18 +1,3 @@
-/* .name {
-    color: rgb(230, 230, 250);
-    text-align: center;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 2vw;
-} */
-
-/* .pos {
-    color: rgb(230, 230, 250);
-    text-align: center;
-    font-family: monospace;
-    font-size: 0.3 vw;
-} */
-
 .label {
     color: rgb(230, 230, 250);
     font-family: monospace;
@@ -31,12 +16,6 @@
     height: 10vw;
 }
 
-/* 
-.alerts {
-    font-family: monospace;
-    line-height: 0.5vw;
-} */
-
 .modal {
     line-height: 0.5vw;
     font-size: 1vw;
@@ -44,6 +23,6 @@
 }
 
 .modaltext {
-    background-color: rgb(230, 230, 250);
+    color: rgb(230, 230, 250);
     font-family: monospace;
 }
