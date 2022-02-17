@@ -79,6 +79,18 @@ a:link {
     box-shadow: 0 0 3vw #ffa500;
 }
 
+.origin {
+    will-change: auto box-shadow;
+    border: 0.25vw solid;
+    border-image: linear-gradient(to bottom right, #ac0a99 0%, #ff47e6 25%, #a32ded 50%, #e67be6 75%, #714668 100%);
+    border-image-slice: 1;
+}
+
+.origin:hover {
+    background: #e443dc;
+    box-shadow: 0 0 3vw #e443dc;
+}
+
 .name {
     color: rgb(230, 230, 250);
     text-align: center;
@@ -94,11 +106,10 @@ a:link {
     font-size: (8pt + 1.5vw);
 }
 
-.twit {
-    width: 4vw;
+.socialMedia {
+    width: 2.3vw;
+    margin: 1vh auto 2vh auto;
     min-width: 20px;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
 }

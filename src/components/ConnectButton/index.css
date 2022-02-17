@@ -1,13 +1,13 @@
 .btn-flat {
-    background-color: rgba(170, 152, 169, 1);
+    background-color: rgba(215, 183, 214, 0.9);
     color: rgba(255, 255, 255, 0.9);
     font-size: 1.2vw;
-    width: 12vw;
+    width: 13vw;
     font-weight: bold;
     border-radius: 1vw;
 }
 
 .btn-flat:hover {
-    background-color: rgba(215, 183, 214, 0.9);
+    background-color: rgba(199, 140, 209, 0.8);
     color: rgba(255, 255, 255, 1);
 }

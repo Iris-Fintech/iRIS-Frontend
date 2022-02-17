@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Form, Button, Modal } from 'react-bootstrap';
 import './index.css';
 import axios from 'axios';
+import config from '../../../config';
 
 enum State {
     NONE,
@@ -43,7 +44,7 @@ class Contact extends Component<{}, ContactInfo> {
                 Alertshow: State.ERROR,
             });
         } else {
-            const hostname = process.env.REACT_APP_BACKEND_URL;
+            const hostname = config.backend_url;
             const endpoint = new URL(`/api/add-response`, hostname).href;
             const data = {
                 Lastname: this.state.Lastname,
@@ -51,6 +52,7 @@ class Contact extends Component<{}, ContactInfo> {
                 Email: this.state.Email,
                 Content: this.state.Message,
             };
+
             const response = await axios.post(endpoint, data);
             if (response.status === 200) {
                 this.setState({

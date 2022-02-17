@@ -20,7 +20,8 @@
 }
 
 .story-text {
-    font-size: 1.2vw;
+    font-size: 1.25vw;
+    line-height: 150%;
 }
 
 .story-prerender {
