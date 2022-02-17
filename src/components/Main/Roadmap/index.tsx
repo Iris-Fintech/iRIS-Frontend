@@ -15,67 +15,21 @@ const Roadmap = () => {
                             <div className="date-content">
                                 <div className="date-outer">
                                     <span className="date">
-                                        <span className="month">Oct. to Dec. </span>
-                                        <span className="year">4Q21</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="timeline-content">
-                                <h5 className="title">Preliminary Stage</h5>
-                                <p className="description">
-                                    Reveal our NFT landing page
-                                    <br />
-                                    Reveal the story behind iRIS Hogs
-                                    <br />
-                                    Build solar energy mining prototype
-                                    <br />
-                                    Survive NTU CEP final pitch
-                                </p>
-                            </div>
-                        </div>
-                        <div className="timeline">
-                            <div className="icon"></div>
-                            <div className="date-content">
-                                <div className="date-outer">
-                                    <span className="date">
-                                        <span className="month">Jan. to Mar.</span>
-                                        <span className="year">1Q22</span>
-                                    </span>
-                                </div>
-                            </div>
-                            <div className="timeline-content">
-                                <h5 className="title">NFT Public Mint</h5>
-                                <p className="description">
-                                    Establish iRIS community
-                                    <br />
-                                    iRIS first Online AMA
-                                    <br />
-                                    Reveal interest DAO mechanism
-                                    <br />
-                                    Public mint of iRIS Hogs NFT
-                                </p>
-                            </div>
-                        </div>
-                        <div className="timeline">
-                            <div className="icon"></div>
-                            <div className="date-content">
-                                <div className="date-outer">
-                                    <span className="date">
-                                        <span className="month">Apr. to Jun.</span>
+                                        <span className="month">Phase 1</span>
                                         <span className="year">2Q22</span>
                                     </span>
                                 </div>
                             </div>
                             <div className="timeline-content">
-                                <h5 className="title">Solar Panel Time</h5>
+                                <h5 className="title">Reincarnation</h5>
                                 <p className="description">
-                                    Construct solar energy mining
+                                    Establish HugiRIS Community
                                     <br />
-                                    Real world Easter party
+                                    10K HugiRIS being adopted
                                     <br />
-                                    Party to Earn! Collect mysterious equipments
+                                    HugiRIS earn $hiRIS w/o staking
                                     <br />
-                                    Sneak peak at our new plan
+                                    HugiRIS parties & meetups
                                 </p>
                             </div>
                         </div>
@@ -84,21 +38,67 @@ const Roadmap = () => {
                             <div className="date-content">
                                 <div className="date-outer">
                                     <span className="date">
-                                        <span className="month">Jul. to Sep.</span>
+                                        <span className="month">Phase 2</span>
                                         <span className="year">3Q22</span>
                                     </span>
                                 </div>
                             </div>
                             <div className="timeline-content">
-                                <h5 className="title">Reveal new plan</h5>
+                                <h5 className="title">Adventure</h5>
                                 <p className="description">
-                                    Announe New Year plan
+                                    NFTs auction with $hiRIS
                                     <br />
-                                    Online and Real world Summer Party
+                                    $hiRIS staking system
                                     <br />
-                                    iRIS Web3.0 symposium
+                                    HugiRIS Equipment wearing system
                                     <br />
-                                    Member exclusive merchandise
+                                    HugiRIS parties & meetups
+                                </p>
+                            </div>
+                        </div>
+                        <div className="timeline">
+                            <div className="icon"></div>
+                            <div className="date-content">
+                                <div className="date-outer">
+                                    <span className="date">
+                                        <span className="month">Phase 3</span>
+                                        <span className="year">4Q22</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="timeline-content">
+                                <h5 className="title">Reflection</h5>
+                                <p className="description">
+                                    HugiRIS DAO voting system
+                                    <br />
+                                    HugiRIS web3 hatcher program
+                                    <br />
+                                    HugiRIS hodler exclusive merchandise
+                                    <br />
+                                    HugiRIS parties & meetups
+                                </p>
+                            </div>
+                        </div>
+                        <div className="timeline">
+                            <div className="icon"></div>
+                            <div className="date-content">
+                                <div className="date-outer">
+                                    <span className="date">
+                                        <span className="month">Phase 4</span>
+                                        <span className="year">2023</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="timeline-content">
+                                <h5 className="title">Hug iRIS</h5>
+                                <p className="description">
+                                    NFT collaboration
+                                    <br />
+                                    International brand collaboration
+                                    <br />
+                                    Quick Access to our next project
+                                    <br />
+                                    HugiRIS parties & meetups
                                 </p>
                             </div>
                         </div>

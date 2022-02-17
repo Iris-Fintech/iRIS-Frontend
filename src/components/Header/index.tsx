@@ -20,7 +20,7 @@ const Header = () => {
                         <Nav className="me-auto">
                             <Nav.Item style={{ marginLeft: '1%' }}>
                                 <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#home">
-                                    HOME
+                                    FEATURE
                                 </Nav.Link>
                             </Nav.Item>
                             <Nav.Item style={{ marginLeft: '1%' }}>

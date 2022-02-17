@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { RiMoonClearLine } from 'react-icons/ri';
-import { FaEthereum } from 'react-icons/fa';
 import './index.css';
-import community from '../../assets/community.svg';
+import auction from '../../assets/auction.svg';
 import party from '../../assets/party.svg';
-import discount from '../../assets/discount.svg';
+import staking from '../../assets/staking.svg';
 
 const Card = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -41,11 +40,9 @@ const Card = () => {
         <>
             <div id="iRIS-bg" className={isVisible ? 'fadeIn' : 'fadeOut'}>
                 <p className="bg-text">
-                    iRIS to the moon <RiMoonClearLine />
+                    Where to go? <RiMoonClearLine />
                 </p>
-                <p className="bg-text">
-                    Time to FOMO <FaEthereum />
-                </p>
+                <p className="bg-text">Planet iRIS!</p>
             </div>
 
             <div className="cardWrapper">
@@ -60,7 +57,7 @@ const Card = () => {
                             <h3 className="card-title">{'Party & Meetups'}</h3>
                             <p className="card-text">
                                 {
-                                    'iRIS is gonna throw wild parties and meetups every seasons. Buy our NFT to meet other hodlers! Also, find the clues to upgrade your NFT in dat parties!'
+                                    'HugiRIS is gonna throw wild parties and meetups. Buy our NFT to meet other HugiRIS hodlers. We are gonna bond and grow together! #WAGMI'
                                 }
                             </p>
                         </div>
@@ -70,15 +67,15 @@ const Card = () => {
                 <div className="cardContainer" id="c1">
                     <div className="cardImage" id="i1">
                         <div className="cardCity">
-                            <img className="cardCityImage" src={community} alt="DAO Community" />
+                            <img className="cardCityImage" src={auction} alt="DAO Community" />
                         </div>
                     </div>
                     <div className="story" id="s1">
                         <div className="info">
-                            <h3 className="card-title">Mining DAO</h3>
+                            <h3 className="card-title">Auctions & Staking</h3>
                             <p className="card-text">
                                 {
-                                    '50% of the profit from all activities will be devoted to SOLAR PANEL Mining and Liquidity mining. The interest belongs to the DAO. Time to FOMO!'
+                                    'HugiRIS will hold NFT auctions on special attribute NFTs & blue-chip NFTs. Guess what? You’re gonna bid with $hiRIS earned by HugiRIS hodlers and $hiRIS stakers.'
                                 }
                             </p>
                         </div>
@@ -88,15 +85,15 @@ const Card = () => {
                 <div className="cardContainer" id="c2">
                     <div className="cardImage" id="i2">
                         <div className="cardCity">
-                            <img className="cardCityImage" src={discount} alt="Discount" />
+                            <img className="cardCityImage" src={staking} alt="staking" />
                         </div>
                     </div>
                     <div className="story" id="s2">
                         <div className="info">
-                            <h3 className="card-title">NFT coupon</h3>
+                            <h3 className="card-title">Non-immersive Game</h3>
                             <p className="card-text">
                                 {
-                                    "iRIS's NFT is gonna save you loads of money. We are going to find more partnership and the NFT will become the best coupon ever!"
+                                    'The story of the planet iRIS is composed of all 10K HugiRIS holders. Decide the next step carefully and portray your future together. #HugiRIS_DAO'
                                 }
                             </p>
                         </div>
