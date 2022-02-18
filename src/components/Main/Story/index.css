@@ -20,8 +20,9 @@
 }
 
 .story-text {
-    font-size: 1.25vw;
+    font-size: 1.2vw;
     line-height: 150%;
+    font-weight: normal;
 }
 
 .story-prerender {
@@ -37,7 +38,6 @@
 
 #story-paragraph-1 {
     margin-top: 3vw;
-    /* height: 18vw; */
 
     display: grid;
     grid-template-columns: 1fr;
@@ -45,7 +45,6 @@
 
 #story-paragraph-2 {
     margin-top: 3vw;
-    /* height: 16vw; */
 
     display: grid;
     grid-template-columns: 1fr;
@@ -53,7 +52,6 @@
 
 #story-paragraph-3 {
     margin-top: 3vw;
-    /* height: 8vw; */
 
     display: grid;
     grid-template-columns: 1fr;
@@ -71,16 +69,13 @@
 
     #story-paragraph-1 {
         margin-top: 3vw;
-        /* height: 136vw; */
     }
 
     #story-paragraph-2 {
         margin-top: 3vw;
-        /* height: 134vw; */
     }
 
     #story-paragraph-3 {
         margin-top: 3vw;
-        /* height: 55vw; */
     }
 }
