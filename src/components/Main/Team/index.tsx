@@ -25,7 +25,7 @@ const Team = () => {
                             <img className="socialMedia" src={twitter} />
                         </a>
                     </div>
-                   <div className="col-lg-4 py-2">
+                    <div className="col-lg-4 py-2">
                         <img className="water profile" src={outline} />
                         <p className="name mt-2 mb-0">iRIS - JS</p>
                         <p className="pos my-0">Co-Founder | Finance</p>
@@ -57,7 +57,7 @@ const Team = () => {
                         </a>
                     </div>
 
-                   <div className="col-lg-4 py-2">
+                    <div className="col-lg-4 py-2">
                         <img className="soil profile" src={outline} />
                         <p className="name mt-1 mb-0">iRIS - grass</p>
                         <p className="pos my-0">Co-Founder | Administration</p>
