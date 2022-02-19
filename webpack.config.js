@@ -20,29 +20,17 @@ module.exports = {
     devServer: {
         static: './dist/www',
     },
-    cache: {
-        type: 'filesystem',
-    },
     optimization: {
         minimize: true,
         minimizer: [new UglifyJsPlugin({}), new CssMinimizerPlugin({}), new TerserPlugin({}), '...'],
         usedExports: true,
         splitChunks: {
-            chunks: 'all',
-            maxSize: 40000,
-            minRemainingSize: 0,
-            minChunks: 1,
-            enforceSizeThreshold: 50000,
             cacheGroups: {
-                defaultVendors: {
+                commons: {
                     test: /[\\/]node_modules[\\/]/,
-                    priority: -10,
-                    reuseExistingChunk: true,
-                },
-                default: {
-                    minChunks: 2,
-                    priority: -20,
-                    reuseExistingChunk: true,
+                    name: 'vendors',
+                    chunks: 'all',
+                    maxSize: 500000,
                 },
             },
         },
@@ -69,6 +57,8 @@ module.exports = {
             ],
         }),
         new WorkboxPlugin.GenerateSW({
+            exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+
             runtimeCaching: [
                 {
                     urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
@@ -76,7 +66,7 @@ module.exports = {
                     options: {
                         cacheName: 'images',
                         expiration: {
-                            maxEntries: 50,
+                            maxEntries: 10,
                         },
                     },
                 },
