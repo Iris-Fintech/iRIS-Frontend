@@ -113,3 +113,81 @@ a:link {
     height: auto;
     display: block;
 }
+
+@media (max-width: 991px) {
+    .fire {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #ff0000 0%, #ff004f 25%, #ff355e 50%, #dc143c 75%, #ff004f 100%);
+        border-image-slice: 1;
+    }
+
+    .fire:hover {
+        background: red;
+        box-shadow: 0 0 3vw red;
+    }
+
+    .gold {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #ffd700 0%, #e5b73b 25%, #fdff00 50%, #fefe33 75%, #ffff00 100%);
+        border-image-slice: 1;
+    }
+
+    .gold:hover {
+        background: gold;
+        box-shadow: 0 0 3vw gold;
+    }
+
+    .grass {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #00ff00 0%, #ccff00 25%, #8bbe1b 50%, #a7fc00 75%, #32cd32 100%);
+        border-image-slice: 1;
+    }
+
+    .grass:hover {
+        background: #adff2f;
+        box-shadow: 0 0 3vw greenyellow;
+    }
+
+    .water {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #00ffef 0%, #00ffff 25%, #9bddff 50%, #00ffff 75%, #00ced1 100%);
+        border-image-slice: 1;
+    }
+
+    .water:hover {
+        background: cyan;
+        box-shadow: 0 0 3vw cyan;
+    }
+
+    .soil {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #ffa500 0%, #ffb347 25%, #ed872d 50%, #ffa812 75%, #ff4500 100%);
+        border-image-slice: 1;
+    }
+
+    .soil:hover {
+        background: #ffa500;
+        box-shadow: 0 0 3vw #ffa500;
+    }
+
+    .origin {
+        will-change: auto box-shadow;
+        border: 0.5vw solid;
+        border-image: linear-gradient(to bottom right, #ac0a99 0%, #ff47e6 25%, #a32ded 50%, #e67be6 75%, #714668 100%);
+        border-image-slice: 1;
+    }
+
+    .origin:hover {
+        background: #e443dc;
+        box-shadow: 0 0 3vw #e443dc;
+    }
+
+    .socialMedia {
+        width: 7vw;
+    }
+}

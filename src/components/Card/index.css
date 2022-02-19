@@ -5,17 +5,17 @@
     margin-top: 4vw;
     margin-bottom: 4vw;
 
-    font-size: 2.5vw;
     text-align: center;
     text-shadow: 0vw 0vw 0.1vw #dddddd;
 
     letter-spacing: 0.1vw;
-    line-height: 80%;
     font-family: monospace;
     font-weight: bold;
 }
 
 .bg-text {
+    font-size: 3vw;
+    line-height: 80%;
     will-change: animation;
     animation: color-change 2s infinite;
 }
@@ -206,12 +206,10 @@
 }
 
 @media (max-width: 991px) {
-    .cardContainer:hover {
-        transform: rotate(0deg) scale(1.2) translateY(1vw);
+    .bg-text {
+        line-height: 20%;
     }
-}
 
-@media (max-width: 991px) {
     .cardWrapper {
         flex-direction: column;
         justify-content: center;
@@ -219,36 +217,41 @@
 
         perspective: 0vw;
         width: 80vw;
-        height: 185vw;
+        height: 195vw;
         margin-bottom: 3vw;
+        padding-top: 8vw;
     }
 
     .cardContainer {
-        width: 45vw;
-        height: 60vw;
+        width: 50vw;
+        height: 68vw;
         transform: scale(0.8);
+    }
+
+    .cardContainer:hover {
+        transform: rotate(0deg) scale(1.2) translateY(1vw);
     }
 
     .cardCityImage {
         padding-top: 3vw;
 
         width: auto;
-        height: 20vw;
+        height: 21.5vw;
     }
 
     .cardImage {
         /* position: absolute; */
         width: 100%;
-        height: 34%;
+        height: 42%;
     }
 
     .card-title {
-        padding: 4vw 0vw 0vw 0vw;
+        padding: 1vw 0vw 0vw 0vw;
         font-size: calc(8pt + 1.5vw);
     }
 
     .story {
-        height: 66%;
+        height: 58%;
     }
 
     .card-text {

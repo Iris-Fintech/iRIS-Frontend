@@ -44,19 +44,7 @@
         "typescript": "^4.4.3",
         "typewriter-effect": "^2.18.2",
         "web-vitals": "^1.0.1",
-        "web3": "1.7.0",
-        "workbox-background-sync": "^5.1.4",
-        "workbox-broadcast-update": "^5.1.4",
-        "workbox-cacheable-response": "^5.1.4",
-        "workbox-core": "^5.1.4",
-        "workbox-expiration": "^5.1.4",
-        "workbox-google-analytics": "^5.1.4",
-        "workbox-navigation-preload": "^5.1.4",
-        "workbox-precaching": "^5.1.4",
-        "workbox-range-requests": "^5.1.4",
-        "workbox-routing": "^5.1.4",
-        "workbox-strategies": "^5.1.4",
-        "workbox-streams": "^5.1.4"
+        "web3": "1.7.0"
     },
     "scripts": {
         "analyze": "source-map-explorer build/static/js/*.js",
@@ -122,7 +110,8 @@
         "webpack": "^5.69.1",
         "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.9.2",
-        "webpack-dev-server": "^4.7.4"
+        "webpack-dev-server": "^4.7.4",
+        "workbox-webpack-plugin": "^6.4.2"
     },
     "resolutions": {
         "ansi-html": "https://registry.npmjs.org/ansi-html-community/-/ansi-html-community-0.0.8.tgz",
@@ -132,7 +121,9 @@
         "immer": "^9.0.6",
         "node-forge": "^1.0.0",
         "glob-parent": "^5.1.2",
-        "browserslist": "^4.16.5"
+        "browserslist": "^4.16.5",
+        "postcss": "^8.2.13",
+        "serialize-javascript": "^3.1.0"
     },
     "description": "iRIS Fintech -- The NFTs in reality are coming!"
 }

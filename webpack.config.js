@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
@@ -18,6 +19,10 @@ module.exports = {
     devtool: 'inline-source-map',
     devServer: {
         static: './dist/www',
+    },
+    cache: {
+        type: 'filesystem',
+        maxAge: 7.2e6,
     },
     optimization: {
         minimize: true,
@@ -53,6 +58,22 @@ module.exports = {
             patterns: [
                 { from: './public/robots.txt', to: 'robots.txt' },
                 { from: './public/manifest.json', to: 'manifest.json' },
+            ],
+        }),
+        new WorkboxPlugin.GenerateSW({
+            exclude: [/\.(?:png|jpg|jpeg|svg)$/],
+
+            runtimeCaching: [
+                {
+                    urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+                    handler: 'CacheFirst',
+                    options: {
+                        cacheName: 'images',
+                        expiration: {
+                            maxEntries: 10,
+                        },
+                    },
+                },
             ],
         }),
     ],
