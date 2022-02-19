@@ -14,21 +14,23 @@ const App = lazy(() => import('./App'));
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <BrowserRouter>
-            <Suspense
-                fallback={
-                    <div id="loading">
-                        <span id="loading-text">Flying to iRIS ...</span>
-                    </div>
-                }
-            >
-                <Web3Provider>
-                    <App />
-                </Web3Provider>
-            </Suspense>
-        </BrowserRouter>
-    </React.StrictMode>,
+    <>
+        <React.StrictMode>
+            <BrowserRouter>
+                <Suspense
+                    fallback={
+                        <div id="loading">
+                            <span id="loading-text">Flying to iRIS ...</span>
+                        </div>
+                    }
+                >
+                    <Web3Provider>
+                        <App />
+                    </Web3Provider>
+                </Suspense>
+            </BrowserRouter>
+        </React.StrictMode>
+    </>,
     document.getElementById('root'),
 );
 

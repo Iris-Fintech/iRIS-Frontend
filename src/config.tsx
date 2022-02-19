@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 
 if (process.env.NODE_ENV === 'production') {
     if (!process.env.REACT_APP_ETH_MAINNET_RPC_URL_1 || !process.env.REACT_APP_ETH_MAINNET_RPC_URL_2) {
