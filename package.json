@@ -49,10 +49,8 @@
     },
     "scripts": {
         "analyze": "source-map-explorer build/static/js/*.js",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "webpack:start": "webpack serve --open --mode development",
-        "webpack:build": "webpack --config ./webpack.config.js --mode production",
+        "start": "webpack serve --open --mode development",
+        "build": "webpack --config ./webpack.config.js --mode production",
         "predeploy": "BUILD_PATH='./build/www' react-scripts build",
         "eject": "react-scripts eject",
         "lint": "eslint --fix --ext .js,.ts,.tsx .",
