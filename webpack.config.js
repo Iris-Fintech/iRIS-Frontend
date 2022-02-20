@@ -12,6 +12,8 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 
+const withReport = process.env.withReport ? true : false;
+
 module.exports = {
     entry: {
         main: './src/index.tsx',
@@ -44,7 +46,6 @@ module.exports = {
             inject: true,
         }),
         new MiniCssExtractPlugin({}),
-        new BundleAnalyzerPlugin(),
         new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-tw|en/),
         new CompressionPlugin({
             test: /\.js(\?.*)?$/i,
@@ -72,7 +73,7 @@ module.exports = {
                 },
             ],
         }),
-    ],
+    ].concat(withReport ? [new BundleAnalyzerPlugin()] : []),
 
     module: {
         rules: [
