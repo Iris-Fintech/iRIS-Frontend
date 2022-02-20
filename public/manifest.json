@@ -3,7 +3,7 @@
     "name": "HugiRIS NFT Landing Page",
     "icons": [
         {
-            "src": "logo_no_bg.svg",
+            "src": "./logo_no_bg.svg",
             "type": "image/svg",
             "sizes": "192x192"
         }
