@@ -1,12 +1,20 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './views/Home';
+import React, { lazy } from 'react';
+import { Switch, Route, Redirect } from 'react-router-dom';
+
+const Main = lazy(() => import('./components/Main'));
+const PublicMint = lazy(() => import('./components/PublicMint'));
 
 const Routes = () => {
     return (
         <Switch>
             <Route exact path="/home">
-                <Home />
+                <Main />
+            </Route>
+            <Route exact path="/public-mint">
+                <PublicMint />
+            </Route>
+            <Route path="/*">
+                <Redirect to="/home" />
             </Route>
         </Switch>
     );

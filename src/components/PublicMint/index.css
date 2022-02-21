@@ -1,0 +1,29 @@
+.public-mint-con {
+    width: 80%;
+}
+
+.card-title {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+}
+
+.card-content {
+    color: rgb(230, 230, 250);
+    text-align: center;
+    font-family: monospace;
+}
+
+.public-card {
+    background-color: rgba(215, 183, 214, 0.9);
+    border-color: rgb(90, 10, 90);
+    border-radius: 1vw;
+    border-width: 0.2vw;
+    padding: 1vw;
+}
+
+.public-mint-img {
+    width: 250px;
+    max-width: 50vw;
+
+}
