@@ -40,45 +40,6 @@ const ETHBalance = () => {
     );
 };
 
-// const BTCBalance = () => {
-//     const { account, library, chainId } = useWeb3React();
-//     const [btcbalance, setBtcbalance] = React.useState<number>();
-//     const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
-
-//     const Address = '0x5aF03DbdD8273A81B9e713AF821D25e819d31894';
-//     const BitcoinABI = JSON.parse(JSON.stringify(require('./BitcoinABI.json')));
-//     const BTCcontract = new web3.eth.Contract(BitcoinABI, Address);
-//     React.useEffect((): any => {
-//         if (!!account && !!library) {
-//             let stale = false;
-
-//             BTCcontract.methods
-//                 .balanceOf(account)
-//                 .call()
-//                 .then((balance: any) => {
-//                     if (!stale) {
-//                         setBtcbalance(balance);
-//                     }
-//                 })
-//                 .catch(() => {
-//                     if (!stale) {
-//                         setBtcbalance(NaN);
-//                     }
-//                 });
-
-//             return () => {
-//                 setBtcbalance(undefined);
-//             };
-//         }
-//     }, [account, library, chainId, BTCcontract.methods]);
-//     // console.log(btcbalance);
-//     return (
-//         <>
-//             <p id="title">BTC: {btcbalance === null ? 'Error' : btcbalance ? `${btcbalance}` : ''}</p>
-//         </>
-//     );
-// };
-
 const Footer = () => {
     const { account, library } = useWeb3React();
     if (!account || !library) {
