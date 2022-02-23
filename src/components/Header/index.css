@@ -6,8 +6,11 @@
     /* font-weight: bold; */
     font-size: 1.4vw;
 }
-/* 
-.navbar-font {
-    color: rgb(230, 230, 250);
-    font-size: 1.3vw;
-} */
+
+#nav-image-twitter {
+    height: 2.4vw;
+}
+
+#nav-image-discord {
+    height: 2vw;
+}

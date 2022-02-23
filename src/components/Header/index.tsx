@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import ConnectButton from '../ConnectButton';
 import './index.css';
 import iris_banner from '../../assets/iris_banner_light.svg';
+import twitter from '../../assets/twitter.svg';
+import discord from '../../assets/discord.svg';
 
 // expand="lg" variant="dark" sticky="top"
 const Header = () => {
@@ -38,9 +40,27 @@ const Header = () => {
                                     TEAM
                                 </Nav.Link>
                             </Nav.Item>
-                            <Nav.Item style={{ marginLeft: '1%' }}>
+                            <Nav.Item style={{ marginLeft: '1%', marginRight: '2%' }}>
                                 <Nav.Link style={{ color: 'rgb(230, 230, 250)' }} href="#contact">
                                     CONTACT
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item style={{ marginLeft: '1%', marginRight: '2%' }}>
+                                <Nav.Link
+                                    style={{ color: 'rgb(230, 230, 250)' }}
+                                    href="https://twitter.com/hugiRIS_nft"
+                                    target="_blank"
+                                >
+                                    <img src={twitter} id="nav-image-twitter" alt="Twitter" />
+                                </Nav.Link>
+                            </Nav.Item>
+                            <Nav.Item style={{ marginLeft: '1%' }}>
+                                <Nav.Link
+                                    style={{ color: 'rgb(230, 230, 250)' }}
+                                    href="https://discord.gg/Wec79mnG"
+                                    target="_blank"
+                                >
+                                    <img src={discord} id="nav-image-discord" alt="Discord" />
                                 </Nav.Link>
                             </Nav.Item>
                         </Nav>
