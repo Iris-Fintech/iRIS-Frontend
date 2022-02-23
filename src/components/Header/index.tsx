@@ -57,7 +57,7 @@ const Header = () => {
                             <Nav.Item style={{ marginLeft: '1%' }}>
                                 <Nav.Link
                                     style={{ color: 'rgb(230, 230, 250)' }}
-                                    href="https://discord.gg/Wec79mnG"
+                                    href="https://discord.gg/XNYGByFGGQ"
                                     target="_blank"
                                 >
                                     <img src={discord} id="nav-image-discord" alt="Discord" />
