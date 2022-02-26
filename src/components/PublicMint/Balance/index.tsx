@@ -50,7 +50,7 @@ const ETHBalance = () => {
 const Balance = () => {
     return (
         <>
-            <Container className="px-0" fluid>
+            <Container className="px-0 h-100">
                 <h3 className="card-title">Wallet</h3>
                 <Card className="mt-3 public-card px-0">
                     <h3 className="card-dis mb-0">🔐 Account</h3>

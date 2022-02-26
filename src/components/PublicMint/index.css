@@ -2,16 +2,25 @@
     width: 80%;
 }
 
+.flex {
+    display: table;
+    width: 100%; 
+}
+
+.flex-cell {
+    display: table-cell;
+}
+
 .card-title {
     color: white;
     text-align: center;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 
 .card-content {
     color: rgb(90, 10, 90);
     text-align: center;
-    font-family: sans-serif;
+    font-family: monospace;
     font-weight: bold;
     font-size: 3.2vh;
 }
@@ -19,14 +28,14 @@
 .card-dis {
     color: rgb(90, 10, 90);
     text-align: center;
-    font-family: sans-serif;
+    font-family: monospace;
     font-weight: bold;
 }
 
 .card-heade {
     color: rgb(90, 10, 90);
     text-align: center;
-    font-family: sans-serif;
+    font-family: monospace;
 }
 
 .card-hr {
@@ -45,6 +54,7 @@
     border-radius: 1vw;
     border-width: 0.2vw;
     padding: 1vw;
+    height: 90%
 }
 
 .public-mint-img {
@@ -60,7 +70,7 @@
 
 .mint-button {
     width: 100%;
-    font-family: sans-serif;
+    font-family: monospace;
     background-color: white;
     border-color: rgb(90, 10, 90);
     color: rgb(90, 10, 90);
@@ -84,7 +94,7 @@
 .form-control {
     border-color: rgb(90, 10, 90);
     color: rgb(90, 10, 90);
-    font-family: sans-serif;
+    font-family: monospace;
     text-align: center;
 }
 
@@ -95,7 +105,7 @@
 .card-account {
     color: rgb(90, 10, 90);
     text-align: left;
-    font-family: sans-serif;
+    font-family: monospace;
     font-weight: bond;
     font-size: 3vh;
 }
@@ -103,6 +113,6 @@
 .card-address {
     color: rgb(90, 10, 90);
     text-align: left;
-    font-family: sans-serif;
+    font-family: monospace;
     font-size: 1vh;
 }
