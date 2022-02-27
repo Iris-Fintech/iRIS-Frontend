@@ -1,6 +1,6 @@
 .main-timeline {
     position: relative;
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
 }
 
 .main-timeline:before {

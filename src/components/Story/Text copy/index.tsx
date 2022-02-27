@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 
 import './index.css';
 
-const Story = () => {
+const Text = () => {
     return (
         <>
             {/* <hr className="mx-3 top-hr" /> */}
@@ -32,10 +32,10 @@ const Story = () => {
                             <Typewriter
                                 onInit={(typewriter) => {
                                     typewriter
-                                        .pauseFor(2000)
+                                        .pauseFor(300)
                                         .changeDelay(10)
                                         .typeString('<h5 class="story-paragraph-time">March 31, 2022...</h5><br />')
-                                        .pauseFor(200)
+                                        .pauseFor(100)
                                         .changeDelay(1)
                                         .typeString(
                                             '<span>&ensp;&ensp;&ensp;&ensp;</span><span class="story-text">Today was supposed to be a great day until a group of intelligent hedgehogs spotted a Polonium asteroid flying straight toward the Earth. After a series of calculations, the hedgehogs concluded that the asteroid would hit the ground and destroyed the planet in about two weeks. After hearing the news, the world has gone crazy, protests and wars were seen everywhere, and no one was willing to just listen. The worried hedgehogs tried to convince everyone to calm down but in vain. After the battle that raged in their head, the hedgehogs set their minds and decided to leave their beloved hometown.<br /><br /></span>',
@@ -86,10 +86,10 @@ const Story = () => {
                             <Typewriter
                                 onInit={(typewriter) => {
                                     typewriter
-                                        .pauseFor(2000)
+                                        .pauseFor(300)
                                         .changeDelay(10)
                                         .typeString('<h5 class="story-paragraph-time">January 19, 2038...</h5><br />')
-                                        .pauseFor(200)
+                                        .pauseFor(100)
                                         .changeDelay(1)
                                         .typeString(
                                             '<span>&ensp;&ensp;&ensp;&ensp;</span><span class="story-text">It was the day of the apocalypse. According to history, a piercing rumble suddenly broke the supposed tranquility in the dead of night – the meteorite finally hit the earth. Brutal as it sounds, hundreds of millions of lives were taken, including the hospitable hedgehogs that were eager to save the ignorant humans. Luckily, right before the meteorite hit the ground, a group of hedgehogs had hastily grabbed their precious belongings, rushing to their spacecraft, embarking on their journey to the land of possibilities – iRIS planet.<br /><br /></span>',
@@ -147,10 +147,10 @@ const Story = () => {
                             <Typewriter
                                 onInit={(typewriter) => {
                                     typewriter
-                                        .pauseFor(2000)
+                                        .pauseFor(300)
                                         .changeDelay(10)
                                         .typeString('<h5 class="story-paragraph-time">February 07, 2106...</h5><br />')
-                                        .pauseFor(200)
+                                        .pauseFor(100)
                                         .changeDelay(1)
                                         .typeString(
                                             '<span>&ensp;&ensp;&ensp;&ensp;</span><span class="story-text">After a long journey, the hedgehogs finally arrived at iRIS. Meters of dust stirred up and obstructed the bright light outside the spacecraft. The six hedgehogs stepped out onto this foreign land and were surprised by their new superpowers. But long before they came out of their trance, the revealing beam of light caught their attention - five unknown flying subjects landed on the land of iRIS, each of them crafted with a unique symbol of Metal, Wood, Water, Fire, and Earth. As the door opened, the six hedgehogs suddenly turned to stone at the moment with more and more peculiar-looking hedgehogs running towards them. It appeared that the meteorite impact twisted the gravity and brought all alien hedgehogs together.<br /><br /></span>',
@@ -177,4 +177,4 @@ const Story = () => {
     );
 };
 
-export default Story;
+export default Text;

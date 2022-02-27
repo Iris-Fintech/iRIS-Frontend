@@ -1,6 +1,6 @@
 .story-title {
     color: rgb(230, 230, 250);
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
     font-weight: bold;
 }
 
@@ -15,8 +15,8 @@
     padding: 0vw 1vw 1vw 1vw;
     line-height: 125%;
     letter-spacing: 0.06vw;
-    color: rgb(230, 230, 250);
-    font-family: monospace;
+    color: rgba(230, 230, 250, 0.7);
+    font-family: 'Noto Sans', monospace;
 }
 
 .story-text {
@@ -37,21 +37,7 @@
 }
 
 #story-paragraph-1 {
-    margin-top: 3vw;
-
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-#story-paragraph-2 {
-    margin-top: 3vw;
-
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-#story-paragraph-3 {
-    margin-top: 3vw;
+    margin-top: 1vw;
 
     display: grid;
     grid-template-columns: 1fr;
@@ -64,18 +50,10 @@
     }
 
     .story-text {
-        font-size: calc(4pt + 1.5vw);
+        font-size: calc(2pt + 1.5vw);
     }
 
     #story-paragraph-1 {
-        margin-top: 3vw;
-    }
-
-    #story-paragraph-2 {
-        margin-top: 3vw;
-    }
-
-    #story-paragraph-3 {
         margin-top: 3vw;
     }
 }

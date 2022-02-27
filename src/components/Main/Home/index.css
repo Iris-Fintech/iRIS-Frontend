@@ -4,3 +4,9 @@
     /* padding: 1.5px; */
     margin: 0px;
 }
+
+#story-image {
+    width: 90vw;
+    margin: auto;
+    display: block;
+}

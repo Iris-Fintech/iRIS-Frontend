@@ -25,15 +25,7 @@ const ConnectButton = () => {
 
     return (
         <>
-            <div
-                style={{
-                    display: 'grid',
-                    gridGap: '2vw',
-                    gridTemplateColumns: 'fit-content',
-                    maxWidth: '20vw',
-                    margin: 'auto',
-                }}
-            >
+            <div>
                 {active && (
                     <Dropdown align="end">
                         <Dropdown.Toggle variant="flat" id="dropdown-basic">

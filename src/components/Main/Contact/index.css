@@ -1,14 +1,14 @@
 .label {
     color: rgb(230, 230, 250);
-    font-family: monospace;
-    font-size: (8pt + 1.5vw);
+    font-family: 'Noto Sans', monospace;
+    font-size: calc(8pt + 1.5vw);
     /* height: 3vw; */
 }
 
 .story-content {
     color: rgb(230, 230, 250);
-    font-family: monospace;
-    font-size: (8pt + 1.5vw);
+    font-family: 'Noto Sans', monospace;
+    font-size: calc(8pt + 1.5vw);
     font-weight: bold;
 }
 
@@ -18,11 +18,18 @@
 
 .modal {
     line-height: 0.5vw;
-    font-size: 1vw;
+    font-size: 1.2vw;
     margin: 0 auto;
 }
 
 .modaltext {
     color: rgb(230, 230, 250);
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .modal {
+        font-size: calc(4pt + 1.5vw);
+    }
 }

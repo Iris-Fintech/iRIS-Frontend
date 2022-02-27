@@ -35,7 +35,7 @@ const ETHBalance = () => {
 
     return (
         <>
-            <p id="title">ETH: {ethbalance === null ? 'Error' : ethbalance ? `${ethbalance}` : ''}</p>
+            <div id="title">ETH Balance: {ethbalance === null ? 'Error' : ethbalance ? `${ethbalance}` : ''}</div>
         </>
     );
 };
@@ -86,8 +86,8 @@ const Footer = () => {
             <>
                 <div id="footer">
                     <div className="row">
-                        <div className="ml-5 col-3">
-                            <p id="title">Welcome to HugiRIS</p>
+                        <div>
+                            <div id="title">Welcome to HugiRIS</div>
                         </div>
                     </div>
                 </div>
@@ -98,13 +98,7 @@ const Footer = () => {
             <>
                 <div id="footer">
                     <div className="row">
-                        <div className="col-3">
-                            <p id="title">Wallet Connected</p>
-                        </div>
-                        {/* <div className="col-3">
-                            <BTCBalance />
-                        </div> */}
-                        <div className="col-3">
+                        <div>
                             <ETHBalance />
                         </div>
                     </div>
