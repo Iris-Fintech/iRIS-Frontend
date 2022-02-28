@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import useAuth from '../../hooks/useAuth';
 import './index.css';
 
-const WalletCard = ({ walletMetaInfo, disabled }: any) => {
+const WalletCard = ({ walletMetaInfo }: any) => {
     const { title, icon, connectorId } = walletMetaInfo;
     const { login } = useAuth();
 
@@ -13,7 +13,7 @@ const WalletCard = ({ walletMetaInfo, disabled }: any) => {
         <div className="row mt-2">
             <div className="d-grid gap-2">
                 <Button
-                    disabled={disabled}
+                    // disabled={disabled}
                     onClick={() => {
                         login(connectorId);
                     }}

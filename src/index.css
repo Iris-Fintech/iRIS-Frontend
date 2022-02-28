@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    background-color: rgb(10, 10, 30);
+}
+
 #loading {
     background-color: rgb(10, 10, 30);
     height: 100vh;
@@ -8,16 +17,11 @@
 }
 
 #loading-text {
-    /* will-change: animation; */
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
     font-size: 4vw;
     font-weight: bold;
     animation: color-change 2s infinite;
 }
-
-/* .walletconnect-modal__base {
-    max-width: 30vw !important;
-} */
 
 @keyframes color-change {
     0% {

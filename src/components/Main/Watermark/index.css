@@ -1,0 +1,38 @@
+#iRIS-bg {
+    color: rgb(230, 230, 250);
+    position: fixed;
+    width: 100%;
+    top: 45%;
+
+    text-align: center;
+    text-shadow: 0vw 0vw 0.1vw #dddddd;
+
+    letter-spacing: 0.2vw;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.bg-text {
+    font-size: 3vw;
+    line-height: 80%;
+    will-change: animation;
+    animation: color-change 2s infinite;
+}
+
+.fadeOut {
+    opacity: 0;
+    z-index: -200;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+
+.fadeIn {
+    opacity: 0.75;
+    z-index: 1;
+    -webkit-transition: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}

@@ -11,3 +11,13 @@
     background-color: rgba(199, 140, 209, 0.8);
     color: rgba(255, 255, 255, 1);
 }
+
+@media (max-width: 991px) {
+    .btn-flat {
+        font-size: 2.8vw;
+        width: 35vw;
+        display: block;
+        margin: auto;
+        /* max-width: 40vw; */
+    }
+}

@@ -1,0 +1,33 @@
+.ending-title {
+    color: rgb(230, 230, 250);
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    text-align: center;
+    font-size: 3vw;
+    font-weight: bold;
+}
+
+.ending-content {
+    color: rgb(230, 230, 250);
+    font-family: 'Noto Sans', monospace;
+    text-align: center;
+    font-size: 0.8vw;
+}
+
+#ending {
+    background-color: rgb(10, 10, 30);
+    padding-bottom: 2vh;
+}
+
+@media (max-width: 991px) {
+    .ending-title {
+        font-size: calc(12pt + 3vh);
+    }
+
+    .ending-content {
+        font-size: calc(3pt + 0.8vh);
+    }
+
+    #ending {
+        padding-bottom: 0vh;
+    }
+}

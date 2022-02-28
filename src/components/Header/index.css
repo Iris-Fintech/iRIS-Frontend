@@ -2,12 +2,41 @@
     background-color: rgb(0, 0, 0);
     /* background-color: black; */
     color: rgb(230, 230, 250);
-    font-family: monospace;
-    /* font-weight: bold; */
+    font-family: 'Noto Sans', monospace;
+    font-weight: bold;
     font-size: 1.4vw;
 }
-/* 
-.navbar-font {
-    color: rgb(230, 230, 250);
-    font-size: 1.3vw;
-} */
+
+#nav-image-twitter {
+    height: 2.4vw;
+}
+
+#nav-image-discord {
+    height: 2.4vw;
+}
+
+.nav-link-text {
+    margin-top: 0.5vh;
+}
+
+.nav-link {
+    vertical-align: center;
+}
+
+@media (max-width: 991px) {
+    #Nav {
+        font-size: 3vw;
+    }
+
+    #nav-image-twitter {
+        height: 4vw;
+    }
+
+    #nav-image-discord {
+        height: 4vw;
+    }
+
+    .nav-link {
+        margin-top: 0vw;
+    }
+}

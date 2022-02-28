@@ -1,25 +1,3 @@
-#iRIS-bg {
-    color: rgb(230, 230, 250);
-    position: fixed;
-    width: 100%;
-    margin-top: 4vw;
-    margin-bottom: 4vw;
-
-    text-align: center;
-    text-shadow: 0vw 0vw 0.1vw #dddddd;
-
-    letter-spacing: 0.1vw;
-    font-family: monospace;
-    font-weight: bold;
-}
-
-.bg-text {
-    font-size: 3vw;
-    line-height: 80%;
-    will-change: animation;
-    animation: color-change 2s infinite;
-}
-
 .cardWrapper {
     display: flex;
     /* establish flex container */
@@ -34,6 +12,9 @@
     height: 38vw;
     perspective: 60vw;
     margin: 0 auto;
+
+    z-index: 2;
+    position: relative;
 }
 
 .cardContainer {
@@ -158,7 +139,7 @@
     text-align: center;
     text-shadow: 0vw 0vw 0.08vw #dddddd;
     color: white;
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
     font-weight: bold;
     margin-bottom: 0.5vw;
 }
@@ -166,29 +147,11 @@
 .card-text {
     font-size: 1.2vw;
     padding: 0vw 1.5vw 1.2vw 1.5vw;
-    line-height: 125%;
+    line-height: 150%;
     text-align: center;
     color: rgb(230, 230, 250);
-    font-family: monospace;
+    font-family: 'Noto Sans', monospace;
     font-weight: bold;
-}
-
-.fadeOut {
-    opacity: 0;
-    z-index: -200;
-    -webkit-transition: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    -o-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-}
-
-.fadeIn {
-    opacity: 0.75;
-    z-index: 0;
-    -webkit-transition: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    -o-transition: opacity 0.2s;
-    transition: opacity 0.2s;
 }
 
 @keyframes color-change {

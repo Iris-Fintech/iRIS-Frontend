@@ -5,7 +5,7 @@ const Roadmap = () => {
     return (
         <>
             <div className="py-3">
-                <h3 className="px-5 story-title"> Roadmap - Step to our future! </h3>
+                <h3 className="px-5 story-title"> Roadmap - Step to the Future! </h3>
             </div>
             <div className="py-5">
                 <div className="container">
