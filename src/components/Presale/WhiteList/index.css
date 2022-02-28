@@ -1,0 +1,27 @@
+.wl-card {
+    background-color: white;
+    border-color: rgb(90, 10, 90);
+    border-radius: 1vw;
+    border-width: 0.2vw;
+    padding: 1vw;
+    height: 52.5%
+}
+
+.fc-card {
+    background-color: white;
+    border-color: rgb(90, 10, 90);
+    border-radius: 1vw;
+    border-width: 0.2vw;
+    padding: 1vw;
+    height: 34%
+}
+
+.card-hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid rgb(90, 10, 90);
+    margin: 1em 0;
+    padding: 0;
+    opacity: 1;
+}

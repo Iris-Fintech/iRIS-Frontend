@@ -1,0 +1,109 @@
+.public-mint-con {
+    width: 80%;
+}
+
+.card-title {
+    color: white;
+    text-align: center;
+    font-family: monospace;
+}
+
+.card-content {
+    color: rgb(90, 10, 90);
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 3.2vh;
+}
+
+.card-dis {
+    color: rgb(90, 10, 90);
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.card-heade {
+    color: rgb(90, 10, 90);
+    text-align: center;
+    font-family: monospace;
+}
+
+.card-hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid rgb(90, 10, 90);
+    margin: 1em 0;
+    padding: 0;
+    opacity: 1;
+}
+
+.public-card {
+    background-color: white;
+    border-color: rgb(90, 10, 90);
+    border-radius: 1vw;
+    border-width: 0.2vw;
+    padding: 1vw;
+    height: 90%;
+}
+
+.public-mint-img {
+    width: 250px;
+    max-width: 50vw;
+    box-shadow: 1vh 1vh 1vh darkgray;
+}
+
+.bg-bar {
+    color: rgb(90, 10, 90);
+    background-color: rgb(90, 10, 90);
+}
+
+.mint-button {
+    width: 100%;
+    font-family: monospace;
+    background-color: white;
+    border-color: rgb(90, 10, 90);
+    color: rgb(90, 10, 90);
+}
+
+.mint-button:hover {
+    background-color: rgb(90, 10, 90);
+    border-color: rgb(90, 10, 90);
+}
+
+.mint-button:focus {
+    background-color: #5a0a5a;
+    border-color: rgb(90, 10, 90);
+    box-shadow: none;
+}
+
+.midcol {
+    margin: auto;
+}
+
+.form-control {
+    border-color: rgb(90, 10, 90);
+    color: rgb(90, 10, 90);
+    font-family: monospace;
+    text-align: center;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0.2rem rgb(90, 10, 90);
+}
+
+.card-account {
+    color: rgb(90, 10, 90);
+    text-align: left;
+    font-family: monospace;
+    font-weight: bond;
+    font-size: 3vh;
+}
+
+.card-address {
+    color: rgb(90, 10, 90);
+    text-align: left;
+    font-family: monospace;
+    font-size: 1vh;
+}

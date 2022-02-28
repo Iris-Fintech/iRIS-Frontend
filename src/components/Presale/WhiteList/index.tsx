@@ -5,7 +5,6 @@ import { AbiItem } from 'web3-utils';
 import { Contract } from 'web3-eth-contract';
 import { Container, Card, Form, Row, Col, ProgressBar, Button } from 'react-bootstrap';
 import './index.css';
-import outline from '../../../assets/profile/outline.svg';
 import { MainContractABI } from '../../../config';
 
 interface AmountState {
@@ -14,7 +13,8 @@ interface AmountState {
     nowSupply: number;
     remainNumber: number;
     mainContract: Contract | null;
-    amount: number;
+    WLAmount: number;
+    FCAmount: number;
     error: undefined | string;
 }
 
@@ -30,7 +30,8 @@ class AmountClass extends React.Component<AmountProp, AmountState> {
             account: undefined,
             library: undefined,
             error: undefined,
-            amount: 1,
+            WLAmount: 1,
+            FCAmount: 1,
             nowSupply: 0,
             remainNumber: 0,
             mainContract: null,
@@ -102,13 +103,13 @@ class AmountClass extends React.Component<AmountProp, AmountState> {
     };
 
     render() {
-        const { nowSupply, remainNumber, error, amount } = this.state;
+        const { nowSupply, remainNumber, error, WLAmount, FCAmount } = this.state;
         if (error != undefined) {
             return (
                 <Container className="px-0 h-100">
-                    <h3 className="card-title">Public Mint</h3>
-                    <Card className="mt-3 public-card px-0">
-                        <h3 className="card-dis mb-0">🌋 MINT a HugiRIS</h3>
+                    <h3 className="card-title">Mint</h3>
+                    <Card className="mt-3 wl-card px-0">
+                        <h3 className="card-dis mb-0">WL Mint</h3>
                         <hr className="card-hr" />
                     </Card>
                 </Container>
@@ -116,23 +117,20 @@ class AmountClass extends React.Component<AmountProp, AmountState> {
         } else {
             return (
                 <Container className="px-0 h-100">
-                    <h3 className="card-title">Public Mint</h3>
-                    <Card className="mt-3 public-card px-0">
-                        <h3 className="card-dis mb-0">🌋 MINT a HugiRIS</h3>
+                    <h3 className="card-title">Mint</h3>
+                    <Card className="mt-3 wl-card px-0">
+                        <h5 className="card-dis mb-0">WL Mint</h5>
                         <hr className="card-hr" />
-                        <Card.Body className="mx-3">
+                        <Card.Body className="mx-1 py-0">
                             <Row>
-                                <Col lg={6}>
-                                    <img className="rounded mx-auto d-block public-mint-img" src={outline} />
-                                </Col>
                                 <Col className="mx-0 midcol">
                                     <h5 className="card-content">HugiRIS Minted: {nowSupply}/10000</h5>
                                     <ProgressBar variant={'bar'} now={nowSupply} striped min={0} max={10000} />
-                                    <p className="mb-0 mt-3 card-heade">Your Remaining Mint Quota: {remainNumber}</p>
+                                    <p className="mb-0 mt-1 card-heade">Your Remaining Mint Quota: {remainNumber}</p>
                                     <p className="my-0 card-heade">
-                                        Estimate price: {(amount * 0.1).toPrecision(2)} ETH
+                                        Estimate price: {(WLAmount * 0.08).toPrecision(2)} ETH
                                     </p>
-                                    <Row className="pt-3">
+                                    <Row className="mt-2 pt-0">
                                         <Col>
                                             <Form>
                                                 <Form.Group>
@@ -142,9 +140,42 @@ class AmountClass extends React.Component<AmountProp, AmountState> {
                                                         type="number"
                                                         max={remainNumber}
                                                         min={0}
-                                                        value={amount}
+                                                        value={WLAmount}
                                                         onChange={(e) =>
-                                                            this.setState({ amount: parseInt(e.target.value) })
+                                                            this.setState({ WLAmount: parseInt(e.target.value) })
+                                                        }
+                                                    />
+                                                </Form.Group>
+                                            </Form>
+                                        </Col>
+                                        <Col>
+                                            <Button className="mint-button">Mint</Button>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                            </Row>
+                        </Card.Body>
+                    </Card>
+                    <Card className="mt-3 fc-card px-0">
+                        <h5 className="card-dis mb-0">Free Claim Mint</h5>
+                        <hr className="card-hr" />
+                        <Card.Body className="mx-1 py-0">
+                            <Row>
+                                <Col className="mx-0 midcol">
+                                    <p className="mb-1 mt-0 card-heade">Your Remaining Mint Quota: {remainNumber}</p>
+                                    <Row className="mt-2">
+                                        <Col>
+                                            <Form>
+                                                <Form.Group>
+                                                    <Form.Control
+                                                        className="form-control"
+                                                        required
+                                                        type="number"
+                                                        max={remainNumber}
+                                                        min={0}
+                                                        value={FCAmount}
+                                                        onChange={(e) =>
+                                                            this.setState({ FCAmount: parseInt(e.target.value) })
                                                         }
                                                     />
                                                 </Form.Group>
@@ -164,7 +195,7 @@ class AmountClass extends React.Component<AmountProp, AmountState> {
     }
 }
 
-export const Amount = () => {
+export const WhiteList = () => {
     const { account, library } = useWeb3React();
     const [newAccount, setNewAccount] = React.useState<string | null | undefined>(null);
     const [newLibrary, setNewLibrary] = React.useState<any>();

@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 
 const Main = lazy(() => import('./components/Main'));
 const PublicMint = lazy(() => import('./components/PublicMint'));
+const Presale = lazy(() => import('./components/Presale'));
 
 const Routes = () => {
     return (
@@ -12,6 +13,9 @@ const Routes = () => {
             </Route>
             <Route exact path="/public-mint">
                 <PublicMint />
+            </Route>
+            <Route exact path="/presale">
+                <Presale />
             </Route>
             <Route path="/*">
                 <Redirect to="/home" />

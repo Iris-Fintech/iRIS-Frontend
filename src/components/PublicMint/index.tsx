@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Col, Row } from 'react-bootstrap';
-import Amount from './Amount';
+import { Amount } from './Amount';
 import Balance from './Balance';
 import './index.css';
 
