@@ -88,7 +88,7 @@ class Contact extends Component<{}, ContactInfo> {
                         <div className="row px-5 pt-2">
                             <div className="col-1"></div>
                             <div className="col-sm-10">
-                                <h5 className="pt-5 pb-2 story-content"> Please feel free to reach out to us!</h5>
+                                <h5 className="pt-5 pb-2 contact-content"> Please feel free to reach out to us!</h5>
                             </div>
                             <div className="col-1"></div>
                         </div>
