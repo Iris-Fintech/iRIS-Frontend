@@ -14,15 +14,15 @@ const App = lazy(() => import('./App'));
 import { BrowserRouter } from 'react-router-dom';
 
 if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker
-            .register('/service-worker.js')
-            .then((registration) => {
-                console.log('SW registered: ', registration);
-            })
-            .catch((registrationError) => {
-                console.log('SW registration failed: ', registrationError);
+    navigator.serviceWorker.ready.then((registration) => {
+        registration.unregister();
+
+        if (caches) {
+            // Service worker cache should be cleared with caches.delete()
+            caches.keys().then(async (names) => {
+                await Promise.all(names.map((name) => caches.delete(name)));
             });
+        }
     });
 }
 
@@ -50,7 +50,7 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://cra.link/PWA
-serviceWorkerRegistration.register();
+serviceWorkerRegistration.unregister();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,14 +1,14 @@
 .label {
     color: rgb(230, 230, 250);
     font-family: 'Noto Sans', monospace;
-    font-size: calc(8pt + 1.5vw);
+    font-size: calc(2pt + 1vw);
     /* height: 3vw; */
 }
 
-.story-content {
+.contact-content {
     color: rgb(230, 230, 250);
     font-family: 'Noto Sans', monospace;
-    font-size: calc(8pt + 1.5vw);
+    font-size: calc(4pt + 1.5vw);
     font-weight: bold;
 }
 
@@ -31,5 +31,13 @@
 @media (max-width: 991px) {
     .modal {
         font-size: calc(4pt + 1.5vw);
+    }
+
+    .label {
+        font-size: calc(4pt + 1.5vw);
+    }
+
+    .contact-content {
+        font-size: calc(8pt + 1.5vw);
     }
 }

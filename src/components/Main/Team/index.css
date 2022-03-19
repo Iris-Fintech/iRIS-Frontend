@@ -96,14 +96,14 @@ a:link {
     text-align: center;
     font-family: 'Noto Sans', monospace;
     font-weight: bold;
-    font-size: (8pt + 1.5vw);
+    font-size: calc(2pt + 1.2vw);
 }
 
 .pos {
     color: rgb(230, 230, 250);
     text-align: center;
     font-family: 'Noto Sans', monospace;
-    font-size: (8pt + 1.5vw);
+    font-size: calc(2pt + 1.2vw);
 }
 
 .socialMedia {
@@ -185,6 +185,14 @@ a:link {
     .origin:hover {
         background: #e443dc;
         box-shadow: 0 0 3vw #e443dc;
+    }
+
+    .name {
+        font-size: calc(8pt + 1.5vw);
+    }
+
+    .pos {
+        font-size: calc(4pt + 1.5vw);
     }
 
     .socialMedia {

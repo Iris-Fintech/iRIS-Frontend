@@ -7,7 +7,7 @@ const Story = lazy(() => import('./components/Story'));
 const Routes = () => {
     return (
         <Switch>
-            <Route exact path="/home">
+            <Route path="/home">
                 <Main />
             </Route>
             <Route exact path="/story">

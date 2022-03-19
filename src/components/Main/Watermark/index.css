@@ -8,7 +8,8 @@
     text-shadow: 0vw 0vw 0.1vw #dddddd;
 
     letter-spacing: 0.2vw;
-    font-family: cursive;
+    font-family: monospace;
+    font-style: italic;
     font-weight: bold;
 }
 
