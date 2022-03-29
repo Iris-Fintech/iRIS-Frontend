@@ -1,0 +1,56 @@
+.main {
+    /* width: 100vw; */
+    margin: 0%;
+    padding: 0;
+}
+.story-title {
+    color: rgb(230, 230, 250);
+    font-family: 'Noto Sans', monospace;
+    font-weight: bold;
+}
+
+.label {
+    color: rgb(230, 230, 250);
+    font-family: 'Noto Sans', monospace;
+    font-size: calc(2pt + 1vw);
+    /* height: 3vw; */
+}
+
+.contact-content {
+    color: rgb(230, 230, 250);
+    font-family: 'Noto Sans', monospace;
+    font-size: calc(4pt + 1.5vw);
+    font-weight: bold;
+}
+
+.large {
+    height: 10vw;
+}
+
+.modal {
+    line-height: 0.5vw;
+    font-size: 1.2vw;
+    margin: 0 auto;
+}
+
+.modaltext {
+    color: rgb(230, 230, 250);
+    font-family: 'Noto Sans', monospace;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .modal {
+        font-size: calc(4pt + 1.5vw);
+    }
+
+    .label {
+        font-size: calc(4pt + 1.5vw);
+    }
+
+    .contact-content {
+        font-size: calc(8pt + 1.5vw);
+    }
+}
+
+
